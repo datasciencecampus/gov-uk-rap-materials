@@ -114,10 +114,45 @@ REALLY NICE TURING IMAGE HERE
 
 In the future, we want to be able to look back at our work today and be able to repeat everything we've done easily
 
+What we need to think about:
+- What does our tool depend on?
+- What sort of extreme cases could break our tool?
+- What is each piece of code doing?
+
 INSERT IMAGES
 
-## 
+## Producing the publication
 
+Usually involves writing and interpretation as well as a lot of copying and pasting images. 
 
+Docoments are revised using comments, tracking changes, email, and creating copies
 
+Why not use code to generate your report?
 
+- LaTeX
+- Markdown
+- Jupyter notebook
+- Rmarkdown
+
+## Getting the balance right
+
+Maintenance versus automation
+
+## What are challenges?
+
+- Infrastructure
+- Data privacy
+- Expertise
+- Legacy systems
+
+## Case studies ...
+
+## Mentoring framework
+
+## Useful resources
+
+https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/
+
+https://ukgovdatascience.github.io/rap-website/
+
+https://the-turing-way.netlify.com
