@@ -1,6 +1,6 @@
-# skeletor-public
+# Reproducible Analytical Pipeline learning materials
 
-A template for public repositories. 
+A collection of documents describing what a Reproducible Analytical Pipeline is and why it is useful. 
 
 ## Steps
 
