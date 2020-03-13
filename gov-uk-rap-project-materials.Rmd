@@ -6,8 +6,7 @@ output:
   ioslides_presentation:
     logo: Images/DataScienceCampus_logo_square.png
     widescreen: true
-  beamer_presentation: default
-runtime: shiny
+    css: css/table.css
 ---
 
 ```{r setup, include=FALSE}
@@ -38,27 +37,87 @@ knitr::opts_chunk$set(echo = FALSE)
 <!-- END custom code block for header -->
 
 
-## R Markdown
+<!-- TO DO
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+- Copy in content from Nathan's slides
+- Thinking of hypothetical project to update into RAP - refer to throughout
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+-->
 
-## Slide with Bullets
+## What we did before
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+Issues relating to this method:
 
-## Slide with R Output
+- Human intensive
+- Many points of failure
+- Undocumented
+- Time consuming and difficult to reproduce
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+## The Reproducible Analytical Pipeline (RAP) way
 
-## Slide with Plot
+INSERT FIGURE
 
-```{r pressure}
-plot(pressure)
-```
+DATA STORE -> SQL -> R/Python -> HTML/PDF/Web application
+
+- All underpinned by version control
+
+## Is it Data Science
+
+NO
+
+It is what underpins data science
+
+- Coding
+- Version control
+- Reporting
+
+## What do we need?
+
+- Open-source tools
+- Version control with `git`
+- To consider reproducibility
+  
+## Why open-source instead of proprietary?
+
+- An online community of users - R and Python are used by millions all over the world
+- Free for anyone to use - it is easier to share
+- Very powerful and flexible
+- Proprietary tools are amazing, powerful and independently maintained but not everyone can access them
+
+
+## What is version control?
+
+Tracking the three **W**s:
+
+- **W**ho did this?
+- **W**hat did they change?
+- **W**hy?
+
+A centralised place to store your code.
+
+A decentralised was of writing and developing your code.
+
+`git`
+
+REALLY NICE TURING IMAGE HERE
+
+## Which version control should I use?
+
+| Tool      | Cost | Where?           | Required?         |
+| --------- | ---- | ---------------- | ----------------- |
+| Github    | Free | Online - Public  |                   |
+| Gitlab    | Free | Local            | IT infrastructure |
+| Bitbucket | Paid |                  |                   |
+| Azure     | Paid | Online - Private |                   |
+
+## What do we mean by reproducible?
+
+In the future, we want to be able to look back at our work today and be able to repeat everything we've done easily
+
+INSERT IMAGES
+
+## 
+
+
+
 
