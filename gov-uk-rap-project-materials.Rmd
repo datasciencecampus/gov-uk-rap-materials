@@ -1,17 +1,42 @@
 ---
 title: "Reproducible Analytical Pipeline"
-author: "Joseph Crispell"
+author: "Joseph Crispell & Nathan Begbie"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output: 
   ioslides_presentation:
     logo: Images/DataScienceCampus_logo_square.png
     widescreen: true
   beamer_presentation: default
+runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+<!-- Extra custom code to add "OFFICIAL" into the header -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $('slide:not(.title-slide, .backdrop, .segue)').append('<header label=\"OFFICIAL\"></header>');    
+    })
+</script>
+
+<style>
+  header:after {
+    content: attr(label);
+    font-size: 12pt;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    line-height: 1.9;
+  }
+</style>
+
+<!-- END custom code block for header -->
+
 
 ## R Markdown
 
