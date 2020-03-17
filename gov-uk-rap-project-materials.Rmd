@@ -44,32 +44,49 @@ knitr::opts_chunk$set(echo = FALSE)
 
 -->
 
-## What we did before
+## What is a Reproducible Analytical Pipeline (RAP)?
 
-Issues relating to this method:
+- It is easily repeatable
+- It is easily extendable
+- It is automated
+- It minimises mistakes
+- It is fast
+- It builds trust
 
-- Human intensive
-- Many points of failure
-- Undocumented
-- Time consuming and difficult to reproduce
+## Let's think about a traditional analysis
 
-## The Reproducible Analytical Pipeline (RAP) way
+<img src="images/TraditionalAnalysis.png" width="90%" height="auto" align="center">
 
-INSERT FIGURE
+## What are the issues?
 
-DATA STORE -> SQL -> R/Python -> HTML/PDF/Web application
+- Lots of manual steps
+- Hard to repeat
+- Mistakes are easy to make and hard to track
+- The steps aren't recorded
 
-- All underpinned by version control
+## What about a RAP?
 
-## Is it Data Science
+<img src="images/ReproducibleAnalyticalPipeline.png" width="90%" height="auto" align="center">
 
-NO
+## All the functionality in one place
 
-It is what underpins data science
+<img src="images/ReproducibleAnalyticalPipeline_expanded.png" width="90%" height="auto" align="center">
 
-- Coding
-- Version control
-- Reporting
+## What are the benefits?
+
+- It is easy for others to use
+- Others can change and adapt
+- All steps are recorded
+  - Including whilst it is built
+- It is automated
+- It is fast
+- It is open and promotes trust
+
+## Is it Data Science? 
+
+<img src="images/BuildingBlock.png" width="100%" height="auto" align="center">
+
+No, it is a building block that's essential for data science!
 
 ## What do we need?
 
