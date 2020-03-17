@@ -44,8 +44,6 @@ output/*
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-*.html
-*.pdf
 
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
@@ -60,3 +58,10 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Delete R markdown outputs
+*.html
+*.pdf
+
+# Ignore powerpoint figure file
+images/*.pptx

@@ -4,7 +4,7 @@ author: "Joseph Crispell & Nathan Begbie"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output: 
   ioslides_presentation:
-    logo: Images/DataScienceCampus_logo_square.png
+    logo: images/logos/DataScienceCampus_logo_square.png
     widescreen: true
     css: css/table.css
 ---
