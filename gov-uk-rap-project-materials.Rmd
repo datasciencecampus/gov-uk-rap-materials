@@ -63,7 +63,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Lots of manual steps
 - Hard to reproduce
-- Mistakes are easy to make and hard to track
+- Mistakes are easily made and hard to track
 - The steps aren't recorded
 - How do we keep track of which file versions people have?
 
@@ -144,7 +144,7 @@ Tracking the three **W**s: **W**ho made **W**hich change and **W**hy? <br><br>
 <br>
 
 - One place to store your code
-- You and collaborators free to write and develop locally
+- You and collaborators are free to write and develop locally
 - Complete documented history of all changes made
 - Easy to share
 - Your future self will thank you! 
@@ -210,7 +210,7 @@ The building blocks of a RAP:
 
 <br>
 
-Are useful in there own right, each will improve the auditability, speed and quality of your work.
+\... are useful in their own right, each will improve the auditability, speed and quality of your work.
 
 ## RAP in practice
 
@@ -218,8 +218,12 @@ Are useful in there own right, each will improve the auditability, speed and qua
 
 ## Useful resources
 
-https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/
+https://ukgovdatascience.github.io/rap-website/index.html
 
-https://ukgovdatascience.github.io/rap-website/
+https://www.udemy.com/course/reproducible-analytical-pipelines/
+
+https://datasciencecampus.github.io/coding-standards/
 
 https://the-turing-way.netlify.com
+
+https://github.com/datasciencecampus/gov-uk-rap-materials
