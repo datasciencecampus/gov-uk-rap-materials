@@ -1,5 +1,4 @@
- 
-/* Changed colour of table header background */
+ /* Changed colour of table header background */
 
 table.rmdtable th {
   color: white;
@@ -12,7 +11,6 @@ table.rmdtable th {
 }
 
 /* Remove border at bottom of table */
-
 
 table.rmdtable {
     border-bottom: none;
@@ -46,3 +44,14 @@ a {
 .aligncenter {
     text-align: center;
 }
+
+/* Adding footnote */
+
+.footnote {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    width: 80%;
+    font-size: 0.6em;
+  }

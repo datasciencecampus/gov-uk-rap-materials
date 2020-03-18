@@ -36,6 +36,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- END custom code block for header -->
 
+<!-- Extra custom code for footnotes - taken from https://stackoverflow.com/questions/42690955/how-to-insert-footnotes-in-ioslides-presentations-using-rmarkdown -->
+
 ## What is a Reproducible Analytical Pipeline (RAP)?
 
 <a href="https://the-turing-way.netlify.com/introduction/introduction"> <img src="images/ReusablePipeline.png" width="65%" height="auto" align="right" alt="Source: The Turing Way"> </a>
@@ -49,11 +51,14 @@ knitr::opts_chunk$set(echo = FALSE)
 - It is fast
 - It builds trust
 
+<p class="footnote">
+  Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
+</p>
+
 ## Let's think about a traditional analysis
 <p class="aligncenter">
     <img src="images/TraditionalAnalysis.png" width="85%" height="auto" align="center">
 </p>
-
 
 ## What are the issues?
 
@@ -87,6 +92,10 @@ knitr::opts_chunk$set(echo = FALSE)
   - Including whilst it is built
 - Automated and fast
 - Open and promotes trust
+
+<p class="footnote">
+  Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
+</p>
 
 ## Is it Data Science?
 
@@ -124,6 +133,10 @@ Open source tools are:
 - Flexible to all data sources
 - Free for anyone to use - it is easier to share
 - Flexible to all output types
+
+<p class="footnote">
+  Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
+</p>
 
 ## What is version control?
 
@@ -182,6 +195,10 @@ What are the benefits?
 - Not reliant on single individual
 - Can be adapted and re-used
 
+<p class="footnote">
+  Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
+</p>
+
 ## Making a RAP is difficult
 
 Before we start, here are a few things to consider:
@@ -195,6 +212,10 @@ Before we start, here are a few things to consider:
 
 <p class="aligncenter">
     <a href="https://the-turing-way.netlify.com/introduction/introduction"> <img src="images/Community.png" width="80%" height="auto" alt="Source: The Turing Way"> </a>
+</p>
+
+<p class="footnote">
+  Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
 </p>
 
 ## And we don't have to do it all at once
