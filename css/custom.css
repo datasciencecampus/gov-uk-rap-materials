@@ -11,6 +11,12 @@ table.rmdtable th {
   background: linear-gradient(top, #797979 40%, #797979 80%) no-repeat;
 }
 
+/* Set width of table to automatically scale with text */
+
+table.rmdtable {
+    width: auto;
+}
+
 /* Changing style of link*/
 
 a {

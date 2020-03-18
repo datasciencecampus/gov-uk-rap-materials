@@ -138,6 +138,8 @@ Tracking the three **W**s: **W**ho made **W**hich change and **W**hy? <br><br>
 
 ## What do we mean by reproducible?
 
+<img src="images/ReproducibleDefinitionGrid.jpg" width="60%" height="auto" align="right">
+
 In the future, we want to be able to look back at our work today and be able to repeat everything we've done easily
 
 What we need to think about:
