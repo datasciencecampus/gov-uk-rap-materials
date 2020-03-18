@@ -160,18 +160,22 @@ What are the benefits?
 - Not reliant on single individual
 - Can be adapted and re-used
 
-## Getting the balance right
+## Making a Reproducible Analytical Pipeline is difficult
 
-Maintenance versus automation
+Here are a few things to consider:
 
-## What are challenges?
+- IT infrastructure available
+- Data privacy - where and how am I storing my data?
+- Expertise - what training do I need?
+- Legacy systems - what are the barriers to transitioning?
 
-- Infrastructure
-- Data privacy
-- Expertise
-- Legacy systems
+## But it is worth it!
 
-## Case studies ...
+<p class="aligncenter">
+    <a href="https://the-turing-way.netlify.com/introduction/introduction"> <img src="images/Community.png" width="80%" height="auto" alt="Source: The Turing Way"> </a>
+</p>
+
+## RAP in practice
 
 ## Mentoring framework
 

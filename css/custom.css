@@ -40,3 +40,9 @@ a {
     grid-template-rows: repeat(8, 5vw);
     grid-gap: 15px;
 }
+
+/* Align image to centre */
+
+.aligncenter {
+    text-align: center;
+}
