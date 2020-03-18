@@ -129,12 +129,12 @@ Tracking the three **W**s: **W**ho made **W**hich change and **W**hy? <br><br>
 
 ## Which version control should I use?
 
-| Tool      | Cost | Where?           | Required?         |
+| Tool      | Cost | Where is master? | Advantage         | Disadvantage
 | --------- | ---- | ---------------- | ----------------- |
-| Github    | Free | Online - Public  |                   |
-| Gitlab    | Free | Local            | IT infrastructure |
-| Bitbucket | Paid |                  |                   |
-| Azure     | Paid | Online - Private |                   |
+| [Github](https://github.com/) | Free | Online | Huge user base | \$\$\$ for private repositories 
+| [Gitlab](https://about.gitlab.com/) | Free | Local or Online | Continuous integration | Smaller user base
+| [Bitbucket](https://bitbucket.org/) | \$\$\$ | Cloud | Cloud security | Harder to share
+| [Azure](https://azure.microsoft.com/en-us/services/devops/repos/) | \$\$\$ | Cloud | Cloud security | Harder to share
 
 ## What do we mean by reproducible?
 
