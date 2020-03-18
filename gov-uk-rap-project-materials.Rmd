@@ -50,10 +50,16 @@ knitr::opts_chunk$set(echo = FALSE)
 - It builds trust
 
 ## Let's think about a traditional analysis
+<p class="aligncenter">
+    <img src="images/TraditionalAnalysis.png" width="85%" height="auto" align="center">
+</p>
 
-<img src="images/TraditionalAnalysis.png" width="85%" height="auto" align="center">
 
 ## What are the issues?
+
+<img src="images/TraditionalMess.png" width="50%" height="auto" align="right">
+
+<br>
 
 - Lots of manual steps
 - Hard to reproduce

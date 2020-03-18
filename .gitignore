@@ -63,5 +63,4 @@ vignettes/*.pdf
 *.html
 *.pdf
 
-# Ignore powerpoint figure file
-images/*.pptx
+
