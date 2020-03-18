@@ -11,5 +11,11 @@ table.rmdtable th {
   background: linear-gradient(top, #797979 40%, #797979 80%) no-repeat;
 }
 
+/* Changing style of link*/
 
+a {
+    color: #2a7cdf;
+    text-decoration: none;
+    border-bottom: none;
+}
   

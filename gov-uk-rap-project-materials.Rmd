@@ -6,7 +6,7 @@ output:
   ioslides_presentation:
     logo: images/logos/DataScienceCampus_logo_square.png
     widescreen: true
-    css: css/table.css
+    css: css/custom.css
 ---
 
 ```{r setup, include=FALSE}
@@ -98,27 +98,34 @@ No, it is a building block that's essential for data science!
   
 ## Why open-source instead of proprietary?
 
-- An online community of users - R and Python are used by millions all over the world
+- Huge online community for support
+- Flexible to all data sources
 - Free for anyone to use - it is easier to share
-- Very powerful and flexible
-- Proprietary tools are amazing, powerful and independently maintained but not everyone can access them
-
+- Flexible to all output types
 
 ## What is version control?
 
-Tracking the three **W**s:
+Tracking the three **W**s: **W**ho made **W**hich change and **W**hy? <br><br>
 
-- **W**ho did this?
-- **W**hat did they change?
-- **W**hy?
+<img src="images/VersionControl_explained.png" width="100%" height="auto" align="center">
 
-A centralised place to store your code.
 
-A decentralised was of writing and developing your code.
+## For example, take a look at this [presentation](https://github.com/datasciencecampus/gov-uk-rap-materials)
 
-`git`
+<img src="images/MyVersionHistory.png" width="80%" height="auto" align="center">
 
-REALLY NICE TURING IMAGE HERE
+
+## Why use version control?
+
+<img src="images/logos/git_logo.png" width="40%" height="auto" align="right">
+
+<br>
+
+- One place to store your code
+- You and collaborators free to write and develop locally
+- Complete documented history of all changes made
+- Easy to share
+- Your future self will thank you! :-)
 
 ## Which version control should I use?
 
