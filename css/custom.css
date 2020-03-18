@@ -11,6 +11,12 @@ table.rmdtable th {
   background: linear-gradient(top, #797979 40%, #797979 80%) no-repeat;
 }
 
+/* Remove border at bottom of table */
+
+
+table.rmdtable {
+    border-bottom: none;
+}
 /* Set width of table to automatically scale with text */
 
 table.rmdtable {
@@ -25,3 +31,12 @@ a {
     border-bottom: none;
 }
   
+
+/* Simple image gallery */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
+}

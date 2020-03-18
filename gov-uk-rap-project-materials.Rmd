@@ -129,12 +129,22 @@ Tracking the three **W**s: **W**ho made **W**hich change and **W**hy? <br><br>
 
 ## Which version control should I use?
 
-| Tool      | Cost | Where is master? | Advantage         | Disadvantage
-| --------- | ---- | ---------------- | ----------------- |
-| [Github](https://github.com/) | Free | Online | Huge user base | \$\$\$ for private repositories 
-| [Gitlab](https://about.gitlab.com/) | Free | Local or Online | Continuous integration | Smaller user base
-| [Bitbucket](https://bitbucket.org/) | \$\$\$ | Cloud | Cloud security | Harder to share
-| [Azure](https://azure.microsoft.com/en-us/services/devops/repos/) | \$\$\$ | Cloud | Cloud security | Harder to share
+| Tool                                                              | Cost   | Where is master? | Advantage              | Disadvantage
+| ----------------------------------------------------------------- | ------ | ---------------- | -----------------------|
+| [Github](https://github.com/)                                     | Free   | Online           | Huge user base         | \$\$\$ for private repositories 
+| [Gitlab](https://about.gitlab.com/)                               | Free   | Local or Online  | Continuous integration | Smaller user base
+| [Bitbucket](https://bitbucket.org/)                               | \$\$\$ | Cloud            | Cloud security         | Harder to share
+| [Azure](https://azure.microsoft.com/en-us/services/devops/repos/) | \$\$\$ | Cloud            | Cloud security         | Harder to share
+
+<br>
+
+<a href="https://github.com/"> <img src="images/logos/github_logo.png" width="15%" height="auto"> </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://about.gitlab.com/"> <img src="images/logos/GitLab_logo.png" width="15%" height="auto"> </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://bitbucket.org/"> <img src="images/logos/bitbucket_logo.png" width="15%" height="auto"> </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://azure.microsoft.com/en-us/services/devops/repos/"> <img src="images/logos/azure_logo.png" width="15%" height="auto"> </a>
 
 ## What do we mean by reproducible?
 
