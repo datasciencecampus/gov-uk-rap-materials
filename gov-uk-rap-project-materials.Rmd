@@ -55,7 +55,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Let's think about a traditional analysis
 
-<img src="images/TraditionalAnalysis.png" width="90%" height="auto" align="center">
+<img src="images/TraditionalAnalysis.png" width="85%" height="auto" align="center">
 
 ## What are the issues?
 
@@ -63,6 +63,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - Hard to repeat
 - Mistakes are easy to make and hard to track
 - The steps aren't recorded
+- How do we keep track of which file versions people have?
 
 ## What about a RAP?
 
@@ -82,7 +83,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - It is fast
 - It is open and promotes trust
 
-## Is it Data Science? 
+## Is it Data Science?
 
 <img src="images/BuildingBlock.png" width="100%" height="auto" align="center">
 
@@ -93,6 +94,7 @@ No, it is a building block that's essential for data science!
 - Open-source tools
 - Version control with `git`
 - To consider reproducibility
+- Time to learn
   
 ## Why open-source instead of proprietary?
 
