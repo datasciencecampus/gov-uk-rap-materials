@@ -59,8 +59,8 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# Delete R markdown outputs
-*.html
+# Ignore R markdown outputs
+#*.html
 *.pdf
 
 
