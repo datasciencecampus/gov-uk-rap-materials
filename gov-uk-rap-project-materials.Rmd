@@ -237,18 +237,50 @@ The building blocks of a RAP:
 
 <img src="images/RAP-project-wordcloud.png" width="50%" height="auto" align="right">
 
-- Successfully rolled out in 10s of projects across the UK government
+<br><br>
 
-## Mentoring framework
+RAP has been successfully rolled out in 10s of projects across the UK government.
+
+It is now part of the best practice [documentation](https://gss.civilservice.gov.uk/policy-store/quality-statistics-in-government/#reproducible-analytical-pipelines-rap-).
+
+Work continues across the government to roll out RAP to more projects.
+
+## Packages to help us with RAP
+
+<a href="https://ukgovdatascience.github.io/govdown/"> <img src="images/GovdownScreenshot.png" width="45%" height="auto" align="right"> </a>
+
+`govdown` - R [package](https://ukgovdatascience.github.io/govdown/) to recreate our UK government website template.
+
+`drake` - R [package](https://pkg.garrickadenbuie.com/drake-intro/#1) to streamline reproducible pipelines in R.
+
+`snapcraft` - python [package](https://snapcraft.io/docs/snapcraft-overview) to solve those dependency issues!
+
+<a href="https://github.com/ropensci/drake"> <img src="images/logos/drake_logo.svg" width="15%" height="auto" align="left"> </a>
+
+<a href="https://snapcraft.io/docs/snapcraft-overview"> <img src="images/logos/snapcraft_logo.png" width="40%" height="auto" align="right"> </a>
+
+## Mentorship at the Data Science Campus
+
+We aim to raise the aid community's capacity for using Data Science to meet the Sustainable Development Goals.
+
+We'll link up Data Scientist mentors from the campus with mentees. Together we'll set plan out a project, describing:
+
+- What the project is, its impact and scope
+- The resources, expertise and time will we'll need
+- And, how we'll work together during the project
+
+<p class="aligncenter">
+    <a href="https://datasciencecampus.ons.gov.uk/"> <img src="images/logos/DataScienceCampus_logo.png" width="70%" height="auto"> </a>
+</p>
 
 ## Useful resources
 
-https://ukgovdatascience.github.io/rap-website/index.html
+The UK goverment RAP [website](https://ukgovdatascience.github.io/rap-website/index.html).
 
-https://www.udemy.com/course/reproducible-analytical-pipelines/
+A free RAP [course](https://www.udemy.com/course/reproducible-analytical-pipelines/) to teach you all you need to know.
 
-https://datasciencecampus.github.io/coding-standards/
+How the Data Science Campus sets its coding [standards](https://datasciencecampus.github.io/coding-standards/).
 
-https://the-turing-way.netlify.com
+A new open-source [book](https://the-turing-way.netlify.com) from the Turing insititute setting out how to do reproducible data science.
 
-https://github.com/datasciencecampus/gov-uk-rap-materials
+The github page for this presentation: https://github.com/datasciencecampus/gov-uk-rap-materials.
