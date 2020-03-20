@@ -235,6 +235,10 @@ The building blocks of a RAP:
 
 ## RAP in practice
 
+<img src="images/RAP-project-wordcloud.png" width="50%" height="auto" align="right">
+
+- Successfully rolled out in 10s of projects across the UK government
+
 ## Mentoring framework
 
 ## Useful resources
