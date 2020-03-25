@@ -1,3 +1,9 @@
+<img align="left" src="images/logos/DataScienceCampus_logo.png" width=30%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="images/logos/ONS_logo.webp" width=40%>
+<img align="right" src="images/logos/DFID_logo.png" width=12%>
+
+<br/>
+
 # Reproducible Analytical Pipeline learning materials
 
 A collection of documents describing what a Reproducible Analytical Pipeline is and why it is useful. We will continue to add resources to this repository as we create them.
