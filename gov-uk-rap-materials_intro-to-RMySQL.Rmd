@@ -2,29 +2,110 @@
 title: "Getting Started with RMySQL"
 author: "Joseph Crispell"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
-output: html_document
+output:
+  html_document:
+    number_sections: true
+    toc: yes
+    toc_depth: '2'
+    toc_float: yes
+  html_notebook:
+    highlight: haddock
+    number_sections: yes
+    theme: simplex
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+params: 
+  password: "ThisIsNotMyPassword"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Introduction
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Usually a Reproducible Analytical Pipeline will start by retrieving data from a database. Often that database could be a `SQL` database. [`MySQL`](https://www.mysql.com/) is an open-source relational database management system that uses *S*tructured *Q*uery *L*anguage (SQL). We can use `MySQL` to store complex data tables that relate to one another.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+`RMySQL` is an R package that we can use to interact with `MySQL`, writing queries, updating data and creating new tables.
 
-```{r cars}
-summary(cars)
+The current tutorial aims to give a brief introduction to using `RMySQL` in R. The current content is more-or-less the same as the TutorialsPoint [tutorial](https://www.tutorialspoint.com/r/r_database.htm), with a  few updates and edits to match updates to `RMySQL`.
+
+## Installing `MySQL`
+
+To get started, you'll ned to install `MySQL`, here are links for the different operating systems:
+
+- Installing on linux systems ([link](https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html)), with extra help [here](https://itsfoss.com/install-mysql-ubuntu/).
+- Installing on mac: ([link](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation.html)), also, I think it comes ready installed! See [here](https://www.thoughtco.com/installing-mysql-on-mac-2693866))
+- Installing on Windows ([link](https://dev.mysql.com/downloads/installer/)), with extra help [here](https://www.wikihow.com/Install-the-MySQL-Database-Server-on-Your-Windows-PC)
+
+For this tutorial, I worked on a Windows machine and it took me a wee while to get MySQL installed properly, so be patient.
+
+## Installing `RMySQL`
+
+Much easier! Just use the following code:
+
+```{r eval=FALSE}
+install.packages("RMySQL")
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+Then we can load the library:
+```{r}
+library(RMySQL)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Working with `RMySQL`
+
+### Create a connection to MySQL
+
+We are going to connect to the "sakila" database, which comes with the `MySQL` installation:
+
+```{r eval=FALSE}
+# Open a connection to a MySQL database
+connection <- dbConnect(MySQL(), 
+                            user='root', 
+                            password=readline(prompt="Enter password: "), # Doing this as password never stored in easily accessible format now
+                            dbname='sakila',
+                            host = 'localhost')
+
+# List the tables available in the sakila database
+dbListTables(connection)
+```
+
+
+```{r echo=FALSE}
+# Open a connection to a MySQL database
+connection <- dbConnect(MySQL(), 
+                            user='root', 
+                            password=params$password, # Doing this as password never stored in easily accessible format now
+                            dbname='sakila',
+                            host = 'localhost')
+
+# List the tables available in the sakila database
+head(dbListTables(connection))
+```
+
+### Sending a query
+
+We can query a table using the following code:
+
+```{r}
+# Query the "actor" table to get all the rows
+result <- dbSendQuery(conn=connection, statement=SELECT * FROM actor") # * means everything NOTE: syntax is case-insensitive
+
+# Store the first 15 rows of the result in an R data frame object
+actors <- dbFetch(result, n=15)
+
+# Remove the unused results
+dbClearResult(result)
+```
+
+Note that the last line of code (`dbClearResult(result)`) clears the fecthed data and closes the query. It is now preferred to query a table with the following code, which doesn't leave the query open:
+
+```{r}
+# Note - you can use single command below to send query and send result as data.frame in one command - doesn't leave query open
+actors <- dbGetQuery(conn=mySQLConnection, statement="SELECT * FROM actor WHERE last_name = 'TEMPLE'")
+
+```
+
