@@ -23,7 +23,7 @@ params:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Introduction
+# Introduction
 
 Usually a Reproducible Analytical Pipeline will start by retrieving data from a database. Often that database could be a `SQL` database. [`MySQL`](https://www.mysql.com/) is an open-source relational database management system that uses *S*tructured *Q*uery *L*anguage (SQL). We can use `MySQL` to store complex data tables that relate to one another.
 
@@ -31,7 +31,7 @@ Usually a Reproducible Analytical Pipeline will start by retrieving data from a 
 
 The current tutorial aims to give a brief introduction to using `RMySQL` in R. The current content is more-or-less the same as the TutorialsPoint [tutorial](https://www.tutorialspoint.com/r/r_database.htm), with a  few updates and edits to match updates to `RMySQL`.
 
-## Installing `MySQL`
+# Installing `MySQL`
 
 To get started, you'll ned to install `MySQL`, here are links for the different operating systems:
 
@@ -41,7 +41,7 @@ To get started, you'll ned to install `MySQL`, here are links for the different 
 
 For this tutorial, I worked on a Windows machine and it took me a wee while to get MySQL installed properly, so be patient.
 
-## Installing `RMySQL`
+# Installing `RMySQL`
 
 Much easier! Just use the following code:
 
@@ -55,9 +55,9 @@ library(RMySQL)
 ```
 
 
-## Working with `RMySQL`
+# Working with `RMySQL`
 
-### Create a connection to MySQL
+## Create a connection to MySQL
 
 We are going to connect to the "sakila" database, which comes with the `MySQL` installation:
 
@@ -86,13 +86,16 @@ connection <- dbConnect(MySQL(),
 head(dbListTables(connection))
 ```
 
-### Sending a query
+## Sending a query
+```{r}
+
+```
 
 We can query a table using the following code:
 
-```{r}
+```{r warning=FALSE}
 # Query the "actor" table to get all the rows
-result <- dbSendQuery(conn=connection, statement=SELECT * FROM actor") # * means everything NOTE: syntax is case-insensitive
+result <- dbSendQuery(conn=connection, statement="SELECT * FROM actor") # NOTE: SQL syntax is case-insensitive
 
 # Store the first 15 rows of the result in an R data frame object
 actors <- dbFetch(result, n=15)
@@ -101,11 +104,91 @@ actors <- dbFetch(result, n=15)
 dbClearResult(result)
 ```
 
-Note that the last line of code (`dbClearResult(result)`) clears the fecthed data and closes the query. It is now preferred to query a table with the following code, which doesn't leave the query open:
+Note that the last line of code (`dbClearResult(result)`) clears the fecched data and closes the query. It is now preferred to query a table with the following code, which doesn't leave the query open:
 
-```{r}
+```{r warning=FALSE}
 # Note - you can use single command below to send query and send result as data.frame in one command - doesn't leave query open
-actors <- dbGetQuery(conn=mySQLConnection, statement="SELECT * FROM actor WHERE last_name = 'TEMPLE'")
-
+actors <- dbGetQuery(conn=connection, statement="SELECT * FROM actor")
 ```
 
+Let's take a quick look at the actors table:
+```{r}
+head(actors)
+```
+
+
+Now, let's try getting the information for actors whose last name is "TEMPLE":
+```{r warning=FALSE}
+# Note - you can use single command below to send query and send result as data.frame in one command - doesn't leave query open
+actors <- dbGetQuery(conn=connection, statement="SELECT * FROM actor WHERE last_name = 'TEMPLE'")
+
+# Print the table
+(actors)
+```
+
+## Creating a table
+
+In order to create a `MySQL` table, we first need to set our permissions so that we can input data locally (see [this](https://stackoverflow.com/questions/44288358/is-there-a-faster-way-to-upload-data-from-r-to-mysql) question for more information):
+
+```{r}
+dbSendQuery(conn=connection, statement="SET GLOBAL local_infile = 1")
+```
+
+With that done, we are going to store the `mtcars` table on our local `MySQL` server using the following code:
+```{r}
+# Upload mtcars table onto MySQL server
+dbWriteTable(connection, "mtcars", mtcars[, ], overwrite=TRUE)
+
+# Check the table is there
+mtcars_mysql <- dbGetQuery(conn=connection, statement="SELECT * FROM mtcars")
+head(mtcars_mysql)
+```
+
+
+## Updating a table
+
+We can update a table on our `MySQL` server by sending a query, for example we can use the code below to edit the data for cars with a certain horse power:
+```{r}
+# Update data in the actor info table
+dbSendQuery(conn=connection, statement="UPDATE mtcars SET disp = 168.5 WHERE hp = 110")
+
+# Check the updated table
+mtcars_mysql <- dbGetQuery(conn=connection, statement="SELECT * FROM mtcars")
+
+# Take a look to see if the data has changed
+head(mtcars_mysql[mtcars_mysql$hp == 110, ])
+```
+
+## Inserting a row into a table
+
+Using the code below, we can insert data for a new car into the `mtcars` table on our `MySQL` server:
+```{r}
+# Insert a new row into table
+dbSendQuery(conn=connection,
+            statement="INSERT INTO mtcars(row_names, mpg, cyl, disp, hp, drat, wt, qsec, vs, am, gear, carb) values('New Mazda RX4 Wag', 21, 6, 168.5, 110, 3.9, 2.875, 17.02, 0, 1, 4, 4)"
+            )
+
+# Check the updated table
+mtcars <- dbGetQuery(conn=connection, statement="SELECT * FROM mtcars")
+tail(mtcars)
+```
+
+## Removing a table
+
+We can remove the `mtcars` table from our `MySQL` server with the following code:
+```{r}
+dbSendQuery(connection, 'drop table if exists mtcars')
+```
+
+## Closing a connection to the `MySQL` server
+
+To wrap up, we can close our connection to the `MySQL` server using the following code:
+```{r warning=FALSE}
+dbDisconnect(conn=connection)
+```
+
+# The end :-)
+
+So, that's me done. This tutorial has hopefully got you started with using the `RMySQL` R package. If you haven't already I would recommend going and doing some more tutorials about `MySQL`. [Here](https://www.tutorialspoint.com/mysql/index.htm) is a good one to start with.
+
+As you'll have noticed, this tutorial has barely scratched the surface of using `MySQL`. It is an extremely powerful language and one that will be found in many Reproducible Analytical Pipelines and well worth learning about.

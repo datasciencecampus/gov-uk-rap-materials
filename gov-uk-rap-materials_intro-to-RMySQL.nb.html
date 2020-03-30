@@ -2991,14 +2991,14 @@ div.tocify {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
-<div id="introduction" class="section level2" number="0.1">
-<h2 number="0.1"><span class="header-section-number">0.1</span> Introduction</h2>
+<div id="introduction" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>Usually a Reproducible Analytical Pipeline will start by retrieving data from a database. Often that database could be a <code>SQL</code> database. <a href="https://www.mysql.com/"><code>MySQL</code></a> is an open-source relational database management system that uses <em>S</em>tructured <em>Q</em>uery <em>L</em>anguage (SQL). We can use <code>MySQL</code> to store complex data tables that relate to one another.</p>
 <p><code>RMySQL</code> is an R package that we can use to interact with <code>MySQL</code>, writing queries, updating data and creating new tables.</p>
 <p>The current tutorial aims to give a brief introduction to using <code>RMySQL</code> in R. The current content is more-or-less the same as the TutorialsPoint <a href="https://www.tutorialspoint.com/r/r_database.htm">tutorial</a>, with a few updates and edits to match updates to <code>RMySQL</code>.</p>
 </div>
-<div id="installing-mysql" class="section level2" number="0.2">
-<h2 number="0.2"><span class="header-section-number">0.2</span> Installing <code>MySQL</code></h2>
+<div id="installing-mysql" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Installing <code>MySQL</code></h1>
 <p>To get started, you’ll ned to install <code>MySQL</code>, here are links for the different operating systems:</p>
 <ul>
 <li>Installing on linux systems (<a href="https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html">link</a>), with extra help <a href="https://itsfoss.com/install-mysql-ubuntu/">here</a>.</li>
@@ -3007,8 +3007,8 @@ div.tocify {
 </ul>
 <p>For this tutorial, I worked on a Windows machine and it took me a wee while to get MySQL installed properly, so be patient.</p>
 </div>
-<div id="installing-rmysql" class="section level2" number="0.3">
-<h2 number="0.3"><span class="header-section-number">0.3</span> Installing <code>RMySQL</code></h2>
+<div id="installing-rmysql" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Installing <code>RMySQL</code></h1>
 <p>Much easier! Just use the following code:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3026,10 +3026,10 @@ div.tocify {
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="working-with-rmysql" class="section level2" number="0.4">
-<h2 number="0.4"><span class="header-section-number">0.4</span> Working with <code>RMySQL</code></h2>
-<div id="create-a-connection-to-mysql" class="section level3" number="0.4.1">
-<h3 number="0.4.1"><span class="header-section-number">0.4.1</span> Create a connection to MySQL</h3>
+<div id="working-with-rmysql" class="section level1" number="4">
+<h1 number="4"><span class="header-section-number">4</span> Working with <code>RMySQL</code></h1>
+<div id="create-a-connection-to-mysql" class="section level2" number="4.1">
+<h2 number="4.1"><span class="header-section-number">4.1</span> Create a connection to MySQL</h2>
 <p>We are going to connect to the “sakila” database, which comes with the <code>MySQL</code> installation:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -3059,37 +3059,151 @@ div.tocify {
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="sending-a-query" class="section level3" number="0.4.2">
-<h3 number="0.4.2"><span class="header-section-number">0.4.2</span> Sending a query</h3>
+<div id="sending-a-query" class="section level2" number="4.2">
+<h2 number="4.2"><span class="header-section-number">4.2</span> Sending a query</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <p>We can query a table using the following code:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBRdWVyeSB0aGUgXCJhY3RvclwiIHRhYmxlIHRvIGdldCBhbGwgdGhlIHJvd3NcbnJlc3VsdCA8LSBkYlNlbmRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD1TRUxFQ1QgKiBGUk9NIGFjdG9yXCIpICMgKiBtZWFucyBldmVyeXRoaW5nIE5PVEU6IHN5bnRheCBpcyBjYXNlLWluc2Vuc2l0aXZlXG5cbiMgU3RvcmUgdGhlIGZpcnN0IDE1IHJvd3Mgb2YgdGhlIHJlc3VsdCBpbiBhbiBSIGRhdGEgZnJhbWUgb2JqZWN0XG5hY3RvcnMgPC0gZGJGZXRjaChyZXN1bHQsIG49MTUpXG5cbiMgUmVtb3ZlIHRoZSB1bnVzZWQgcmVzdWx0c1xuZGJDbGVhclJlc3VsdChyZXN1bHQpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBRdWVyeSB0aGUgXCJhY3RvclwiIHRhYmxlIHRvIGdldCBhbGwgdGhlIHJvd3NcbnJlc3VsdCA8LSBkYlNlbmRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD1cIlNFTEVDVCAqIEZST00gYWN0b3JcIikgIyBOT1RFOiBTUUwgc3ludGF4IGlzIGNhc2UtaW5zZW5zaXRpdmVcblxuIyBTdG9yZSB0aGUgZmlyc3QgMTUgcm93cyBvZiB0aGUgcmVzdWx0IGluIGFuIFIgZGF0YSBmcmFtZSBvYmplY3RcbmFjdG9ycyA8LSBkYkZldGNoKHJlc3VsdCwgbj0xNSlcblxuIyBSZW1vdmUgdGhlIHVudXNlZCByZXN1bHRzXG5kYkNsZWFyUmVzdWx0KHJlc3VsdClcbmBgYCJ9 -->
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Query the &quot;actor&quot; table to get all the rows</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>result &lt;-<span class="st"> </span><span class="kw">dbSendQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span>SELECT <span class="op">*</span><span class="st"> </span>FROM actor<span class="st">&quot;) # * means everything NOTE: syntax is case-insensitive</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>result &lt;-<span class="st"> </span><span class="kw">dbSendQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;SELECT * FROM actor&quot;</span>) <span class="co"># </span><span class="al">NOTE</span><span class="co">: SQL syntax is case-insensitive</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="st"># Store the first 15 rows of the result in an R data frame object</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="st">actors &lt;- dbFetch(result, n=15)</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Store the first 15 rows of the result in an R data frame object</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>actors &lt;-<span class="st"> </span><span class="kw">dbFetch</span>(result, <span class="dt">n=</span><span class="dv">15</span>)</span>
 <span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="st"># Remove the unused results</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="st">dbClearResult(result)</span></span></code></pre></div>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Remove the unused results</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">dbClearResult</span>(result)</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Note that the last line of code (<code>dbClearResult(result)</code>) clears the fecthed data and closes the query. It is now preferred to query a table with the following code, which doesn’t leave the query open:</p>
+<p>Note that the last line of code (<code>dbClearResult(result)</code>) clears the fecched data and closes the query. It is now preferred to query a table with the following code, which doesn’t leave the query open:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBOb3RlIC0geW91IGNhbiB1c2Ugc2luZ2xlIGNvbW1hbmQgYmVsb3cgdG8gc2VuZCBxdWVyeSBhbmQgc2VuZCByZXN1bHQgYXMgZGF0YS5mcmFtZSBpbiBvbmUgY29tbWFuZCAtIGRvZXNuJ3QgbGVhdmUgcXVlcnkgb3BlblxuYWN0b3JzIDwtIGRiR2V0UXVlcnkoY29ubj1teVNRTENvbm5lY3Rpb24sIHN0YXRlbWVudD1cIlNFTEVDVCAqIEZST00gYWN0b3IgV0hFUkUgbGFzdF9uYW1lID0gJ1RFTVBMRSdcIilcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBOb3RlIC0geW91IGNhbiB1c2Ugc2luZ2xlIGNvbW1hbmQgYmVsb3cgdG8gc2VuZCBxdWVyeSBhbmQgc2VuZCByZXN1bHQgYXMgZGF0YS5mcmFtZSBpbiBvbmUgY29tbWFuZCAtIGRvZXNuJ3QgbGVhdmUgcXVlcnkgb3BlblxuYWN0b3JzIDwtIGRiR2V0UXVlcnkoY29ubj1jb25uZWN0aW9uLCBzdGF0ZW1lbnQ9XCJTRUxFQ1QgKiBGUk9NIGFjdG9yXCIpXG5gYGAifQ== -->
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Note - you can use single command below to send query and send result as data.frame in one command - doesn&#39;t leave query open</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>actors &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(<span class="dt">conn=</span>mySQLConnection, <span class="dt">statement=</span><span class="st">&quot;SELECT * FROM actor WHERE last_name = &#39;TEMPLE&#39;&quot;</span>)</span></code></pre></div>
+<span id="cb6-2"><a href="#cb6-2"></a>actors &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;SELECT * FROM actor&quot;</span>)</span></code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Let’s take a quick look at the actors table:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChhY3RvcnMpXG5gYGAifQ== -->
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">head</span>(actors)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Now, let’s try getting the information for actors whose last name is “TEMPLE”:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBOb3RlIC0geW91IGNhbiB1c2Ugc2luZ2xlIGNvbW1hbmQgYmVsb3cgdG8gc2VuZCBxdWVyeSBhbmQgc2VuZCByZXN1bHQgYXMgZGF0YS5mcmFtZSBpbiBvbmUgY29tbWFuZCAtIGRvZXNuJ3QgbGVhdmUgcXVlcnkgb3BlblxuYWN0b3JzIDwtIGRiR2V0UXVlcnkoY29ubj1jb25uZWN0aW9uLCBzdGF0ZW1lbnQ9XCJTRUxFQ1QgKiBGUk9NIGFjdG9yIFdIRVJFIGxhc3RfbmFtZSA9ICdURU1QTEUnXCIpXG5cbiMgUHJpbnQgdGhlIHRhYmxlXG4oYWN0b3JzKVxuYGBgIn0= -->
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Note - you can use single command below to send query and send result as data.frame in one command - doesn&#39;t leave query open</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>actors &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;SELECT * FROM actor WHERE last_name = &#39;TEMPLE&#39;&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Print the table</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>(actors)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="creating-a-table" class="section level2" number="4.3">
+<h2 number="4.3"><span class="header-section-number">4.3</span> Creating a table</h2>
+<p>In order to create a <code>MySQL</code> table, we first need to set our permissions so that we can input data locally (see <a href="https://stackoverflow.com/questions/44288358/is-there-a-faster-way-to-upload-data-from-r-to-mysql">this</a> question for more information):</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGJTZW5kUXVlcnkoY29ubj1jb25uZWN0aW9uLCBzdGF0ZW1lbnQ9XCJTRVQgR0xPQkFMIGxvY2FsX2luZmlsZSA9IDFcIilcbmBgYCJ9 -->
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">dbSendQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;SET GLOBAL local_infile = 1&quot;</span>)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>With that done, we are going to store the <code>mtcars</code> table on our local <code>MySQL</code> server using the following code:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBVcGxvYWQgbXRjYXJzIHRhYmxlIG9udG8gTXlTUUwgc2VydmVyXG5kYldyaXRlVGFibGUoY29ubmVjdGlvbiwgXCJtdGNhcnNcIiwgbXRjYXJzWywgXSwgb3ZlcndyaXRlPVRSVUUpXG5cbiMgQ2hlY2sgdGhlIHRhYmxlIGlzIHRoZXJlXG5tdGNhcnNfbXlzcWwgPC0gZGJHZXRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD1cIlNFTEVDVCAqIEZST00gbXRjYXJzXCIpXG5oZWFkKG10Y2Fyc19teXNxbClcbmBgYCJ9 -->
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Upload mtcars table onto MySQL server</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="kw">dbWriteTable</span>(connection, <span class="st">&quot;mtcars&quot;</span>, mtcars[, ], <span class="dt">overwrite=</span><span class="ot">TRUE</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Check the table is there</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>mtcars_mysql &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;SELECT * FROM mtcars&quot;</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="kw">head</span>(mtcars_mysql)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="updating-a-table" class="section level2" number="4.4">
+<h2 number="4.4"><span class="header-section-number">4.4</span> Updating a table</h2>
+<p>We can update a table on our <code>MySQL</code> server by sending a query, for example we can use the code below to edit the data for cars with a certain horse power:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBVcGRhdGUgZGF0YSBpbiB0aGUgYWN0b3IgaW5mbyB0YWJsZVxuZGJTZW5kUXVlcnkoY29ubj1jb25uZWN0aW9uLCBzdGF0ZW1lbnQ9XCJVUERBVEUgbXRjYXJzIFNFVCBkaXNwID0gMTY4LjUgV0hFUkUgaHAgPSAxMTBcIilcblxuIyBDaGVjayB0aGUgdXBkYXRlZCB0YWJsZVxubXRjYXJzX215c3FsIDwtIGRiR2V0UXVlcnkoY29ubj1jb25uZWN0aW9uLCBzdGF0ZW1lbnQ9XCJTRUxFQ1QgKiBGUk9NIG10Y2Fyc1wiKVxuXG4jIFRha2UgYSBsb29rIHRvIHNlZSBpZiB0aGUgZGF0YSBoYXMgY2hhbmdlZFxuaGVhZChtdGNhcnNfbXlzcWxbbXRjYXJzX215c3FsJGhwID09IDExMCwgXSlcbmBgYCJ9 -->
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Update data in the actor info table</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">dbSendQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;UPDATE mtcars SET disp = 168.5 WHERE hp = 110&quot;</span>)</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># Check the updated table</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>mtcars_mysql &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;SELECT * FROM mtcars&quot;</span>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co"># Take a look to see if the data has changed</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="kw">head</span>(mtcars_mysql[mtcars_mysql<span class="op">$</span>hp <span class="op">==</span><span class="st"> </span><span class="dv">110</span>, ])</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="inserting-a-row-into-a-table" class="section level2" number="4.5">
+<h2 number="4.5"><span class="header-section-number">4.5</span> Inserting a row into a table</h2>
+<p>Using the code below, we can insert data for a new car into the <code>mtcars</code> table on our <code>MySQL</code> server:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNlcnQgYSBuZXcgcm93IGludG8gdGFibGVcbmRiU2VuZFF1ZXJ5KGNvbm49Y29ubmVjdGlvbixcbiAgICAgICAgICAgIHN0YXRlbWVudD1cIklOU0VSVCBJTlRPIG10Y2Fycyhyb3dfbmFtZXMsIG1wZywgY3lsLCBkaXNwLCBocCwgZHJhdCwgd3QsIHFzZWMsIHZzLCBhbSwgZ2VhciwgY2FyYikgdmFsdWVzKCdOZXcgTWF6ZGEgUlg0IFdhZycsIDIxLCA2LCAxNjguNSwgMTEwLCAzLjksIDIuODc1LCAxNy4wMiwgMCwgMSwgNCwgNClcIlxuICAgICAgICAgICAgKVxuXG4jIENoZWNrIHRoZSB1cGRhdGVkIHRhYmxlXG5tdGNhcnMgPC0gZGJHZXRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD1cIlNFTEVDVCAqIEZST00gbXRjYXJzXCIpXG50YWlsKG10Y2FycylcbmBgYCJ9 -->
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Insert a new row into table</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">dbSendQuery</span>(<span class="dt">conn=</span>connection,</span>
+<span id="cb12-3"><a href="#cb12-3"></a>            <span class="dt">statement=</span><span class="st">&quot;INSERT INTO mtcars(row_names, mpg, cyl, disp, hp, drat, wt, qsec, vs, am, gear, carb) values(&#39;New Mazda RX4 Wag&#39;, 21, 6, 168.5, 110, 3.9, 2.875, 17.02, 0, 1, 4, 4)&quot;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>            )</span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="co"># Check the updated table</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>mtcars &lt;-<span class="st"> </span><span class="kw">dbGetQuery</span>(<span class="dt">conn=</span>connection, <span class="dt">statement=</span><span class="st">&quot;SELECT * FROM mtcars&quot;</span>)</span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="kw">tail</span>(mtcars)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="removing-a-table" class="section level2" number="4.6">
+<h2 number="4.6"><span class="header-section-number">4.6</span> Removing a table</h2>
+<p>We can remove the <code>mtcars</code> table from our <code>MySQL</code> server with the following code:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGJTZW5kUXVlcnkoY29ubmVjdGlvbiwgJ2Ryb3AgdGFibGUgaWYgZXhpc3RzIG10Y2FycycpXG5gYGAifQ== -->
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">dbSendQuery</span>(connection, <span class="st">&#39;drop table if exists mtcars&#39;</span>)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="closing-a-connection-to-the-mysql-server" class="section level2" number="4.7">
+<h2 number="4.7"><span class="header-section-number">4.7</span> Closing a connection to the <code>MySQL</code> server</h2>
+<p>To wrap up, we can close our connection to the <code>MySQL</code> server using the following code:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGJEaXNjb25uZWN0KGNvbm49Y29ubmVjdGlvbilcblxuYGBgIn0= -->
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">dbDisconnect</span>(<span class="dt">conn=</span>connection)</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="the-end--" class="section level1" number="5">
+<h1 number="5"><span class="header-section-number">5</span> The end :-)</h1>
+<p>So, that’s me done. This tutorial has hopefully got you started with using the <code>RMySQL</code> R package. If you haven’t already I would recommend going and doing some more tutorials about <code>MySQL</code>. <a href="https://www.tutorialspoint.com/mysql/index.htm">Here</a> is a good one to start with.</p>
+<p>As you’ll have noticed, this tutorial has barely scratched the surface of using <code>MySQL</code>. It is an extremely powerful language and one that will be found in many Reproducible Analytical Pipelines and well worth learning about.</p>
 <!-- rnb-text-end -->
 </div>
-</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkdldHRpbmcgU3RhcnRlZCB3aXRoIFJNeVNRTCINCmF1dGhvcjogIkpvc2VwaCBDcmlzcGVsbCINCmRhdGU6ICJgciBmb3JtYXQoU3lzLkRhdGUoKSwgJyVkICViICVZJylgIg0Kb3V0cHV0Og0KICBodG1sX2RvY3VtZW50Og0KICAgIG51bWJlcl9zZWN0aW9uczogdHJ1ZQ0KICAgIHRvYzogeWVzDQogICAgdG9jX2RlcHRoOiAnMicNCiAgICB0b2NfZmxvYXQ6IHllcw0KICBodG1sX25vdGVib29rOg0KICAgIGhpZ2hsaWdodDogaGFkZG9jaw0KICAgIG51bWJlcl9zZWN0aW9uczogeWVzDQogICAgdGhlbWU6IHNpbXBsZXgNCiAgICB0b2M6IHllcw0KICAgIHRvY19kZXB0aDogMg0KICAgIHRvY19mbG9hdDogeWVzDQpwYXJhbXM6IA0KICBwYXNzd29yZDogIlRoaXNJc05vdE15UGFzc3dvcmQiDQotLS0NCg0KYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9DQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpDQpgYGANCg0KIyMgSW50cm9kdWN0aW9uDQoNClVzdWFsbHkgYSBSZXByb2R1Y2libGUgQW5hbHl0aWNhbCBQaXBlbGluZSB3aWxsIHN0YXJ0IGJ5IHJldHJpZXZpbmcgZGF0YSBmcm9tIGEgZGF0YWJhc2UuIE9mdGVuIHRoYXQgZGF0YWJhc2UgY291bGQgYmUgYSBgU1FMYCBkYXRhYmFzZS4gW2BNeVNRTGBdKGh0dHBzOi8vd3d3Lm15c3FsLmNvbS8pIGlzIGFuIG9wZW4tc291cmNlIHJlbGF0aW9uYWwgZGF0YWJhc2UgbWFuYWdlbWVudCBzeXN0ZW0gdGhhdCB1c2VzICpTKnRydWN0dXJlZCAqUSp1ZXJ5ICpMKmFuZ3VhZ2UgKFNRTCkuIFdlIGNhbiB1c2UgYE15U1FMYCB0byBzdG9yZSBjb21wbGV4IGRhdGEgdGFibGVzIHRoYXQgcmVsYXRlIHRvIG9uZSBhbm90aGVyLg0KDQpgUk15U1FMYCBpcyBhbiBSIHBhY2thZ2UgdGhhdCB3ZSBjYW4gdXNlIHRvIGludGVyYWN0IHdpdGggYE15U1FMYCwgd3JpdGluZyBxdWVyaWVzLCB1cGRhdGluZyBkYXRhIGFuZCBjcmVhdGluZyBuZXcgdGFibGVzLg0KDQpUaGUgY3VycmVudCB0dXRvcmlhbCBhaW1zIHRvIGdpdmUgYSBicmllZiBpbnRyb2R1Y3Rpb24gdG8gdXNpbmcgYFJNeVNRTGAgaW4gUi4gVGhlIGN1cnJlbnQgY29udGVudCBpcyBtb3JlLW9yLWxlc3MgdGhlIHNhbWUgYXMgdGhlIFR1dG9yaWFsc1BvaW50IFt0dXRvcmlhbF0oaHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL3Ivcl9kYXRhYmFzZS5odG0pLCB3aXRoIGEgIGZldyB1cGRhdGVzIGFuZCBlZGl0cyB0byBtYXRjaCB1cGRhdGVzIHRvIGBSTXlTUUxgLg0KDQojIyBJbnN0YWxsaW5nIGBNeVNRTGANCg0KVG8gZ2V0IHN0YXJ0ZWQsIHlvdSdsbCBuZWQgdG8gaW5zdGFsbCBgTXlTUUxgLCBoZXJlIGFyZSBsaW5rcyBmb3IgdGhlIGRpZmZlcmVudCBvcGVyYXRpbmcgc3lzdGVtczoNCg0KLSBJbnN0YWxsaW5nIG9uIGxpbnV4IHN5c3RlbXMgKFtsaW5rXShodHRwczovL2Rldi5teXNxbC5jb20vZG9jL3JlZm1hbi84LjAvZW4vbGludXgtaW5zdGFsbGF0aW9uLmh0bWwpKSwgd2l0aCBleHRyYSBoZWxwIFtoZXJlXShodHRwczovL2l0c2Zvc3MuY29tL2luc3RhbGwtbXlzcWwtdWJ1bnR1LykuDQotIEluc3RhbGxpbmcgb24gbWFjOiAoW2xpbmtdKGh0dHBzOi8vZGV2Lm15c3FsLmNvbS9kb2MvbXlzcWwtb3N4LWV4Y2VycHQvNS43L2VuL29zeC1pbnN0YWxsYXRpb24uaHRtbCkpLCBhbHNvLCBJIHRoaW5rIGl0IGNvbWVzIHJlYWR5IGluc3RhbGxlZCEgU2VlIFtoZXJlXShodHRwczovL3d3dy50aG91Z2h0Y28uY29tL2luc3RhbGxpbmctbXlzcWwtb24tbWFjLTI2OTM4NjYpKQ0KLSBJbnN0YWxsaW5nIG9uIFdpbmRvd3MgKFtsaW5rXShodHRwczovL2Rldi5teXNxbC5jb20vZG93bmxvYWRzL2luc3RhbGxlci8pKSwgd2l0aCBleHRyYSBoZWxwIFtoZXJlXShodHRwczovL3d3dy53aWtpaG93LmNvbS9JbnN0YWxsLXRoZS1NeVNRTC1EYXRhYmFzZS1TZXJ2ZXItb24tWW91ci1XaW5kb3dzLVBDKQ0KDQpGb3IgdGhpcyB0dXRvcmlhbCwgSSB3b3JrZWQgb24gYSBXaW5kb3dzIG1hY2hpbmUgYW5kIGl0IHRvb2sgbWUgYSB3ZWUgd2hpbGUgdG8gZ2V0IE15U1FMIGluc3RhbGxlZCBwcm9wZXJseSwgc28gYmUgcGF0aWVudC4NCg0KIyMgSW5zdGFsbGluZyBgUk15U1FMYA0KDQpNdWNoIGVhc2llciEgSnVzdCB1c2UgdGhlIGZvbGxvd2luZyBjb2RlOg0KDQpgYGB7ciBldmFsPUZBTFNFfQ0KaW5zdGFsbC5wYWNrYWdlcygiUk15U1FMIikNCmBgYA0KDQpUaGVuIHdlIGNhbiBsb2FkIHRoZSBsaWJyYXJ5Og0KYGBge3J9DQpsaWJyYXJ5KFJNeVNRTCkNCmBgYA0KDQoNCiMjIFdvcmtpbmcgd2l0aCBgUk15U1FMYA0KDQojIyMgQ3JlYXRlIGEgY29ubmVjdGlvbiB0byBNeVNRTA0KDQpXZSBhcmUgZ29pbmcgdG8gY29ubmVjdCB0byB0aGUgInNha2lsYSIgZGF0YWJhc2UsIHdoaWNoIGNvbWVzIHdpdGggdGhlIGBNeVNRTGAgaW5zdGFsbGF0aW9uOg0KDQpgYGB7ciBldmFsPUZBTFNFfQ0KIyBPcGVuIGEgY29ubmVjdGlvbiB0byBhIE15U1FMIGRhdGFiYXNlDQpjb25uZWN0aW9uIDwtIGRiQ29ubmVjdChNeVNRTCgpLCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB1c2VyPSdyb290JywgDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFzc3dvcmQ9cmVhZGxpbmUocHJvbXB0PSJFbnRlciBwYXNzd29yZDogIiksICMgRG9pbmcgdGhpcyBhcyBwYXNzd29yZCBuZXZlciBzdG9yZWQgaW4gZWFzaWx5IGFjY2Vzc2libGUgZm9ybWF0IG5vdw0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRibmFtZT0nc2FraWxhJywNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBob3N0ID0gJ2xvY2FsaG9zdCcpDQoNCiMgTGlzdCB0aGUgdGFibGVzIGF2YWlsYWJsZSBpbiB0aGUgc2FraWxhIGRhdGFiYXNlDQpkYkxpc3RUYWJsZXMoY29ubmVjdGlvbikNCmBgYA0KDQoNCmBgYHtyIGVjaG89RkFMU0V9DQojIE9wZW4gYSBjb25uZWN0aW9uIHRvIGEgTXlTUUwgZGF0YWJhc2UNCmNvbm5lY3Rpb24gPC0gZGJDb25uZWN0KE15U1FMKCksIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVzZXI9J3Jvb3QnLCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYXNzd29yZD1wYXJhbXMkcGFzc3dvcmQsICMgRG9pbmcgdGhpcyBhcyBwYXNzd29yZCBuZXZlciBzdG9yZWQgaW4gZWFzaWx5IGFjY2Vzc2libGUgZm9ybWF0IG5vdw0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRibmFtZT0nc2FraWxhJywNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBob3N0ID0gJ2xvY2FsaG9zdCcpDQoNCiMgTGlzdCB0aGUgdGFibGVzIGF2YWlsYWJsZSBpbiB0aGUgc2FraWxhIGRhdGFiYXNlDQpoZWFkKGRiTGlzdFRhYmxlcyhjb25uZWN0aW9uKSkNCmBgYA0KDQojIyMgU2VuZGluZyBhIHF1ZXJ5DQoNCldlIGNhbiBxdWVyeSBhIHRhYmxlIHVzaW5nIHRoZSBmb2xsb3dpbmcgY29kZToNCg0KYGBge3J9DQojIFF1ZXJ5IHRoZSAiYWN0b3IiIHRhYmxlIHRvIGdldCBhbGwgdGhlIHJvd3MNCnJlc3VsdCA8LSBkYlNlbmRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD1TRUxFQ1QgKiBGUk9NIGFjdG9yIikgIyAqIG1lYW5zIGV2ZXJ5dGhpbmcgTk9URTogc3ludGF4IGlzIGNhc2UtaW5zZW5zaXRpdmUNCg0KIyBTdG9yZSB0aGUgZmlyc3QgMTUgcm93cyBvZiB0aGUgcmVzdWx0IGluIGFuIFIgZGF0YSBmcmFtZSBvYmplY3QNCmFjdG9ycyA8LSBkYkZldGNoKHJlc3VsdCwgbj0xNSkNCg0KIyBSZW1vdmUgdGhlIHVudXNlZCByZXN1bHRzDQpkYkNsZWFyUmVzdWx0KHJlc3VsdCkNCmBgYA0KDQpOb3RlIHRoYXQgdGhlIGxhc3QgbGluZSBvZiBjb2RlIChgZGJDbGVhclJlc3VsdChyZXN1bHQpYCkgY2xlYXJzIHRoZSBmZWN0aGVkIGRhdGEgYW5kIGNsb3NlcyB0aGUgcXVlcnkuIEl0IGlzIG5vdyBwcmVmZXJyZWQgdG8gcXVlcnkgYSB0YWJsZSB3aXRoIHRoZSBmb2xsb3dpbmcgY29kZSwgd2hpY2ggZG9lc24ndCBsZWF2ZSB0aGUgcXVlcnkgb3BlbjoNCg0KYGBge3J9DQojIE5vdGUgLSB5b3UgY2FuIHVzZSBzaW5nbGUgY29tbWFuZCBiZWxvdyB0byBzZW5kIHF1ZXJ5IGFuZCBzZW5kIHJlc3VsdCBhcyBkYXRhLmZyYW1lIGluIG9uZSBjb21tYW5kIC0gZG9lc24ndCBsZWF2ZSBxdWVyeSBvcGVuDQphY3RvcnMgPC0gZGJHZXRRdWVyeShjb25uPW15U1FMQ29ubmVjdGlvbiwgc3RhdGVtZW50PSJTRUxFQ1QgKiBGUk9NIGFjdG9yIFdIRVJFIGxhc3RfbmFtZSA9ICdURU1QTEUnIikNCg0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkdldHRpbmcgU3RhcnRlZCB3aXRoIFJNeVNRTCINCmF1dGhvcjogIkpvc2VwaCBDcmlzcGVsbCINCmRhdGU6ICJgciBmb3JtYXQoU3lzLkRhdGUoKSwgJyVkICViICVZJylgIg0Kb3V0cHV0Og0KICBodG1sX2RvY3VtZW50Og0KICAgIG51bWJlcl9zZWN0aW9uczogdHJ1ZQ0KICAgIHRvYzogeWVzDQogICAgdG9jX2RlcHRoOiAnMicNCiAgICB0b2NfZmxvYXQ6IHllcw0KICBodG1sX25vdGVib29rOg0KICAgIGhpZ2hsaWdodDogaGFkZG9jaw0KICAgIG51bWJlcl9zZWN0aW9uczogeWVzDQogICAgdGhlbWU6IHNpbXBsZXgNCiAgICB0b2M6IHllcw0KICAgIHRvY19kZXB0aDogMg0KICAgIHRvY19mbG9hdDogeWVzDQpwYXJhbXM6IA0KICBwYXNzd29yZDogIlRoaXNJc05vdE15UGFzc3dvcmQiDQotLS0NCg0KYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9DQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpDQpgYGANCg0KIyBJbnRyb2R1Y3Rpb24NCg0KVXN1YWxseSBhIFJlcHJvZHVjaWJsZSBBbmFseXRpY2FsIFBpcGVsaW5lIHdpbGwgc3RhcnQgYnkgcmV0cmlldmluZyBkYXRhIGZyb20gYSBkYXRhYmFzZS4gT2Z0ZW4gdGhhdCBkYXRhYmFzZSBjb3VsZCBiZSBhIGBTUUxgIGRhdGFiYXNlLiBbYE15U1FMYF0oaHR0cHM6Ly93d3cubXlzcWwuY29tLykgaXMgYW4gb3Blbi1zb3VyY2UgcmVsYXRpb25hbCBkYXRhYmFzZSBtYW5hZ2VtZW50IHN5c3RlbSB0aGF0IHVzZXMgKlMqdHJ1Y3R1cmVkICpRKnVlcnkgKkwqYW5ndWFnZSAoU1FMKS4gV2UgY2FuIHVzZSBgTXlTUUxgIHRvIHN0b3JlIGNvbXBsZXggZGF0YSB0YWJsZXMgdGhhdCByZWxhdGUgdG8gb25lIGFub3RoZXIuDQoNCmBSTXlTUUxgIGlzIGFuIFIgcGFja2FnZSB0aGF0IHdlIGNhbiB1c2UgdG8gaW50ZXJhY3Qgd2l0aCBgTXlTUUxgLCB3cml0aW5nIHF1ZXJpZXMsIHVwZGF0aW5nIGRhdGEgYW5kIGNyZWF0aW5nIG5ldyB0YWJsZXMuDQoNClRoZSBjdXJyZW50IHR1dG9yaWFsIGFpbXMgdG8gZ2l2ZSBhIGJyaWVmIGludHJvZHVjdGlvbiB0byB1c2luZyBgUk15U1FMYCBpbiBSLiBUaGUgY3VycmVudCBjb250ZW50IGlzIG1vcmUtb3ItbGVzcyB0aGUgc2FtZSBhcyB0aGUgVHV0b3JpYWxzUG9pbnQgW3R1dG9yaWFsXShodHRwczovL3d3dy50dXRvcmlhbHNwb2ludC5jb20vci9yX2RhdGFiYXNlLmh0bSksIHdpdGggYSAgZmV3IHVwZGF0ZXMgYW5kIGVkaXRzIHRvIG1hdGNoIHVwZGF0ZXMgdG8gYFJNeVNRTGAuDQoNCiMgSW5zdGFsbGluZyBgTXlTUUxgDQoNClRvIGdldCBzdGFydGVkLCB5b3UnbGwgbmVkIHRvIGluc3RhbGwgYE15U1FMYCwgaGVyZSBhcmUgbGlua3MgZm9yIHRoZSBkaWZmZXJlbnQgb3BlcmF0aW5nIHN5c3RlbXM6DQoNCi0gSW5zdGFsbGluZyBvbiBsaW51eCBzeXN0ZW1zIChbbGlua10oaHR0cHM6Ly9kZXYubXlzcWwuY29tL2RvYy9yZWZtYW4vOC4wL2VuL2xpbnV4LWluc3RhbGxhdGlvbi5odG1sKSksIHdpdGggZXh0cmEgaGVscCBbaGVyZV0oaHR0cHM6Ly9pdHNmb3NzLmNvbS9pbnN0YWxsLW15c3FsLXVidW50dS8pLg0KLSBJbnN0YWxsaW5nIG9uIG1hYzogKFtsaW5rXShodHRwczovL2Rldi5teXNxbC5jb20vZG9jL215c3FsLW9zeC1leGNlcnB0LzUuNy9lbi9vc3gtaW5zdGFsbGF0aW9uLmh0bWwpKSwgYWxzbywgSSB0aGluayBpdCBjb21lcyByZWFkeSBpbnN0YWxsZWQhIFNlZSBbaGVyZV0oaHR0cHM6Ly93d3cudGhvdWdodGNvLmNvbS9pbnN0YWxsaW5nLW15c3FsLW9uLW1hYy0yNjkzODY2KSkNCi0gSW5zdGFsbGluZyBvbiBXaW5kb3dzIChbbGlua10oaHR0cHM6Ly9kZXYubXlzcWwuY29tL2Rvd25sb2Fkcy9pbnN0YWxsZXIvKSksIHdpdGggZXh0cmEgaGVscCBbaGVyZV0oaHR0cHM6Ly93d3cud2lraWhvdy5jb20vSW5zdGFsbC10aGUtTXlTUUwtRGF0YWJhc2UtU2VydmVyLW9uLVlvdXItV2luZG93cy1QQykNCg0KRm9yIHRoaXMgdHV0b3JpYWwsIEkgd29ya2VkIG9uIGEgV2luZG93cyBtYWNoaW5lIGFuZCBpdCB0b29rIG1lIGEgd2VlIHdoaWxlIHRvIGdldCBNeVNRTCBpbnN0YWxsZWQgcHJvcGVybHksIHNvIGJlIHBhdGllbnQuDQoNCiMgSW5zdGFsbGluZyBgUk15U1FMYA0KDQpNdWNoIGVhc2llciEgSnVzdCB1c2UgdGhlIGZvbGxvd2luZyBjb2RlOg0KDQpgYGB7ciBldmFsPUZBTFNFfQ0KaW5zdGFsbC5wYWNrYWdlcygiUk15U1FMIikNCmBgYA0KDQpUaGVuIHdlIGNhbiBsb2FkIHRoZSBsaWJyYXJ5Og0KYGBge3J9DQpsaWJyYXJ5KFJNeVNRTCkNCmBgYA0KDQoNCiMgV29ya2luZyB3aXRoIGBSTXlTUUxgDQoNCiMjIENyZWF0ZSBhIGNvbm5lY3Rpb24gdG8gTXlTUUwNCg0KV2UgYXJlIGdvaW5nIHRvIGNvbm5lY3QgdG8gdGhlICJzYWtpbGEiIGRhdGFiYXNlLCB3aGljaCBjb21lcyB3aXRoIHRoZSBgTXlTUUxgIGluc3RhbGxhdGlvbjoNCg0KYGBge3IgZXZhbD1GQUxTRX0NCiMgT3BlbiBhIGNvbm5lY3Rpb24gdG8gYSBNeVNRTCBkYXRhYmFzZQ0KY29ubmVjdGlvbiA8LSBkYkNvbm5lY3QoTXlTUUwoKSwgDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgdXNlcj0ncm9vdCcsIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhc3N3b3JkPXJlYWRsaW5lKHByb21wdD0iRW50ZXIgcGFzc3dvcmQ6ICIpLCAjIERvaW5nIHRoaXMgYXMgcGFzc3dvcmQgbmV2ZXIgc3RvcmVkIGluIGVhc2lseSBhY2Nlc3NpYmxlIGZvcm1hdCBub3cNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYm5hbWU9J3Nha2lsYScsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaG9zdCA9ICdsb2NhbGhvc3QnKQ0KDQojIExpc3QgdGhlIHRhYmxlcyBhdmFpbGFibGUgaW4gdGhlIHNha2lsYSBkYXRhYmFzZQ0KZGJMaXN0VGFibGVzKGNvbm5lY3Rpb24pDQpgYGANCg0KDQpgYGB7ciBlY2hvPUZBTFNFfQ0KIyBPcGVuIGEgY29ubmVjdGlvbiB0byBhIE15U1FMIGRhdGFiYXNlDQpjb25uZWN0aW9uIDwtIGRiQ29ubmVjdChNeVNRTCgpLCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB1c2VyPSdyb290JywgDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFzc3dvcmQ9cGFyYW1zJHBhc3N3b3JkLCAjIERvaW5nIHRoaXMgYXMgcGFzc3dvcmQgbmV2ZXIgc3RvcmVkIGluIGVhc2lseSBhY2Nlc3NpYmxlIGZvcm1hdCBub3cNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYm5hbWU9J3Nha2lsYScsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaG9zdCA9ICdsb2NhbGhvc3QnKQ0KDQojIExpc3QgdGhlIHRhYmxlcyBhdmFpbGFibGUgaW4gdGhlIHNha2lsYSBkYXRhYmFzZQ0KaGVhZChkYkxpc3RUYWJsZXMoY29ubmVjdGlvbikpDQpgYGANCg0KIyMgU2VuZGluZyBhIHF1ZXJ5DQpgYGB7cn0NCg0KYGBgDQoNCldlIGNhbiBxdWVyeSBhIHRhYmxlIHVzaW5nIHRoZSBmb2xsb3dpbmcgY29kZToNCg0KYGBge3Igd2FybmluZz1GQUxTRX0NCiMgUXVlcnkgdGhlICJhY3RvciIgdGFibGUgdG8gZ2V0IGFsbCB0aGUgcm93cw0KcmVzdWx0IDwtIGRiU2VuZFF1ZXJ5KGNvbm49Y29ubmVjdGlvbiwgc3RhdGVtZW50PSJTRUxFQ1QgKiBGUk9NIGFjdG9yIikgIyBOT1RFOiBTUUwgc3ludGF4IGlzIGNhc2UtaW5zZW5zaXRpdmUNCg0KIyBTdG9yZSB0aGUgZmlyc3QgMTUgcm93cyBvZiB0aGUgcmVzdWx0IGluIGFuIFIgZGF0YSBmcmFtZSBvYmplY3QNCmFjdG9ycyA8LSBkYkZldGNoKHJlc3VsdCwgbj0xNSkNCg0KIyBSZW1vdmUgdGhlIHVudXNlZCByZXN1bHRzDQpkYkNsZWFyUmVzdWx0KHJlc3VsdCkNCmBgYA0KDQpOb3RlIHRoYXQgdGhlIGxhc3QgbGluZSBvZiBjb2RlIChgZGJDbGVhclJlc3VsdChyZXN1bHQpYCkgY2xlYXJzIHRoZSBmZWNjaGVkIGRhdGEgYW5kIGNsb3NlcyB0aGUgcXVlcnkuIEl0IGlzIG5vdyBwcmVmZXJyZWQgdG8gcXVlcnkgYSB0YWJsZSB3aXRoIHRoZSBmb2xsb3dpbmcgY29kZSwgd2hpY2ggZG9lc24ndCBsZWF2ZSB0aGUgcXVlcnkgb3BlbjoNCg0KYGBge3Igd2FybmluZz1GQUxTRX0NCiMgTm90ZSAtIHlvdSBjYW4gdXNlIHNpbmdsZSBjb21tYW5kIGJlbG93IHRvIHNlbmQgcXVlcnkgYW5kIHNlbmQgcmVzdWx0IGFzIGRhdGEuZnJhbWUgaW4gb25lIGNvbW1hbmQgLSBkb2Vzbid0IGxlYXZlIHF1ZXJ5IG9wZW4NCmFjdG9ycyA8LSBkYkdldFF1ZXJ5KGNvbm49Y29ubmVjdGlvbiwgc3RhdGVtZW50PSJTRUxFQ1QgKiBGUk9NIGFjdG9yIikNCmBgYA0KDQpMZXQncyB0YWtlIGEgcXVpY2sgbG9vayBhdCB0aGUgYWN0b3JzIHRhYmxlOg0KYGBge3J9DQpoZWFkKGFjdG9ycykNCmBgYA0KDQoNCk5vdywgbGV0J3MgdHJ5IGdldHRpbmcgdGhlIGluZm9ybWF0aW9uIGZvciBhY3RvcnMgd2hvc2UgbGFzdCBuYW1lIGlzICJURU1QTEUiOg0KYGBge3Igd2FybmluZz1GQUxTRX0NCiMgTm90ZSAtIHlvdSBjYW4gdXNlIHNpbmdsZSBjb21tYW5kIGJlbG93IHRvIHNlbmQgcXVlcnkgYW5kIHNlbmQgcmVzdWx0IGFzIGRhdGEuZnJhbWUgaW4gb25lIGNvbW1hbmQgLSBkb2Vzbid0IGxlYXZlIHF1ZXJ5IG9wZW4NCmFjdG9ycyA8LSBkYkdldFF1ZXJ5KGNvbm49Y29ubmVjdGlvbiwgc3RhdGVtZW50PSJTRUxFQ1QgKiBGUk9NIGFjdG9yIFdIRVJFIGxhc3RfbmFtZSA9ICdURU1QTEUnIikNCg0KIyBQcmludCB0aGUgdGFibGUNCihhY3RvcnMpDQpgYGANCg0KIyMgQ3JlYXRpbmcgYSB0YWJsZQ0KDQpJbiBvcmRlciB0byBjcmVhdGUgYSBgTXlTUUxgIHRhYmxlLCB3ZSBmaXJzdCBuZWVkIHRvIHNldCBvdXIgcGVybWlzc2lvbnMgc28gdGhhdCB3ZSBjYW4gaW5wdXQgZGF0YSBsb2NhbGx5IChzZWUgW3RoaXNdKGh0dHBzOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzQ0Mjg4MzU4L2lzLXRoZXJlLWEtZmFzdGVyLXdheS10by11cGxvYWQtZGF0YS1mcm9tLXItdG8tbXlzcWwpIHF1ZXN0aW9uIGZvciBtb3JlIGluZm9ybWF0aW9uKToNCg0KYGBge3J9DQpkYlNlbmRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD0iU0VUIEdMT0JBTCBsb2NhbF9pbmZpbGUgPSAxIikNCmBgYA0KDQpXaXRoIHRoYXQgZG9uZSwgd2UgYXJlIGdvaW5nIHRvIHN0b3JlIHRoZSBgbXRjYXJzYCB0YWJsZSBvbiBvdXIgbG9jYWwgYE15U1FMYCBzZXJ2ZXIgdXNpbmcgdGhlIGZvbGxvd2luZyBjb2RlOg0KYGBge3J9DQojIFVwbG9hZCBtdGNhcnMgdGFibGUgb250byBNeVNRTCBzZXJ2ZXINCmRiV3JpdGVUYWJsZShjb25uZWN0aW9uLCAibXRjYXJzIiwgbXRjYXJzWywgXSwgb3ZlcndyaXRlPVRSVUUpDQoNCiMgQ2hlY2sgdGhlIHRhYmxlIGlzIHRoZXJlDQptdGNhcnNfbXlzcWwgPC0gZGJHZXRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD0iU0VMRUNUICogRlJPTSBtdGNhcnMiKQ0KaGVhZChtdGNhcnNfbXlzcWwpDQpgYGANCg0KDQojIyBVcGRhdGluZyBhIHRhYmxlDQoNCldlIGNhbiB1cGRhdGUgYSB0YWJsZSBvbiBvdXIgYE15U1FMYCBzZXJ2ZXIgYnkgc2VuZGluZyBhIHF1ZXJ5LCBmb3IgZXhhbXBsZSB3ZSBjYW4gdXNlIHRoZSBjb2RlIGJlbG93IHRvIGVkaXQgdGhlIGRhdGEgZm9yIGNhcnMgd2l0aCBhIGNlcnRhaW4gaG9yc2UgcG93ZXI6DQpgYGB7cn0NCiMgVXBkYXRlIGRhdGEgaW4gdGhlIGFjdG9yIGluZm8gdGFibGUNCmRiU2VuZFF1ZXJ5KGNvbm49Y29ubmVjdGlvbiwgc3RhdGVtZW50PSJVUERBVEUgbXRjYXJzIFNFVCBkaXNwID0gMTY4LjUgV0hFUkUgaHAgPSAxMTAiKQ0KDQojIENoZWNrIHRoZSB1cGRhdGVkIHRhYmxlDQptdGNhcnNfbXlzcWwgPC0gZGJHZXRRdWVyeShjb25uPWNvbm5lY3Rpb24sIHN0YXRlbWVudD0iU0VMRUNUICogRlJPTSBtdGNhcnMiKQ0KDQojIFRha2UgYSBsb29rIHRvIHNlZSBpZiB0aGUgZGF0YSBoYXMgY2hhbmdlZA0KaGVhZChtdGNhcnNfbXlzcWxbbXRjYXJzX215c3FsJGhwID09IDExMCwgXSkNCmBgYA0KDQojIyBJbnNlcnRpbmcgYSByb3cgaW50byBhIHRhYmxlDQoNClVzaW5nIHRoZSBjb2RlIGJlbG93LCB3ZSBjYW4gaW5zZXJ0IGRhdGEgZm9yIGEgbmV3IGNhciBpbnRvIHRoZSBgbXRjYXJzYCB0YWJsZSBvbiBvdXIgYE15U1FMYCBzZXJ2ZXI6DQpgYGB7cn0NCiMgSW5zZXJ0IGEgbmV3IHJvdyBpbnRvIHRhYmxlDQpkYlNlbmRRdWVyeShjb25uPWNvbm5lY3Rpb24sDQogICAgICAgICAgICBzdGF0ZW1lbnQ9IklOU0VSVCBJTlRPIG10Y2Fycyhyb3dfbmFtZXMsIG1wZywgY3lsLCBkaXNwLCBocCwgZHJhdCwgd3QsIHFzZWMsIHZzLCBhbSwgZ2VhciwgY2FyYikgdmFsdWVzKCdOZXcgTWF6ZGEgUlg0IFdhZycsIDIxLCA2LCAxNjguNSwgMTEwLCAzLjksIDIuODc1LCAxNy4wMiwgMCwgMSwgNCwgNCkiDQogICAgICAgICAgICApDQoNCiMgQ2hlY2sgdGhlIHVwZGF0ZWQgdGFibGUNCm10Y2FycyA8LSBkYkdldFF1ZXJ5KGNvbm49Y29ubmVjdGlvbiwgc3RhdGVtZW50PSJTRUxFQ1QgKiBGUk9NIG10Y2FycyIpDQp0YWlsKG10Y2FycykNCmBgYA0KDQojIyBSZW1vdmluZyBhIHRhYmxlDQoNCldlIGNhbiByZW1vdmUgdGhlIGBtdGNhcnNgIHRhYmxlIGZyb20gb3VyIGBNeVNRTGAgc2VydmVyIHdpdGggdGhlIGZvbGxvd2luZyBjb2RlOg0KYGBge3J9DQpkYlNlbmRRdWVyeShjb25uZWN0aW9uLCAnZHJvcCB0YWJsZSBpZiBleGlzdHMgbXRjYXJzJykNCmBgYA0KDQojIyBDbG9zaW5nIGEgY29ubmVjdGlvbiB0byB0aGUgYE15U1FMYCBzZXJ2ZXINCg0KVG8gd3JhcCB1cCwgd2UgY2FuIGNsb3NlIG91ciBjb25uZWN0aW9uIHRvIHRoZSBgTXlTUUxgIHNlcnZlciB1c2luZyB0aGUgZm9sbG93aW5nIGNvZGU6DQpgYGB7ciB3YXJuaW5nPUZBTFNFfQ0KZGJEaXNjb25uZWN0KGNvbm49Y29ubmVjdGlvbikNCmBgYA0KDQojIFRoZSBlbmQgOi0pDQoNClNvLCB0aGF0J3MgbWUgZG9uZS4gVGhpcyB0dXRvcmlhbCBoYXMgaG9wZWZ1bGx5IGdvdCB5b3Ugc3RhcnRlZCB3aXRoIHVzaW5nIHRoZSBgUk15U1FMYCBSIHBhY2thZ2UuIElmIHlvdSBoYXZlbid0IGFscmVhZHkgSSB3b3VsZCByZWNvbW1lbmQgZ29pbmcgYW5kIGRvaW5nIHNvbWUgbW9yZSB0dXRvcmlhbHMgYWJvdXQgYE15U1FMYC4gW0hlcmVdKGh0dHBzOi8vd3d3LnR1dG9yaWFsc3BvaW50LmNvbS9teXNxbC9pbmRleC5odG0pIGlzIGEgZ29vZCBvbmUgdG8gc3RhcnQgd2l0aC4NCg0KQXMgeW91J2xsIGhhdmUgbm90aWNlZCwgdGhpcyB0dXRvcmlhbCBoYXMgYmFyZWx5IHNjcmF0Y2hlZCB0aGUgc3VyZmFjZSBvZiB1c2luZyBgTXlTUUxgLiBJdCBpcyBhbiBleHRyZW1lbHkgcG93ZXJmdWwgbGFuZ3VhZ2UgYW5kIG9uZSB0aGF0IHdpbGwgYmUgZm91bmQgaW4gbWFueSBSZXByb2R1Y2libGUgQW5hbHl0aWNhbCBQaXBlbGluZXMgYW5kIHdlbGwgd29ydGggbGVhcm5pbmcgYWJvdXQuDQo=</div>
 
 
 </div>
