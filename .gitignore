@@ -61,6 +61,6 @@ vignettes/*.pdf
 
 # Ignore R markdown outputs
 #*.html
-*.pdf
+#*.pdf
 
 
