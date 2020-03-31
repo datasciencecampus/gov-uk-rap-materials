@@ -38,6 +38,33 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- Extra custom code for footnotes - taken from https://stackoverflow.com/questions/42690955/how-to-insert-footnotes-in-ioslides-presentations-using-rmarkdown -->
 
+## What is a Analytical Pipeline? The ideal scenario
+
+<br><br>
+
+<p class="aligncenter">
+    <img src="images/TraditionalAnalysis-Aim.png" width="85%" height="auto" align="center">
+</p>
+
+## What is a Analytical Pipeline? The reality...
+
+<p class="aligncenter">
+    <img src="images/TraditionalAnalysis-Reality.png" width="85%" height="auto" align="center">
+</p>
+
+## What are the issues?
+
+<img src="images/TraditionalMess.png" width="50%" height="auto" align="right">
+
+<br>
+
+- Lots of manual steps
+- Hard to reproduce
+- Mistakes are easily made and hard to track
+- The steps aren't recorded
+- Using multiple independent tools
+- How do we keep track of which file versions people have?
+
 ## What is a Reproducible Analytical Pipeline (RAP)?
 
 <a href="https://the-turing-way.netlify.com/introduction/introduction"> <img src="images/ReusablePipeline.png" width="65%" height="auto" align="right" alt="Source: The Turing Way"> </a>
@@ -55,30 +82,17 @@ knitr::opts_chunk$set(echo = FALSE)
   Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
 </p>
 
-## Let's think about a traditional analysis
-<p class="aligncenter">
-    <img src="images/TraditionalAnalysis.png" width="85%" height="auto" align="center">
-</p>
+## What does a RAP look like?
 
-## What are the issues?
+<img src="images/ReproducibleAnalyticalPipeline-Python.png" width="90%" height="auto" align="center">
 
-<img src="images/TraditionalMess.png" width="50%" height="auto" align="right">
+## What does a RAP look like?
 
-<br>
-
-- Lots of manual steps
-- Hard to reproduce
-- Mistakes are easily made and hard to track
-- The steps aren't recorded
-- How do we keep track of which file versions people have?
-
-## What about a RAP?
-
-<img src="images/ReproducibleAnalyticalPipeline.png" width="90%" height="auto" align="center">
+<img src="images/ReproducibleAnalyticalPipeline-R.png" width="90%" height="auto" align="center">
 
 ## All the functionality in one place
 
-<img src="images/ReproducibleAnalyticalPipeline_expanded.png" width="90%" height="auto" align="center">
+<img src="images/ReproducibleAnalyticalPipeline-R_expanded.png" width="90%" height="auto" align="center">
 
 ## What are the benefits?
 
@@ -114,7 +128,7 @@ No, it is a building block that's essential for data science!
 &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://rstudio.com/"> <img src="images/logos/RStudio_logo.png" width="15%" height="auto"> </a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.python.org/"> <img src="images/logos/Python_logo.png" width="15%" height="auto"> </a>
+<a href="https://www.python.org/"> <img src="images/logos/Python_logo.svg" width="15%" height="auto"> </a>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://www.w3schools.com/sql/sql_intro.asp"> <img src="images/logos/SQL_logo.jfif" width="15%" height="auto"> </a>
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -261,6 +275,10 @@ Work continues across the government to roll out RAP to more projects.
 
 ## Mentorship at the Data Science Campus
 
+<br>
+
+<a href="https://datasciencecampus.ons.gov.uk/"> <img src="images/Mentorship.png" width="35%" height="auto" align="right"> </a>
+
 We aim to raise the aid community's capacity for using Data Science to meet the Sustainable Development Goals.
 
 We'll link up Data Scientist mentors from the campus with mentees. Together we'll set plan out a project, describing:
@@ -269,21 +287,36 @@ We'll link up Data Scientist mentors from the campus with mentees. Together we'l
 - The resources, expertise and time will we'll need
 - And, how we'll work together during the project
 
-<p class="aligncenter">
-    <a href="https://datasciencecampus.ons.gov.uk/"> <img src="images/logos/DataScienceCampus_logo.png" width="70%" height="auto"> </a>
-</p>
+## Mentorship at the Data Science Campus
+
+<br>
+
+<a href="https://datasciencecampus.ons.gov.uk/"> <img src="images/Mentorship.png" width="35%" height="auto" align="right"> </a>
+
+As we plan out our project, we'll be considering those sometimes difficult aspects of RAP:
+
+- IT infrastructure available
+- Data privacy - where and how am I storing my data?
+- Expertise - what training do I need?
+- Legacy systems - what are the barriers to transitioning?
 
 ## Useful resources
 
-The UK goverment RAP [website](https://ukgovdatascience.github.io/rap-website/index.html).
+* The UK goverment RAP [website](https://ukgovdatascience.github.io/rap-website/index.html).
 
-A free RAP [course](https://www.udemy.com/course/reproducible-analytical-pipelines/) to teach you all you need to know.
+* A free RAP [course](https://www.udemy.com/course/reproducible-analytical-pipelines/) to teach you all you need to know.
 
-How the Data Science Campus sets its coding [standards](https://datasciencecampus.github.io/coding-standards/).
+* How the Data Science Campus sets its coding [standards](https://datasciencecampus.github.io/coding-standards/).
 
-A new open-source [book](https://the-turing-way.netlify.com) from the Alan Turing insititute setting out how to do reproducible data science.
+* A new open-source [book](https://the-turing-way.netlify.com) from the Alan Turing insititute setting out how to do reproducible data science.
 
-The github page for this presentation: https://github.com/datasciencecampus/gov-uk-rap-materials.
+* The github page for this presentation and other materials is [here](https://github.com/datasciencecampus/gov-uk-rap-materials).
+
+<br><br>
+
+<p class="aligncenter">
+    <a href="https://datasciencecampus.ons.gov.uk/"> <img src="images/logos/DataScienceCampus_logo.png" width="45%" height="auto"> </a>
+</p>
 
 ## Citing _The Turing Way_
 
