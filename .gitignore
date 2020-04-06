@@ -63,4 +63,5 @@ vignettes/*.pdf
 #*.html
 #*.pdf
 
-
+# Ignore any video files - too large
+*.mp4

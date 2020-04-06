@@ -312,7 +312,7 @@ As we plan out our project, we'll be considering those sometimes difficult aspec
 
 * The github page for this presentation and other materials is [here](https://github.com/datasciencecampus/gov-uk-rap-materials).
 
-<br><br>
+* Get involved in the UK government RAP champion network [here](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/).
 
 <p class="aligncenter">
     <a href="https://datasciencecampus.ons.gov.uk/"> <img src="images/logos/DataScienceCampus_logo.png" width="45%" height="auto"> </a>
