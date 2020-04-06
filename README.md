@@ -11,7 +11,12 @@ A collection of documents describing what a Reproducible Analytical Pipeline is 
 > A Reproducible Analytical Pipeline (RAP) brings together code and data to generate outputs. The RAP pipeline is built within a version control system (e.g. `git`) to create a transparent production process.
 
 ## Resources list
-- [Introduction to RAP presentation](https://github.com/datasciencecampus/gov-uk-rap-materials/raw/master/gov-uk-rap-project-materials.html)
+- [Introduction to RAP presentation](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.html)
+    * A presentation introducing the concept of RAP and why it is useful
+    * Download this `html` document and double click it to view the presentation. Or, view it [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.pdf)
+    * This presentation was built using the `Rmarkdown` `ioslides` presentation template. Take a look at the code [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.Rmd)
+- [Using `RMySQL` R package tutorial](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.nb.html)
+    * A tutorial going through how to use the `RMySQL` package to interact with a `SQL` server directly from R
     * A presentation introducing the concept of RAP and why it is useful
     * Download this `html` document and double click it to view the presentation
-    * This presentation was built using the `Rmarkdown` `ioslides` presentation template. Take a look at the code [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-project-materials.Rmd)
+    * This presentation was built using the `Rmarkdown`. Take a look at teh code [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.Rmd)
