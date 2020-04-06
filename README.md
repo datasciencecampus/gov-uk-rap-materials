@@ -17,6 +17,5 @@ A collection of documents describing what a Reproducible Analytical Pipeline is 
     * This presentation was built using the `Rmarkdown` `ioslides` presentation template. Take a look at the code [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.Rmd)
 - [Using `RMySQL` R package tutorial](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.nb.html)
     * A tutorial going through how to use the `RMySQL` package to interact with a `SQL` server directly from R
-    * A presentation introducing the concept of RAP and why it is useful
     * Download this `html` document and double click it to view the presentation
     * This presentation was built using the `Rmarkdown`. Take a look at teh code [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.Rmd)
