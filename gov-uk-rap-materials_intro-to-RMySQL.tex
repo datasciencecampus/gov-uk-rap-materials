@@ -1,0 +1,462 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Getting Started with RMySQL},
+  pdfauthor={Joseph Crispell},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Getting Started with RMySQL}
+\author{Joseph Crispell}
+\date{17 Apr 2020}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Usually a Reproducible Analytical Pipeline will start by retrieving data
+from a database. Often that database could be a \texttt{SQL} database.
+\href{https://www.mysql.com/}{\texttt{MySQL}} is an open-source
+relational database management system that uses \emph{S}tructured
+\emph{Q}uery \emph{L}anguage (SQL). We can use \texttt{MySQL} to store
+complex data tables that relate to one another.
+
+\texttt{RMySQL} is an R package that we can use to interact with
+\texttt{MySQL}, writing queries, updating data and creating new tables.
+
+The current tutorial aims to give a brief introduction to using
+\texttt{RMySQL} in R. The current content is more-or-less the same as
+the TutorialsPoint
+\href{https://www.tutorialspoint.com/r/r_database.htm}{tutorial}, with a
+few updates and edits to match updates to \texttt{RMySQL}.
+
+\hypertarget{installing-mysql}{%
+\section{\texorpdfstring{Installing
+\texttt{MySQL}}{Installing MySQL}}\label{installing-mysql}}
+
+To get started, you'll ned to install \texttt{MySQL}, here are links for
+the different operating systems:
+
+\begin{itemize}
+\tightlist
+\item
+  Installing on linux systems
+  (\href{https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html}{link}),
+  with extra help
+  \href{https://itsfoss.com/install-mysql-ubuntu/}{here}.
+\item
+  Installing on mac:
+  (\href{https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation.html}{link}),
+  also, I think it comes ready installed! See
+  \href{https://www.thoughtco.com/installing-mysql-on-mac-2693866}{here})
+\item
+  Installing on Windows
+  (\href{https://dev.mysql.com/downloads/installer/}{link}), with extra
+  help
+  \href{https://www.wikihow.com/Install-the-MySQL-Database-Server-on-Your-Windows-PC}{here}
+\end{itemize}
+
+For this tutorial, I worked on a Windows machine and it took me a wee
+while to get MySQL installed properly, so be patient.
+
+\hypertarget{installing-rmysql}{%
+\section{\texorpdfstring{Installing
+\texttt{RMySQL}}{Installing RMySQL}}\label{installing-rmysql}}
+
+Much easier! Just use the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"RMySQL"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Then we can load the library:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(RMySQL)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'RMySQL' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: DBI
+\end{verbatim}
+
+\hypertarget{working-with-rmysql}{%
+\section{\texorpdfstring{Working with
+\texttt{RMySQL}}{Working with RMySQL}}\label{working-with-rmysql}}
+
+\hypertarget{create-a-connection-to-mysql}{%
+\subsection{Create a connection to
+MySQL}\label{create-a-connection-to-mysql}}
+
+We are going to connect to the ``sakila'' database, which comes with the
+\texttt{MySQL} installation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Open a connection to a MySQL database}
+\NormalTok{connection \textless{}{-}}\StringTok{ }\KeywordTok{dbConnect}\NormalTok{(}\KeywordTok{MySQL}\NormalTok{(), }
+                            \DataTypeTok{user=}\StringTok{\textquotesingle{}root\textquotesingle{}}\NormalTok{, }
+                            \DataTypeTok{password=}\KeywordTok{readline}\NormalTok{(}\DataTypeTok{prompt=}\StringTok{"Enter password: "}\NormalTok{), }\CommentTok{\# Doing this as password never stored in easily accessible format now}
+                            \DataTypeTok{dbname=}\StringTok{\textquotesingle{}sakila\textquotesingle{}}\NormalTok{,}
+                            \DataTypeTok{host =} \StringTok{\textquotesingle{}localhost\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# List the tables available in the sakila database}
+\KeywordTok{dbListTables}\NormalTok{(connection)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "actor"      "actor_info" "address"    "category"   "city"      
+## [6] "country"
+\end{verbatim}
+
+\hypertarget{sending-a-query}{%
+\subsection{Sending a query}\label{sending-a-query}}
+
+We can query a table using the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Query the "actor" table to get all the rows}
+\NormalTok{result \textless{}{-}}\StringTok{ }\KeywordTok{dbSendQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"SELECT * FROM actor"}\NormalTok{) }\CommentTok{\# }\AlertTok{NOTE}\CommentTok{: SQL syntax is case{-}insensitive}
+
+\CommentTok{\# Store the first 15 rows of the result in an R data frame object}
+\NormalTok{actors \textless{}{-}}\StringTok{ }\KeywordTok{dbFetch}\NormalTok{(result, }\DataTypeTok{n=}\DecValTok{15}\NormalTok{)}
+
+\CommentTok{\# Remove the unused results}
+\KeywordTok{dbClearResult}\NormalTok{(result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Note that the last line of code (\texttt{dbClearResult(result)}) clears
+the fecched data and closes the query. It is now preferred to query a
+table with the following code, which doesn't leave the query open:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Note {-} you can use single command below to send query and send result as data.frame in one command {-} doesn\textquotesingle{}t leave query open}
+\NormalTok{actors \textless{}{-}}\StringTok{ }\KeywordTok{dbGetQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"SELECT * FROM actor"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Let's take a quick look at the actors table:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(actors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   actor_id first_name    last_name         last_update
+## 1        1   PENELOPE      GUINESS 2006-02-15 04:34:33
+## 2        2       NICK     WAHLBERG 2006-02-15 04:34:33
+## 3        3         ED        CHASE 2006-02-15 04:34:33
+## 4        4   JENNIFER        DAVIS 2006-02-15 04:34:33
+## 5        5     JOHNNY LOLLOBRIGIDA 2006-02-15 04:34:33
+## 6        6      BETTE    NICHOLSON 2006-02-15 04:34:33
+\end{verbatim}
+
+Now, let's try getting the information for actors whose last name is
+``TEMPLE'':
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Note {-} you can use single command below to send query and send result as data.frame in one command {-} doesn\textquotesingle{}t leave query open}
+\NormalTok{actors \textless{}{-}}\StringTok{ }\KeywordTok{dbGetQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"SELECT * FROM actor WHERE last\_name = \textquotesingle{}TEMPLE\textquotesingle{}"}\NormalTok{)}
+
+\CommentTok{\# Print the table}
+\NormalTok{(actors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   actor_id first_name last_name         last_update
+## 1       53       MENA    TEMPLE 2006-02-15 04:34:33
+## 2      149    RUSSELL    TEMPLE 2006-02-15 04:34:33
+## 3      193       BURT    TEMPLE 2006-02-15 04:34:33
+## 4      200      THORA    TEMPLE 2006-02-15 04:34:33
+\end{verbatim}
+
+\hypertarget{creating-a-table}{%
+\subsection{Creating a table}\label{creating-a-table}}
+
+In order to create a \texttt{MySQL} table, we first need to set our
+permissions so that we can input data locally (see
+\href{https://stackoverflow.com/questions/44288358/is-there-a-faster-way-to-upload-data-from-r-to-mysql}{this}
+question for more information):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dbSendQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"SET GLOBAL local\_infile = 1"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <MySQLResult:324305608,0,4>
+\end{verbatim}
+
+With that done, we are going to store the \texttt{mtcars} table on our
+local \texttt{MySQL} server using the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Upload mtcars table onto MySQL server}
+\KeywordTok{dbWriteTable}\NormalTok{(connection, }\StringTok{"mtcars"}\NormalTok{, mtcars[, ], }\DataTypeTok{overwrite=}\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check the table is there}
+\NormalTok{mtcars\_mysql \textless{}{-}}\StringTok{ }\KeywordTok{dbGetQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"SELECT * FROM mtcars"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(mtcars\_mysql)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           row_names  mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## 1         Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## 2     Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## 3        Datsun 710 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## 4    Hornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## 5 Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## 6           Valiant 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+\end{verbatim}
+
+\hypertarget{updating-a-table}{%
+\subsection{Updating a table}\label{updating-a-table}}
+
+We can update a table on our \texttt{MySQL} server by sending a query,
+for example we can use the code below to edit the data for cars with a
+certain horse power:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Update data in the actor info table}
+\KeywordTok{dbSendQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"UPDATE mtcars SET disp = 168.5 WHERE hp = 110"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <MySQLResult:11,0,9>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check the updated table}
+\NormalTok{mtcars\_mysql \textless{}{-}}\StringTok{ }\KeywordTok{dbGetQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"SELECT * FROM mtcars"}\NormalTok{)}
+
+\CommentTok{\# Take a look to see if the data has changed}
+\KeywordTok{head}\NormalTok{(mtcars\_mysql[mtcars\_mysql}\OperatorTok{$}\NormalTok{hp }\OperatorTok{==}\StringTok{ }\DecValTok{110}\NormalTok{, ])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        row_names  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## 1      Mazda RX4 21.0   6 168.5 110 3.90 2.620 16.46  0  1    4    4
+## 2  Mazda RX4 Wag 21.0   6 168.5 110 3.90 2.875 17.02  0  1    4    4
+## 4 Hornet 4 Drive 21.4   6 168.5 110 3.08 3.215 19.44  1  0    3    1
+\end{verbatim}
+
+\hypertarget{inserting-a-row-into-a-table}{%
+\subsection{Inserting a row into a
+table}\label{inserting-a-row-into-a-table}}
+
+Using the code below, we can insert data for a new car into the
+\texttt{mtcars} table on our \texttt{MySQL} server:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Insert a new row into table}
+\KeywordTok{dbSendQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection,}
+            \DataTypeTok{statement=}\StringTok{"INSERT INTO mtcars(row\_names, mpg, cyl, disp, hp, drat, wt, qsec, vs, am, gear, carb) values(\textquotesingle{}New Mazda RX4 Wag\textquotesingle{}, 21, 6, 168.5, 110, 3.9, 2.875, 17.02, 0, 1, 4, 4)"}
+\NormalTok{            )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <MySQLResult:1,0,11>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check the updated table}
+\NormalTok{mtcars \textless{}{-}}\StringTok{ }\KeywordTok{dbGetQuery}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection, }\DataTypeTok{statement=}\StringTok{"SELECT * FROM mtcars"}\NormalTok{)}
+\KeywordTok{tail}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            row_names  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## 28      Lotus Europa 30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## 29    Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## 30      Ferrari Dino 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## 31     Maserati Bora 15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+## 32        Volvo 142E 21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+## 33 New Mazda RX4 Wag 21.0   6 168.5 110 3.90 2.875 17.02  0  1    4    4
+\end{verbatim}
+
+\hypertarget{removing-a-table}{%
+\subsection{Removing a table}\label{removing-a-table}}
+
+We can remove the \texttt{mtcars} table from our \texttt{MySQL} server
+with the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dbSendQuery}\NormalTok{(connection, }\StringTok{\textquotesingle{}drop table if exists mtcars\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <MySQLResult:4,0,13>
+\end{verbatim}
+
+\hypertarget{closing-a-connection-to-the-mysql-server}{%
+\subsection{\texorpdfstring{Closing a connection to the \texttt{MySQL}
+server}{Closing a connection to the MySQL server}}\label{closing-a-connection-to-the-mysql-server}}
+
+To wrap up, we can close our connection to the \texttt{MySQL} server
+using the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dbDisconnect}\NormalTok{(}\DataTypeTok{conn=}\NormalTok{connection)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\hypertarget{the-end--}{%
+\section{The end :-)}\label{the-end--}}
+
+So, that's me done. This tutorial has hopefully got you started with
+using the \texttt{RMySQL} R package. If you haven't already I would
+recommend going and doing some more tutorials about \texttt{MySQL}.
+\href{https://www.tutorialspoint.com/mysql/index.htm}{Here} is a good
+one to start with.
+
+As you'll have noticed, this tutorial has barely scratched the surface
+of using \texttt{MySQL}. It is an extremely powerful language and one
+that will be found in many Reproducible Analytical Pipelines and well
+worth learning about.
+
+\end{document}

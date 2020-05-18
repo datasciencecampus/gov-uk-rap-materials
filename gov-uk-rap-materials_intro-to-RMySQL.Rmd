@@ -8,13 +8,6 @@ output:
     toc: yes
     toc_depth: '2'
     toc_float: yes
-  html_notebook:
-    highlight: haddock
-    number_sections: yes
-    theme: simplex
-    toc: yes
-    toc_depth: 2
-    toc_float: yes
 params: 
   password: "ThisIsNotMyPassword"
 ---

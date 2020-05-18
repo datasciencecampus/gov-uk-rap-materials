@@ -11,7 +11,7 @@
 
 <meta name="author" content="Joseph Crispell" />
 
-<meta name="date" content="2020-03-30" />
+<meta name="date" content="2020-04-17" />
 
 <title>Getting Started with RMySQL</title>
 
@@ -1525,7 +1525,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Getting Started with RMySQL</h1>
 <h4 class="author">Joseph Crispell</h4>
-<h4 class="date">30 Mar 2020</h4>
+<h4 class="date">17 Apr 2020</h4>
 
 </div>
 
@@ -1612,7 +1612,7 @@ actors &lt;- dbGetQuery(conn=connection, statement=&quot;SELECT * FROM actor WHE
 <h2 number="4.3"><span class="header-section-number">4.3</span> Creating a table</h2>
 <p>In order to create a <code>MySQL</code> table, we first need to set our permissions so that we can input data locally (see <a href="https://stackoverflow.com/questions/44288358/is-there-a-faster-way-to-upload-data-from-r-to-mysql">this</a> question for more information):</p>
 <pre class="r"><code>dbSendQuery(conn=connection, statement=&quot;SET GLOBAL local_infile = 1&quot;)</code></pre>
-<pre><code>## &lt;MySQLResult:NA,0,4&gt;</code></pre>
+<pre><code>## &lt;MySQLResult:11,0,4&gt;</code></pre>
 <p>With that done, we are going to store the <code>mtcars</code> table on our local <code>MySQL</code> server using the following code:</p>
 <pre class="r"><code># Upload mtcars table onto MySQL server
 dbWriteTable(connection, &quot;mtcars&quot;, mtcars[, ], overwrite=TRUE)</code></pre>
@@ -1633,7 +1633,7 @@ head(mtcars_mysql)</code></pre>
 <p>We can update a table on our <code>MySQL</code> server by sending a query, for example we can use the code below to edit the data for cars with a certain horse power:</p>
 <pre class="r"><code># Update data in the actor info table
 dbSendQuery(conn=connection, statement=&quot;UPDATE mtcars SET disp = 168.5 WHERE hp = 110&quot;)</code></pre>
-<pre><code>## &lt;MySQLResult:11,0,9&gt;</code></pre>
+<pre><code>## &lt;MySQLResult:361886304,0,9&gt;</code></pre>
 <pre class="r"><code># Check the updated table
 mtcars_mysql &lt;- dbGetQuery(conn=connection, statement=&quot;SELECT * FROM mtcars&quot;)
 
@@ -1667,7 +1667,7 @@ tail(mtcars)</code></pre>
 <h2 number="4.6"><span class="header-section-number">4.6</span> Removing a table</h2>
 <p>We can remove the <code>mtcars</code> table from our <code>MySQL</code> server with the following code:</p>
 <pre class="r"><code>dbSendQuery(connection, &#39;drop table if exists mtcars&#39;)</code></pre>
-<pre><code>## &lt;MySQLResult:327831960,0,13&gt;</code></pre>
+<pre><code>## &lt;MySQLResult:1,0,13&gt;</code></pre>
 </div>
 <div id="closing-a-connection-to-the-mysql-server" class="section level2" number="4.7">
 <h2 number="4.7"><span class="header-section-number">4.7</span> Closing a connection to the <code>MySQL</code> server</h2>
