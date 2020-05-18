@@ -1,13 +1,13 @@
 id,content,title,start,end,style,group
-1,WP 1: Create timeline for project,Create a timeline setting out how I will create a tutorial explaining how to create GANTT chart in R,18/05/2020 15:30,18/05/2020 16:00,"background-color: rgb(202,0,32);",Preparation
-2,WP 2: Create tutorial for GANTT,Create Rmarkdown presentation describing how to create GANTT in R,19/05/2020 10:00,19/05/2020 12:00,"background-color: rgb(244,165,130);",Preparation
+1,WP 1: Create timeline for project,Create a timeline setting out how I will create a tutorial explaining how to create GANTT chart in R,20/05/2020 08:00,20/05/2020 08:30,"background-color: rgb(202,0,32);",Preparation
+2,WP 2: Create tutorial for GANTT,Create Rmarkdown presentation describing how to create GANTT in R,20/05/2020 08:30,20/05/2020 10:25,"background-color: rgb(244,165,130);",Preparation
 3,WP 3: Present GANTT tutorial,Present my creating GANTT in R tutorial,20/05/2020 10:30,20/05/2020 11:10,"background-color: rgb(146,197,222);",Presenting
-4,O 1.1: Create timeline,Timeline will set out how I will create tutorial,18/05/2020 15:30,18/05/2020 16:00,"background-color: rgb(202,0,32);",Preparation
-6,D 1.1: Share timeline,Push timeline to github for anyone who is interested to view,18/05/2020 16:00,NA,"color: rgb(202,0,32); background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0);",Preparation
-7,O 2.1: Create project GANTT chart using draft timeline,Create GANTT for tutorial timeline in R,19/05/2020 10:00,19/05/2020 10:10,"background-color: rgb(244,165,130);",Preparation
-8,O 2.2: Create presentation,Create Rmarkdown presentation describing how to create GANTT in R,19/05/2020 10:10,19/05/2020 12:00,"background-color: rgb(244,165,130);",Preparation
-9,D 2.3: Publish on github,Push presentation to github for anyone who is interested to view,19/05/2020 11:45,NA,"color: rgb(244,165,130); background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0);",Preparation
-10,D 3.1: Share slides,Push presentation slides as PDF to github for anyone who is interested to view,19/05/2020 12:00,NA,"color: rgb(146,197,222); background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0);",Presenting
+4,O 1.1: Create timeline,Timeline will set out how I will create tutorial,20/05/2020 08:00,20/05/2020 08:30,"background-color: rgb(202,0,32);",Preparation
+6,D 1.1: Share timeline,Push timeline to github for anyone who is interested to view,20/05/2020 08:30,NA,"color: rgb(202,0,32); background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0);",Preparation
+7,O 2.1: Create project GANTT chart using draft timeline,Create GANTT for tutorial timeline in R,20/05/2020 08:30,20/05/2020 08:40,"background-color: rgb(244,165,130);",Preparation
+8,O 2.2: Create presentation,Create Rmarkdown presentation describing how to create GANTT in R,20/05/2020 08:40,20/05/2020 10:25,"background-color: rgb(244,165,130);",Preparation
+9,D 2.3: Publish on github,Push presentation to github for anyone who is interested to view,20/05/2020 09:00,NA,"color: rgb(244,165,130); background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0);",Preparation
+10,D 3.1: Share slides,Push presentation slides as PDF to github for anyone who is interested to view,20/05/2020 10:25,NA,"color: rgb(146,197,222); background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0);",Presenting
 11,O 3.1: Present,Present creating GANTT chart in R tutorial at Show & Tell,20/05/2020 10:30,20/05/2020 11:10,"background-color: rgb(146,197,222);",Presenting
 12,D 3.3: Share video,Share the recording of the Show & Tell presentation on teams for anyone who missed,20/05/2020 11:10,NA,"color: rgb(146,197,222); background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0);",Presenting
 ,,,,,,
