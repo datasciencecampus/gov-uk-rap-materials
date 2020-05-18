@@ -65,3 +65,7 @@ vignettes/*.pdf
 
 # Ignore any video files - too large
 *.mp4
+
+# Ignore the GANTT build files
+CreatingAGantt/*.html
+CreatingAGantt/GanttTutorial_gantt_files/*
