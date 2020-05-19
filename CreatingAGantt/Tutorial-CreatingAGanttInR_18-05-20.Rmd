@@ -10,20 +10,40 @@ output:
     toc_float: yes
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r set-options, echo=FALSE, cache=FALSE}
+options(width=800)
+```
+
 ```{r preparation, include=FALSE}
 # Load libraries
+library(knitr) # Nice tables
+library(kableExtra) # Extra nice tables
 library(timevis) # Wrapper for javascript gantt library: https://visjs.org/
 library(htmlwidgets) # Creating html widgets
 library(tufte) # Block quotes
 
 # Set the path
 path <- file.path("C:", "Users", "j-crispell", "Repositories", "gov-uk-rap-materials", "CreatingAGantt")
+```
 
+```{r functions, include=FALSE}
+prettyTable <- function(table){
+  
+  # Use the kable function to create a nicer formatted table
+  kable(table) %>%
+  
+    # Set the format
+    kable_styling(bootstrap_options="striped", # Set the colour of rows
+                  full_width=FALSE, # Make the table not stretch to fit the page
+                  position="left") %>% # Position the table on the left
+  
+    # Make the table scrollable
+    scroll_box(height = "400px")
+}
 ```
 
 ```{r load gantt, echo=FALSE}
@@ -57,15 +77,117 @@ saveWidget(timevis(gantt, groups=groups, options=options, width="100%", showZoom
            file, selfcontained=FALSE) # Unfortunately self-contained doesn't work
 ```
 
-## What is a GANTT chart
+# What is a gantt chart
 
-> A horizontal bar chart illustrating a project schedule
->
-> `r tufte::quote_footer('Conceived by Henry Gantt in 1910')` 
+It's A horizontal bar chart illustrating a project schedule. It was first used by Henry Gantt in ~1910.
 
-```{r show gantt, echo=FALSE}
+Here is a gantt chart mapping how I will create the current tutorial:
+
+```{r show gantt, echo=FALSE, fig.width=10}
 
 # Plot the GANTT chart
 timevis(gantt, groups=groups, options=options)
 ```
 
+The above gantt chart sets out the work packages (`WP`) and their associated tasks (`T`) and deliverables (`D`).
+
+# Creating a gantt chart in R
+
+The current tutorial will describe how to create an interactive html-based gantt chart in R. We'll be using the `timevis` R package (really nice demo [here](https://daattali.com/shiny/timevis-demo/)). `timevis` is a wrapper for the `vis.js` javascript visulisation library (described [here](https://visjs.org/)).
+
+## Create the timeline table
+
+Any gantt chart needs a table that sets out the timings and duration of each element in the chart:
+
+```{r show input table, echo=FALSE}
+prettyTable(gantt[, c("content", "start", "end")])
+```
+
+<br>
+
+Work packages (`WP`s) and tasks (`T`s) have both a start and end date/time and take a period of time. Deliverables (`D`s) have a start date - the due date for the output.
+
+For my gantt chart, I have included a few more columns to set some style and groupings that `timevis` can use:
+
+```{r show full input table, echo=FALSE, fig.width=10}
+prettyTable(gantt)
+```
+
+<br>
+
+Here is a brief description of each of the columns:
+
+- **id**: a unique identifying number for each element
+- **content**: text to be shown in gantt
+- **title**: text to be shown in tooltip when hovering
+- **start**: date/time element is due to start
+- **end**: date/time element is due to end
+- **style** - `css` code used to set style of element on gantt
+- **group** - categorical column dividing elements into groups
+
+I created the above table in excel and saved as `csv` formatted text file to read into R.
+
+## Read in timeline table into R and process
+
+We can read in the timeline table with the following code:
+
+```{r load timeline table, eval=FALSE, echo=TRUE}
+# Read in the GANTT table
+file <- file.path(path, "GanttTutorialTimeline_18-05-20.csv")
+gantt <- read.table(file, header=TRUE, sep=",", stringsAsFactors=FALSE)
+```
+
+<br>
+Next, we can note the date columns and remove `NA` rows (excel kept inserting these for me!).
+
+```{r note date columns and remove NA rows, eval=FALSE, echo=TRUE}
+# Set the date formats
+gantt$start <- as.POSIXct(gantt$start, format="%d/%m/%Y %H:%M")
+gantt$end <- as.POSIXct(gantt$end, format="%d/%m/%Y %H:%M")
+
+# Remove NA rows
+naRows <- which(is.na(gantt$id))
+if(length(naRows) > 0){
+  gantt <- gantt[-naRows, ]
+}
+```
+
+<br>
+
+We can recognise the grouping column and use some `html` to set some styles for their labels:
+
+```{r note the group column, eval=FALSE, echo=TRUE}
+# Note the groupings in the gannt chart
+groups <- c("Preparation", "Presenting")
+style <- c("<b>Preparation</b>", "<b>Presenting</b>")
+groups <- data.frame(id=groups, content=style)
+```
+
+## Plotting the gantt
+
+Now we can visualise our gantt chart in R with the following code:
+
+```{r visualise gantt, eval=TRUE, echo=TRUE, fig.width=10}
+# Set the options for timevis
+options <- list(editable=FALSE, align="center", multiselect=TRUE)
+
+# Plot the GANTT chart
+timevis(gantt, groups=groups, options=options)
+```
+
+We can also save the gantt as an `html` file:
+```{r save gantt as html, eval=FALSE, echo=TRUE}
+# Save the timeline to file
+file <- file.path(path, "GanttTutorial_gantt.html")
+saveWidget(timevis(gantt, groups=groups, options=options, 
+                   width="100%", showZoom=TRUE), 
+           file, selfcontained=FALSE) # Unfortunately self-contained doesn't work well for me
+```
+
+# Wrapping up
+
+So `timevis` is a cool R package to help us create interactive gantt charts in R. Gantt charts are useful for planning projects and monitoring their progress.
+
+The R code used in the current tutorial for creating a gantt is available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/CreatingAGantt/CreateGanttChart_18-05-20.R).
+
+Hope this is useful!
