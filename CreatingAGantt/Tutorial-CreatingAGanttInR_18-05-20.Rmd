@@ -2,11 +2,12 @@
 title: "Creating a GANTT chart in R"
 author: "Joseph Crispell"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
-output: 
-  ioslides_presentation:
-    logo: images/logos/DataScienceCampus_logo_square.png
-    widescreen: true
-    css: css/custom.css
+output:
+  html_document:
+    number_sections: true
+    toc: yes
+    toc_depth: '2'
+    toc_float: yes
 ---
 
 
@@ -14,27 +15,57 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown
+```{r preparation, include=FALSE}
+# Load libraries
+library(timevis) # Wrapper for javascript gantt library: https://visjs.org/
+library(htmlwidgets) # Creating html widgets
+library(tufte) # Block quotes
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Set the path
+path <- file.path("C:", "Users", "j-crispell", "Repositories", "gov-uk-rap-materials", "CreatingAGantt")
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
 ```
 
-## Slide with Plot
+```{r load gantt, echo=FALSE}
+# Read in the GANTT table
+file <- file.path(path, "GanttTutorialTimeline_18-05-20.csv")
+gantt <- read.table(file, header=TRUE, sep=",", stringsAsFactors=FALSE)
 
-```{r pressure}
-plot(pressure)
+# Set the date formats
+gantt$start <- as.POSIXct(gantt$start, format="%d/%m/%Y %H:%M")
+gantt$end <- as.POSIXct(gantt$end, format="%d/%m/%Y %H:%M")
+
+# Remove NA rows
+naRows <- which(is.na(gantt$id))
+if(length(naRows) > 0){
+  gantt <- gantt[-naRows, ]
+}
+```
+
+```{r create gantt html, echo=FALSE}
+# Note the groupings in the gannt chart
+groups <- c("Preparation", "Presenting")
+style <- c("<b>Preparation</b>", "<b>Presenting</b>")
+groups <- data.frame(id=groups, content=style)
+
+# Set the options for timevis
+options <- list(editable=FALSE, align="center", multiselect=TRUE)
+
+# Save the timeline to file
+file <- file.path(path, "GanttTutorial_gantt.html")
+saveWidget(timevis(gantt, groups=groups, options=options, width="100%", showZoom=TRUE), 
+           file, selfcontained=FALSE) # Unfortunately self-contained doesn't work
+```
+
+## What is a GANTT chart
+
+> A horizontal bar chart illustrating a project schedule
+>
+> `r tufte::quote_footer('Conceived by Henry Gantt in 1910')` 
+
+```{r show gantt, echo=FALSE}
+
+# Plot the GANTT chart
+timevis(gantt, groups=groups, options=options)
 ```
 
