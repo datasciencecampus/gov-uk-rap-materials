@@ -79,9 +79,7 @@ saveWidget(timevis(gantt, groups=groups, options=options, width="100%", showZoom
 
 # What is a gantt chart
 
-It's A horizontal bar chart illustrating a project schedule. It was first used by Henry Gantt in ~1910.
-
-Here is a gantt chart mapping how I will create the current tutorial:
+It's a horizontal bar chart illustrating a project schedule. It was first used by Henry Gantt in ~1910. Here is a gantt chart mapping how I will create the current tutorial:
 
 ```{r show gantt, echo=FALSE, fig.width=10}
 
@@ -125,7 +123,7 @@ Here is a brief description of each of the columns:
 - **style** - `css` code used to set style of element on gantt
 - **group** - categorical column dividing elements into groups
 
-I created the above table in excel and saved as `csv` formatted text file to read into R.
+I created the above table in excel and saved as `csv` formatted text file to read into R. For setting the styles with `css` code take alook at [this](https://www.w3schools.com/html/html_css.asp) tutorial.
 
 ## Read in timeline table into R and process
 
