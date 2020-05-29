@@ -1,0 +1,64 @@
+---
+title: "Make Git Happen"
+author: "Joseph Crispell"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+  ioslides_presentation:
+    logo: images/logos/DataScienceCampus_logo_square.png
+    widescreen: true
+    css: css/custom.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<!-- Extra custom code to add "OFFICIAL" into the header -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $('slide:not(.title-slide, .backdrop, .segue)').append('<header label=\"OFFICIAL\"></header>');    
+    })
+</script>
+
+<style>
+  header:after {
+    content: attr(label);
+    font-size: 12pt;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    line-height: 1.9;
+  }
+</style>
+
+<!-- END custom code block for header -->
+
+<!-- Extra custom code for footnotes - taken from https://stackoverflow.com/questions/42690955/how-to-insert-footnotes-in-ioslides-presentations-using-rmarkdown -->
+
+## What is git?
+
+"You use Git to take snapshots of all the files in a folder."
+
+_Alice Bartlett_
+
+<br>
+
+<p class="aligncenter">
+    <img src="images/SnapshotOfFolder.png" width="50%" height="auto">
+</p>
+
+## Three key concepts
+
+- Repository - your project folder
+- Commit - a snapshot of your folder
+- Branches - we'll get to these! `r emo::ji("wink")`
+
+## Useful resources
+
+- Introduction to GitHub presentation ([slides](https://speakerdeck.com/alicebartlett/git-for-humans) and [video](https://www.youtube.com/watch?v=eWxxfttcMts))
+- Detailed book about git, GitHub and R ([here](https://happygitwithr.com/))
+- Detailed overview of RStudio, git and GitHub ([here](http://r-pkgs.had.co.nz/git.html))
+- A game to help us think about git branches ([here](https://learngitbranching.js.org/))
