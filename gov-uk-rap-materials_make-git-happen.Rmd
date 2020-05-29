@@ -1,5 +1,5 @@
 ---
-title: "Make Git Happen"
+title: "Make `git` happen"
 author: "Joseph Crispell"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output:
@@ -64,7 +64,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - **Repository** - your project folder
 - **Commit** - a snapshot of your folder
-- **Branch** - we'll get to these! `r emo::ji("wink")`
+- **Branch** - working versions of your folder
 
 ## Three key concepts
 
@@ -78,15 +78,41 @@ knitr::opts_chunk$set(echo = FALSE)
   * And `pull` to retrieve an updated snapshot
 - **Branch** - we'll get to these! `r emo::ji("wink")`
 
-## So let's get started
+## Installing `git`
+
+<img src="images/logos/git_logo.png" width="40%" height="auto" align="right">
+
+<br>
+
+- For Windows, download the executable [here](https://git-scm.com/download/win)
+- On a mac type `git --version` in your terminal
+- On linux machines type `sudo apt install git-all` in your terminal
+
+<br>
+
+_Note that you need admin rights on your computer, without these you'll need to request an install. Send your IT to this [page](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for instructions_
+
+## Creating a repository
+
+
+
+## Linking to RStudio
 
 <img src="images/logos/RStudio_logo.png" width="35%" height="auto" align="right">
 
 <br><br>
 
-- Working with `git` and GitHub using RStudio
-- Can use terminal but we'll start with RStudio
-- Here are a few screenshots to get us started
+- Rstudio does a lot of the hard work for you
+- You can use the terminal, if you like
+- Here are some screenshots showing you how to link a GitHub repository to RStudio
+
+## {data-background=images/LoadGitHubProjectInRStudio.gif data-background-size=100%}
+
+## Create a branch
+
+## Your first commit
+
+## Make `git` pretty
 
 ## Useful resources
 
@@ -94,3 +120,4 @@ knitr::opts_chunk$set(echo = FALSE)
 - Detailed book about git, GitHub and R ([here](https://happygitwithr.com/))
 - Detailed overview of RStudio, git and GitHub ([here](http://r-pkgs.had.co.nz/git.html))
 - A game to help us think about git branches ([here](https://learngitbranching.js.org/))
+- ONS GitHub introductory course ([here](https://github.com/datasciencecampus/version-control-with-git-github))
