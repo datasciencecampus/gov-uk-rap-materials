@@ -42,21 +42,51 @@ knitr::opts_chunk$set(echo = FALSE)
 
 "You use Git to take snapshots of all the files in a folder."
 
-_Alice Bartlett_
+[_Alice Bartlett_](https://speakerdeck.com/alicebartlett/git-for-humans)
 
 <br>
 
 <p class="aligncenter">
-    <img src="images/SnapshotOfFolder.png" width="50%" height="auto">
+    <img src="images/SnapshotOfFolder.png" width="60%" height="auto">
 </p>
 
-## {data-background=images/FileVersionControl.png data-background-size=80%}
+## Snapshots in time
+
+<p class="aligncenter">
+    <img src="images/FileVersionControl.png" width="100%" height="auto">
+</p>
 
 ## Three key concepts
 
-- Repository - your project folder
-- Commit - a snapshot of your folder
-- Branches - we'll get to these! `r emo::ji("wink")`
+<img src="images/VersionControl_vertical.png" width="15%" height="auto" align="right">
+
+<br>
+
+- **Repository** - your project folder
+- **Commit** - a snapshot of your folder
+- **Branch** - we'll get to these! `r emo::ji("wink")`
+
+## Three key concepts
+
+<img src="images/VersionControl_vertical.png" width="15%" height="auto" align="right">
+
+<br>
+
+- **Repository** - your project folder
+- **Commit** - a snapshot of your folder
+  * We use `push` to send the snapshots online
+  * And `pull` to retrieve an updated snapshot
+- **Branch** - we'll get to these! `r emo::ji("wink")`
+
+## So let's get started
+
+<img src="images/logos/RStudio_logo.png" width="35%" height="auto" align="right">
+
+<br><br>
+
+- Working with `git` and GitHub using RStudio
+- Can use terminal but we'll start with RStudio
+- Here are a few screenshots to get us started
 
 ## Useful resources
 
