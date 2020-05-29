@@ -50,6 +50,8 @@ _Alice Bartlett_
     <img src="images/SnapshotOfFolder.png" width="50%" height="auto">
 </p>
 
+## {data-background=images/FileVersionControl.png data-background-size=80%}
+
 ## Three key concepts
 
 - Repository - your project folder
