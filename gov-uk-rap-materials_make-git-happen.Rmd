@@ -78,13 +78,13 @@ knitr::opts_chunk$set(echo = FALSE)
   * And `pull` to retrieve an updated snapshot
 - **Branch** - we'll get to these! `r emo::ji("wink")`
 
-## Working `git`
+## Work `git`!
 
 <p class="aligncenter">
     <img src="images/WorkingWithGit.gif" width="100%" height="auto">
 </p>
 
-## Working `git`
+## Work `git`!
 
 <p class="aligncenter">
     <img src="images/WorkingWithGit_12.png" width="100%" height="auto">
@@ -102,15 +102,23 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <br>
 
-_Note that you need admin rights on your computer, without these you'll need to request an install. Send your IT to this [page](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for instructions_
+_Note that you may need admin rights on your computer, without these you'll need to request an install._
 
 ## Create a GitHub account
 
+<img src="images/logos/github_logo_octo.png" width="35%" height="auto" align="right">
 
+<br>
+
+GitHub offers a range of account types. A free account is available for organisations and individuals.
+
+EVvn if you're in an institution, create a personal GitHub account to keep track of you own work.
+
+You'll find more information, and links for creating an account, [here](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).
 
 ## Create a repository
 
-
+[Add content here]
 
 ## Linking to RStudio
 
@@ -124,15 +132,24 @@ _Note that you need admin rights on your computer, without these you'll need to 
 
 ## {data-background=images/LoadGitHubProjectInRStudio.gif data-background-size=100%}
 
-## My ideal working day
+## `git` working!
+
+[Add content here]
 
 ## `git` the most out of GitHub
 
+<img src="images/logos/github_logo.png" width="35%" height="auto" align="right">
+
+<br>
+
 - Manage your work on a project using the [Projects](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) tab
-- Track and document your tasks using [issues](https://help.github.com/en/github/managing-your-work-on-github/managing-your-work-with-issues) [wiki](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards)
+- Track your tasks using [issues](https://help.github.com/en/github/managing-your-work-on-github/managing-your-work-with-issues) 
+- Document your project using a [wiki](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards)
 - Host a [website](https://guides.github.com/features/pages/) on GitHub, check out these jekyl [themes](http://jekyllthemes.org/)
 
 ## Useful resources
+
+<img src="images/logos/git_logo.jpg" width="35%" height="auto" align="right">
 
 - Introduction to GitHub presentation ([slides](https://speakerdeck.com/alicebartlett/git-for-humans) and [video](https://www.youtube.com/watch?v=eWxxfttcMts))
 - All you need to know about GitHub in their [help](https://help.github.com/en) pages
