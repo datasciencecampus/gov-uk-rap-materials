@@ -92,7 +92,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 _Note that you need admin rights on your computer, without these you'll need to request an install. Send your IT to this [page](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for instructions_
 
-## Creating a repository
+## Create a GitHub account
+
+
+
+## Create a repository
 
 
 
@@ -108,15 +112,18 @@ _Note that you need admin rights on your computer, without these you'll need to 
 
 ## {data-background=images/LoadGitHubProjectInRStudio.gif data-background-size=100%}
 
-## Create a branch
+## My ideal working day
 
-## Your first commit
+## `git` the most out of GitHub
 
-## Make `git` pretty
+- Manage your work on a project using the [Projects](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) tab
+- Track and document your tasks using [issues](https://help.github.com/en/github/managing-your-work-on-github/managing-your-work-with-issues) [wiki](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards)
+- Host a [website](https://guides.github.com/features/pages/) on GitHub, check out these jekyl [themes](http://jekyllthemes.org/)
 
 ## Useful resources
 
 - Introduction to GitHub presentation ([slides](https://speakerdeck.com/alicebartlett/git-for-humans) and [video](https://www.youtube.com/watch?v=eWxxfttcMts))
+- All you need to know about GitHub in their [help](https://help.github.com/en) pages
 - Detailed book about git, GitHub and R ([here](https://happygitwithr.com/))
 - Detailed overview of RStudio, git and GitHub ([here](http://r-pkgs.had.co.nz/git.html))
 - A game to help us think about git branches ([here](https://learngitbranching.js.org/))
