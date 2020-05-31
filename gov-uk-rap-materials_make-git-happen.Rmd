@@ -78,6 +78,18 @@ knitr::opts_chunk$set(echo = FALSE)
   * And `pull` to retrieve an updated snapshot
 - **Branch** - we'll get to these! `r emo::ji("wink")`
 
+## Working `git`
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit.gif" width="100%" height="auto">
+</p>
+
+## Working `git`
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit_12.png" width="100%" height="auto">
+</p>
+
 ## Installing `git`
 
 <img src="images/logos/git_logo.png" width="40%" height="auto" align="right">
