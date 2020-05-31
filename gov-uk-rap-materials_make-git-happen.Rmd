@@ -178,7 +178,18 @@ You'll find more information, and links for creating an account, [here](https://
 
 ## Create a repository
 
-[Add content here]
+- Follow the instructions [here](https://help.github.com/en/enterprise/2.16/user/github/getting-started-with-github/create-a-repo) to create your first repository
+- Some key files to include:
+
+  `README` - ideally format this as a markdown `md` file (more info [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes) and [here](https://github.com/18F/open-source-guide/blob/18f-pages/pages/making-readmes-readable.md))<br>
+  
+  `LICENSE` - how you want people to re-use your code ([info](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository))<br>
+  
+  `.gitignore` - names of any files in your project you don't want on GitHub ([templates](https://github.com/github/gitignore/blob/master/README.md))<br>
+  
+<p class="aligncenter">
+    <img src="images/VersionControl_withoutGitLogo.png" width="75%" height="auto">
+</p>
 
 ## Linking to RStudio
 
