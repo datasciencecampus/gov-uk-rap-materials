@@ -81,13 +81,73 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Work `git`!
 
 <p class="aligncenter">
-    <img src="images/WorkingWithGit.gif" width="100%" height="auto">
+    <img src="images/WorkingWithGit/WorkingWithGit_1.png" width="100%" height="auto">
 </p>
 
 ## Work `git`!
 
 <p class="aligncenter">
-    <img src="images/WorkingWithGit_12.png" width="100%" height="auto">
+    <img src="images/WorkingWithGit/WorkingWithGit_2.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_3.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_4.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_5.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_6.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_7.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_8.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_9.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_10.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_11.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_12.png" width="100%" height="auto">
 </p>
 
 ## Installing `git`
@@ -112,7 +172,7 @@ _Note that you may need admin rights on your computer, without these you'll need
 
 GitHub offers a range of account types. A free account is available for organisations and individuals.
 
-EVvn if you're in an institution, create a personal GitHub account to keep track of you own work.
+Even if you're in an institution, create a personal GitHub account to keep track of you own work.
 
 You'll find more information, and links for creating an account, [here](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).
 
@@ -130,7 +190,18 @@ You'll find more information, and links for creating an account, [here](https://
 - You can use the terminal, if you like
 - Here are some screenshots showing you how to link a GitHub repository to RStudio
 
-## {data-background=images/LoadGitHubProjectInRStudio.gif data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_1.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_2.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_3.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_4.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_5.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_6.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_7.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_8.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_9.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_10.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_11.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_12.png data-background-size=100%}
 
 ## `git` working!
 
