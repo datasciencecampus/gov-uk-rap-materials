@@ -6,11 +6,16 @@ output:
   ioslides_presentation:
     logo: images/logos/DataScienceCampus_logo_square.png
     widescreen: true
-    css: css/custom.css
+    css: 
+      css/custom.css
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r load required libraries, include=FALSE}
+library(kableExtra) # Extra nice tables
 ```
 
 <!-- Extra custom code to add "OFFICIAL" into the header -->
@@ -239,3 +244,45 @@ You'll find more information, and links for creating an account, [here](https://
 - Detailed overview of RStudio, git and GitHub ([here](http://r-pkgs.had.co.nz/git.html))
 - A game to help us think about git branches ([here](https://learngitbranching.js.org/))
 - ONS GitHub introductory course ([here](https://github.com/datasciencecampus/version-control-with-git-github))
+
+## `git` glossary
+
+```{r}
+
+# Create a glossary table
+glossary <- list(
+  "git status"="Check current status of local repository - is it up to date?",
+  "git branch"="List existing branches",
+  "git branch [branchName]"="Create new branch",
+  "git branch -d [branchName]"="Delete branch",
+  "git checkout [branchName]"="Switch to branch",
+  "git push -u [branchName]"="Push a branch online",
+  "git add [FileName]"="Stage file for committing",
+  "git commit -m [message]"="Commit staged changes to GitHub. Always add meaningful message.",
+  "git push"="Push committed changes to GitHub",
+  "git pull"="Pull changes from GitHub to local repository",
+  "git rm [fileName]"="Remove file and record",
+  "git mv [fileName]"="Move file and version history within repository"
+)
+
+# Create a dataframe from glossary list
+glossaryTable <- data.frame("Command"=paste0("`", names(glossary), "`"),
+                            "Definition"=unlist(glossary),
+                            row.names=seq_along(glossary), stringsAsFactors=FALSE)
+
+# Force row colours
+options("kableExtra.html.bsTable"=TRUE)
+
+# Create nice html visualisation
+kable(glossaryTable, format="html") %>%
+  
+  # Set the format
+  kable_styling(bootstrap_options="striped", # Set the colour of rows
+                full_width=FALSE, # Make the table not stretch to fit the page
+                position="left", # Position the table on the left
+                font_size=15) %>% # Change the font size
+  
+  # Make the table scrollable
+  scroll_box(height = "450px")
+```
+
