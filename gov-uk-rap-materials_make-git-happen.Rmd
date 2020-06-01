@@ -61,6 +61,12 @@ library(kableExtra) # Extra nice tables
     <img src="images/FileVersionControl.png" width="100%" height="auto">
 </p>
 
+## Snapshots in time
+
+<p class="aligncenter">
+    <img src="images/gov-uk-rap-materials_make-git-happen.png" width="70%" height="auto">
+</p>
+
 ## Three key concepts
 
 <img src="images/VersionControl_vertical.png" width="15%" height="auto" align="right">
@@ -69,7 +75,7 @@ library(kableExtra) # Extra nice tables
 
 - **Repository** - your project folder
 - **Commit** - a snapshot of your folder
-- **Branch** - working versions of your folder
+- **Branch** - a working version of your folder
 
 ## Three key concepts
 
@@ -81,7 +87,7 @@ library(kableExtra) # Extra nice tables
 - **Commit** - a snapshot of your folder
   * We use `push` to send the snapshots online
   * And `pull` to retrieve an updated snapshot
-- **Branch** - we'll get to these! `r emo::ji("wink")`
+- **Branch** - a working version of your folder
 
 ## Work `git`!
 
@@ -155,6 +161,12 @@ library(kableExtra) # Extra nice tables
     <img src="images/WorkingWithGit/WorkingWithGit_12.png" width="100%" height="auto">
 </p>
 
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_13.png" width="100%" height="auto">
+</p>
+
 ## Installing `git`
 
 <img src="images/logos/git_logo.png" width="40%" height="auto" align="right">
@@ -219,10 +231,6 @@ You'll find more information, and links for creating an account, [here](https://
 ## {data-background=images/RStudioAndGit/RStudioAndGit_11.png data-background-size=100%}
 ## {data-background=images/RStudioAndGit/RStudioAndGit_12.png data-background-size=100%}
 
-## `git` working!
-
-[Add content here]
-
 ## `git` the most out of GitHub
 
 <img src="images/logos/github_logo.png" width="35%" height="auto" align="right">
@@ -247,7 +255,7 @@ You'll find more information, and links for creating an account, [here](https://
 
 ## `git` glossary
 
-```{r}
+```{r create glossary table, echo=FALSE}
 
 # Create a glossary table
 glossary <- list(
