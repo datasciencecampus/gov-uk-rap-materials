@@ -239,6 +239,7 @@ You'll find more information, and links for creating an account, [here](https://
 
 - Manage your work on a project using the [Projects](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) tab
 - Track your tasks using [issues](https://help.github.com/en/github/managing-your-work-on-github/managing-your-work-with-issues) 
+- Use your README to describe your project (more info [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes) and [here](https://github.com/18F/open-source-guide/blob/18f-pages/pages/making-readmes-readable.md))
 - Document your project using a [wiki](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards)
 - Host a [website](https://guides.github.com/features/pages/) on GitHub, check out these jekyl [themes](http://jekyllthemes.org/)
 
