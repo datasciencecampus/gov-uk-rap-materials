@@ -265,7 +265,7 @@ glossary <- list(
   "git branch [branchName]"="Create new branch",
   "git branch -d [branchName]"="Delete branch",
   "git checkout [branchName]"="Switch to branch",
-  "git push -u [branchName]"="Push a branch online",
+  "git push -u origin [branchName]"="Push a branch online",
   "git add [FileName]"="Stage file for committing",
   "git commit -m [message]"="Commit staged changes to GitHub. Always add meaningful message.",
   "git push"="Push committed changes to GitHub",
