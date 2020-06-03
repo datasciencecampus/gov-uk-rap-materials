@@ -1,0 +1,74 @@
+---
+title: "GitHub glossary"
+author: "<a href=\"https://github.com/JosephCrispell\" style=\"color:inherit\">Joseph Crispell</a>"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed # Adds the source code as a popup
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load libraries, include=FALSE}
+library(kableExtra) # Extra nice tables
+```
+
+```{r functions, include=FALSE}
+prettyTable <- function(table){
+  
+  # Force row colours
+  options("kableExtra.html.bsTable"=TRUE)
+
+  # Create nice html visualisation
+  kable(table, format="html") %>%
+  
+    # Set the format
+    kable_styling(bootstrap_options="striped", # Set the colour of rows
+                  full_width=FALSE, # Make the table not stretch to fit the page
+                  position="left", # Position the table on the left
+                  font_size=15) %>% # Change the font size
+  
+    # Make the table scrollable
+    scroll_box(height = "100%")
+}
+```
+
+
+```{r read glossary table, echo=FALSE}
+
+# Read in the glossary table
+glossary <- read.csv("git-command-glossary.csv")
+
+# Wrap the command column in code apostrophes
+glossary$Command <- paste0("`", glossary$Command, "`")
+```
+
+```{r read resources table, echo=FALSE}
+
+# Read in the glossary table
+resources <- read.csv("git-resources.csv")
+
+# Use resource name and url to make hyperlink in rmarkdown code
+resources$Link <- paste0("[", resources$Name, "](", resources$url, ")")
+```
+
+Column {data-width=50%}
+-----------------------------------------------------------------------
+
+### A `git` glossary of useful commands and what they do
+
+```{r visualise glossary, echo=FALSE}
+prettyTable(glossary)
+```
+
+Column {data-width=50%}
+-----------------------------------------------------------------------
+
+### Some useful resources
+
+```{r visualise resources, echo=FALSE}
+prettyTable(resources[, c("Link", "Description")])
+```
