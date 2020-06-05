@@ -19,6 +19,7 @@ A collection of documents describing what a Reproducible Analytical Pipeline is 
     * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.Rmd)
 - [Make `git` happen](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_make-git-happen.html)
     * A presentation introducing `git`
+    * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_make-git-happen.Rmd)
 - [`git` glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv)
     * A [dashboard](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/gov-uk-rap-materials_git-glossary.html) visualising a simple `git` [glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv) and list of [resources](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-resources.csv)
     * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/gov-uk-rap-materials_git-glossary.Rmd)
