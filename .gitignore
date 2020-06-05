@@ -67,5 +67,5 @@ vignettes/*.pdf
 *.mp4
 
 # Ignore the GANTT build files
-CreatingAGantt/*.html
+#CreatingAGantt/*.html
 CreatingAGantt/GanttTutorial_gantt_files/*
