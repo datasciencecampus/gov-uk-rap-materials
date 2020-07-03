@@ -14,8 +14,8 @@ A collection of documents describing what a Reproducible Analytical Pipeline is 
 - [Introduction to RAP presentation](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.html)
     * A presentation introducing the concept of RAP and why it is useful. 
     * Available as pdf [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.pdf). 
-    * Available to view [here](https://josephcrispell.github.io/Tutorials/gov-uk-rap-materials_make-git-happen.html#1).
-    * Code is available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.Rmd).
+    * Available to view [here](https://josephcrispell.github.io/Tutorials/gov-uk-rap-materials_intro-to-rap.html#1).
+    * Code is available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.Rmd).
 - [Using `RMySQL` R package tutorial](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.nb.html)
     * A tutorial going through how to use the [`RMySQL`](https://cran.r-project.org/web/packages/RMySQL/index.html) package to interact with a `SQL` server directly from R.
     * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.Rmd).
