@@ -10,10 +10,15 @@ runtime: shiny
 ---
 
 ```{r global, include=FALSE}
+# Using "global" chunk so data is available to all users
 
-# Using 'global' chunk, so that all data can be loaded can be shared by all users of the dashboard
+# Load libraries
 library(datasets) # Load datasets package - example datasets
+library(plotly) # Interative plots
+
+# Load example data sets
 data(faithful) # Load eruption data
+data(iris) # Plant species information
 ```
 
 Guide
@@ -23,44 +28,60 @@ Guide
 
 The current document provides some simple examples that combine `flex_dashboard` and `RShiny` to create interactive dashboards for visualising and exploring data. As you can see this document is a work in progress!!
 
+View this dashboard in your browser (once you have `Run Document` locally in RStudio) at:
+[`http://127.0.0.1:7068/gov-uk-rap-materials_getting-started-withRShiny.Rmd#section-example-geyser`](http://127.0.0.1:7068/gov-uk-rap-materials_getting-started-withRShiny.Rmd#section-example-geyser)
+
 ### Useful resources
 
 Here's a list of resources that I found really useful when I was creating this dashboard:
 
 - [Using `RShiny` and `flex_dashboard`](https://rmarkdown.rstudio.com/flexdashboard/shiny.html)
 - [Getting started with `flex_dashboard`](https://rmarkdown.rstudio.com/flexdashboard/using.html)
+- [Getting started with `RShiny`](https://shiny.rstudio.com/tutorial/)
 - [Examples of `RShiny` and `flex_dashboard` in action](https://rmarkdown.rstudio.com/flexdashboard/examples.html)
 - [Creating an `RShiny` `flex_dashboard`](https://medium.com/analytics-vidhya/shiny-dashboards-with-flexdashboard-e66aaafac1f2)
+- [Where to host your `Rshiny` application](https://shiny.rstudio.com/deploy/)
 
 
-Example: Geyser
+Example: Selecting datasets
 =====================================
 
 Column {.sidebar}
 -----------------------------------------------------------------------
 
-Waiting time between eruptions and the duration of the eruption for the
-Old Faithful geyser in Yellowstone National Park, Wyoming, USA.
+Select which dataset you would like to visualise:
 
 ```{r}
-selectInput("n_breaks", label = "Number of bins:",
-            choices = c(10, 20, 35, 50), selected = 20)
-
-sliderInput("bw_adjust", label = "Bandwidth adjustment:",
-            min = 0.2, max = 2, value = 1, step = 0.2)
+selectInput("dataset", label="Choose dataset:",
+            choices=c("geyser", "iris"), 
+            selected="iris")
 ```
 
 Column
 -----------------------------------------------------------------------
 
-### Geyser Eruption Duration
+### Interactive graphic
 
 ```{r}
+
+# CHeck which dataset selected
+dataset <- reactive(input$dataset)
+
 renderPlot({
-  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
-       xlab = "Duration (minutes)", main = "Geyser Eruption Duration")
   
-  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
-  lines(dens, col = "blue")
+  if(input$dataset == "iris"){
+    hist(faithful$eruptions, probability=TRUE, breaks=10,
+       xlab="Duration (minutes)", main="Geyser Eruption Duration", col="red")
+  
+    dens <- density(faithful$eruptions, adjust=1)
+    lines(dens, col="blue")
+  }else{
+    hist(faithful$eruptions, probability=TRUE, breaks=10,
+         xlab="Duration (minutes)", main="Geyser Eruption Duration", col="blue")
+  
+    dens <- density(faithful$eruptions, adjust=1)
+    lines(dens, col="blue")
+  }
 })
+
 ```
