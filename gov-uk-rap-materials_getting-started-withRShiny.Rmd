@@ -28,9 +28,6 @@ Guide
 
 The current document provides some simple examples that combine `flex_dashboard` and `RShiny` to create interactive dashboards for visualising and exploring data. As you can see this document is a work in progress!!
 
-View this dashboard in your browser (once you have `Run Document` locally in RStudio) at:
-[`http://127.0.0.1:7068/gov-uk-rap-materials_getting-started-withRShiny.Rmd#section-example-geyser`](http://127.0.0.1:7068/gov-uk-rap-materials_getting-started-withRShiny.Rmd#section-example-geyser)
-
 ### Useful resources
 
 Here's a list of resources that I found really useful when I was creating this dashboard:
@@ -64,24 +61,50 @@ Column
 
 ```{r}
 
-# CHeck which dataset selected
-dataset <- reactive(input$dataset)
+# Get the dataset selected
+dataset <- reactive({input$dataset})
 
-renderPlot({
-  
-  if(input$dataset == "iris"){
-    hist(faithful$eruptions, probability=TRUE, breaks=10,
-       xlab="Duration (minutes)", main="Geyser Eruption Duration", col="red")
-  
-    dens <- density(faithful$eruptions, adjust=1)
-    lines(dens, col="blue")
+# Create the interactive plotly graphic
+renderPlotly({
+
+  # Check if we are using the iris dataset or the geysers
+  if(dataset() == "iris"){
+    
+    # Create the initial interactive graphic
+    fig <- plot_ly(type="scatter")
+    
+    # Add a data trace
+    fig <- add_trace(fig, x=iris$Sepal.Length, y=iris$Petal.Length, color=iris$Species,
+                     hovertemplate=paste0("<b>Petal length: </b>: ", round(iris$Petal.Length, digits=1),
+                                          "<br><b>Sepal length: </b>: ", round(iris$Sepal.Length, digits=1)))
+    
+
+    # Set the axis labels
+    fig <- layout(fig, 
+                  xaxis=list(title="<b>Sepal Length</b>", titlefont=list(size=16)), 
+                  yaxis=list(title="<b>Petal Length", titlefont=list(size=16)),
+                  title="<b>Flower dimensions in different species<b>")
+
   }else{
-    hist(faithful$eruptions, probability=TRUE, breaks=10,
-         xlab="Duration (minutes)", main="Geyser Eruption Duration", col="blue")
-  
-    dens <- density(faithful$eruptions, adjust=1)
-    lines(dens, col="blue")
+    
+    # Create the initial interactive graphic
+    fig <- plot_ly(type="histogram")
+    
+    # Add a data trace
+    fig <- add_trace(fig, x=faithful$eruptions, name="Old faithful",
+                     hovertemplate=paste0("<b>Duration</b>: ", round(faithful$eruptions, digits=1)))
+    
+    # Remove the legend
+    fig <- layout(fig, showlegend=FALSE)
+    
+    # Set the axis labels
+    fig <- layout(fig, 
+                  xaxis=list(title="<b>Duration (minutes)</b>", titlefont=list(size=16)), 
+                  yaxis=list(title="<b>Frequency<b>", titlefont=list(size=16)),
+                  title="<b>Geyser Eruption Duration<b>")
   }
 })
+
+
 
 ```
