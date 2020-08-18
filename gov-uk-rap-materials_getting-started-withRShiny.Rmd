@@ -38,6 +38,7 @@ Here's a list of resources that I found really useful when I was creating this d
 - [Examples of `RShiny` and `flex_dashboard` in action](https://rmarkdown.rstudio.com/flexdashboard/examples.html)
 - [Creating an `RShiny` `flex_dashboard`](https://medium.com/analytics-vidhya/shiny-dashboards-with-flexdashboard-e66aaafac1f2)
 - [Where to host your `Rshiny` application](https://shiny.rstudio.com/deploy/)
+- [Thorough `plotly` documentation](https://plotly.com/r/)
 
 
 Example: Selecting datasets
