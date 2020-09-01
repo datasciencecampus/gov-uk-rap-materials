@@ -79,6 +79,42 @@ getTopCountries <-function(covid, countColumn, n){
   # Return the top "n" countries
   return(latestCounts$Country[1:n])
 }
+
+# Function to create interactive line chart of daily deaths trends for particular countries
+plotDailyDeathsInteractive <- function(aligendByDate, countries, title, legend=TRUE){
+  
+  # Define a colour palette
+  colours <- colorRampPalette(brewer.pal(8, "Dark2"))(length(countries))
+
+  # Create the initial plotly figure
+  fig <- plot_ly()
+  
+  # Add a trace for the rolling average dataset
+  for(i in seq_along(countries)){
+    fig <- add_lines(fig, 
+                     x=alignedByDate$Date, y=alignedByDate[, countries[i]], 
+                    name=topCountries[i], 
+                    hovertemplate=paste("Number deaths:", alignedByDate[, topCountries[i]]),
+                    line=list(color=colours[i]))
+  }
+
+  # Set the X axis label
+  fig <- layout(fig, xaxis=list(title="Date"))
+
+  # Set the Y axis label
+  fig <- layout(fig, yaxis=list(title="Number deaths per day"))
+
+  # Set the plot title
+  fig <- layout(fig, title=title)
+
+  # Turn off legend if request
+  if(legend == FALSE){
+    fig <- layout(fig, showlegend=FALSE)
+  }
+  
+  # Plot the final figure
+  fig
+}
 ```
 
 
@@ -133,32 +169,9 @@ With the aligned data, we can now create an interactive plot for the daily death
 nToSelect <- 5
 topCountries <- getTopCountries(covid, countColumn="Cumulative_deaths", n=nToSelect)
 
-# Define a colour palette
-colours <- colorRampPalette(brewer.pal(8, "Dark2"))(nToSelect)
-
-# Create the initial plotly figure
-fig <- plot_ly()
-  
-# Add a trace for the rolling average dataset
-for(i in seq_along(topCountries)){
-  fig <- add_lines(fig, 
-                   x=alignedByDate$Date, y=alignedByDate[, topCountries[i]], 
-                   name=topCountries[i], 
-                   hovertemplate=paste("Number deaths:", alignedByDate[, topCountries[i]]),
-                   line=list(color=colours[i]))
-}
-
-# Set the X axis label
-fig <- layout(fig, xaxis=list(title="Date"))
-
-# Set the Y axis label
-fig <- layout(fig, yaxis=list(title="Number deaths per day"))
-
-# Set the plot title
-fig <- layout(fig, title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
-
-# Plot the final figure
-fig
+# Ploit the trends for the countries with highest counts
+plotDailyDeathsInteractive(aligendByDate, countries=topCountries, 
+                           title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
 ```
 
 # Providing the data
@@ -167,6 +180,29 @@ We can use the [DT](https://rstudio.github.io/DT/) package to provide an interac
 
 ```{r interactive table}
 datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
+```
+
+# Selecting data for particular country {.tabset .tabset-dropdown}
+
+## United Kingdom
+```{r, echo=FALSE}
+plotDailyDeathsInteractive(aligendByDate, countries=c("The United Kingdom"), 
+                           title=paste0("Trends in daily deaths in UK"),
+                           legend=FALSE)
+```
+
+## United States
+```{r, echo=FALSE}
+plotDailyDeathsInteractive(aligendByDate, countries=c("United States of America"), 
+                           title=paste0("Trends in daily deaths in US"),
+                           legend=FALSE)
+```
+
+## China
+```{r, echo=FALSE}
+plotDailyDeathsInteractive(aligendByDate, countries=c("China"), 
+                           title=paste0("Trends in daily deaths in China"),
+                           legend=FALSE)
 ```
 
 # Some useful resources
