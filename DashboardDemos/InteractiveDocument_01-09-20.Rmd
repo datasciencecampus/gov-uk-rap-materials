@@ -1,0 +1,94 @@
+---
+title: "An interactive document"
+author: "Joseph Crispell"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+  html_document:
+    number_sections: true
+    toc: yes
+    toc_depth: '2'
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+
+# By default show code chunks in output
+knitr::opts_chunk$set(echo=TRUE)
+
+# Load the required libraries
+library(plotly) # Interative plots
+library(kableExtra) # Extra nice tables
+```
+
+```{r functions, echo=FALSE}
+
+# Function to build simple scrollable table for html output
+prettyTable <- function(table){
+  
+  # Use the kable function to create a nicer formatted table
+  kable(table, row.names=FALSE) %>%
+  
+    # Set the format
+    kable_styling(bootstrap_options="striped", # Set the colour of rows
+                  full_width=FALSE, # Make the table not stretch to fit the page
+                  position="left") %>% # Position the table on the left
+  
+    # Make the table scrollable
+    scroll_box(height = "400px")
+}
+```
+
+
+## Introduction
+
+The current document aims to illustrate how we can used [Rmarkdown](https://rmarkdown.rstudio.com/) to create interactive documents for visualising and exploring data. We'll be exploring the [COVID-19](https://covid19.who.int/) data published by the World Health Organisation.
+
+## Downloading the data
+
+The World Health Organisation publishes COVID-19 case and death counts for most countries. We can load these data with the following code:
+
+```{r load the data}
+
+# Note the url for the WHO COVID-19 data
+whoURL <- "https://covid19.who.int/WHO-COVID-19-global-data.csv"
+
+# Load the WHO COVID-19 data
+covid <- read.csv(whoURL)
+
+# Fix the first column name
+colnames(covid)[1] <- "Date_reported"
+
+# Convert the dates from character vector to a date object
+covid$Date_reported <- as.Date(covid$Date_reported, format="%Y-%m-%d")
+
+# Take a quick look at the table - note I am limiting view to first 25 rows
+prettyTable(covid[1:25, ])
+```
+
+## Processing the data
+
+The WHO data reports the new and cumulative counts for cases and deaths for each country since the start of January. We want to visualise the daily trends in deaths for each country, so we'll need to manipulate the data a little to align the daily deaths counts by date:
+```{r align by date}
+# Initialise a dataframe to store the aligned data - a row for each date data from any country available
+alignedByDate <- data.frame(Date=sort(unique(covid$Date_reported)), check.names=FALSE)
+
+# Using dates as unique row names as some countries don't have data for every date
+rownames(alignedByDate) <- as.character(alignedByDate$Date)
+
+# Add the death counts for each country
+for(country in unique(covid$Country)){
+  
+  # Create a column for the current country
+  alignedByDate[, country] <- NA
+    
+  # Get the data for current country
+  counts <- covid[covid$Country == country, c("Date_reported", "New_deaths")]
+    
+  # Insert the countries data into the aligned table - note using date as the row index
+  alignedByDate[as.character(counts$Date_reported), country] <- counts[, "New_deaths"]
+}
+
+# Take a quick look at the aligned deaths data - note only selecting 25 rows and 25 countries
+prettyTable(alignedByDate[100:125, 1:25])
+```
+
