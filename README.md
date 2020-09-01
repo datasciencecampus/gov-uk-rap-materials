@@ -14,15 +14,15 @@ A collection of documents describing what a Reproducible Analytical Pipeline is 
 - [Introduction to RAP presentation](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.html)
     * A presentation introducing the concept of RAP and why it is useful. 
     * Available as pdf [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.pdf). 
-    * Available to view [here](https://josephcrispell.github.io/Tutorials/gov-uk-rap-materials_intro-to-rap.html#1).
+    * Available to view [here](https://josephcrispell.github.io/standalone/gov-uk-rap-materials_intro-to-rap.html#1).
     * Code is available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.Rmd).
 - [Using `RMySQL` R package tutorial](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.nb.html)
     * A tutorial going through how to use the [`RMySQL`](https://cran.r-project.org/web/packages/RMySQL/index.html) package to interact with a `SQL` server directly from R.
     * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-RMySQL.Rmd).
-    * Available to view [here](https://josephcrispell.github.io/Tutorials/gov-uk-rap-materials_intro-to-RMySQL.html).
+    * Available to view [here](https://josephcrispell.github.io/standalone/gov-uk-rap-materials_intro-to-RMySQL.html).
 - [Make `git` happen](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_make-git-happen.html)
     * A presentation introducing `git`.
-    * Available to view [here](https://josephcrispell.github.io/Tutorials/gov-uk-rap-materials_make-git-happen.html#1).
+    * Available to view [here](https://josephcrispell.github.io/standalone/gov-uk-rap-materials_make-git-happen.html#1).
     * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_make-git-happen.Rmd).
 - [`git` glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv)
     * A [dashboard](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/gov-uk-rap-materials_git-glossary.html) visualising a simple `git` [glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv) and list of [resources](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-resources.csv).
