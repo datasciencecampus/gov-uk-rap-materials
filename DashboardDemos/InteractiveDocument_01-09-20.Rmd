@@ -1,5 +1,5 @@
 ---
-title: "An interactive document"
+title: "Traditional Rmarkdown interactive document"
 author: "Joseph Crispell"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output:
