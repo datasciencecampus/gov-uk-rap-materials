@@ -22,7 +22,7 @@ library(RColorBrewer) # Creating colour pallettes
 library(DT) # An interactive table format
 
 # Load the common functions
-source("functions.R")
+source("ExampleDashboards_FUNCTIONS.R")
 ```
 
 # Introduction
@@ -34,7 +34,6 @@ The current document aims to illustrate how we can used [Rmarkdown](https://rmar
 The World Health Organisation publishes COVID-19 case and death counts for most countries. We can load these data with the following code:
 
 ```{r load the data}
-
 # Note the url for the WHO COVID-19 data
 whoURL <- "https://covid19.who.int/WHO-COVID-19-global-data.csv"
 

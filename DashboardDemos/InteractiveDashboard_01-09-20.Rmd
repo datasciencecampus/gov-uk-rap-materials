@@ -1,0 +1,88 @@
+---
+title: "An stand-a-lone interactive Rmarkdown dashboards"
+author: "Joseph Crispell"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+# Load the required libraries
+library(flexdashboard) # Create Rmarkdown flexdashboard
+library(plotly) # Interative plots
+library(kableExtra) # Extra nice tables
+library(RColorBrewer) # Creating colour pallettes
+library(DT) # An interactive table format
+
+# Load the common functions
+source("ExampleDashboards_FUNCTIONS.R")
+```
+
+
+Main
+=======================================================================
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Getting started
+
+The current document aims to illustrate how we can used [Rmarkdown](https://rmarkdown.rstudio.com/) to create interactive documents for visualising and exploring data. We'll be exploring the [COVID-19](https://covid19.who.int/) data published by the World Health Organisation. The World Health Organisation publishes COVID-19 case and death counts for most countries. We can load these data with the following code:
+
+```{r load the data, echo=TRUE}
+# Note the url for the WHO COVID-19 data
+whoURL <- "https://covid19.who.int/WHO-COVID-19-global-data.csv"
+
+# Load the WHO COVID-19 data
+covid <- read.csv(whoURL)
+
+# Fix the first column name
+colnames(covid)[1] <- "Date_reported"
+
+# Convert the dates from character vector to a date object
+covid$Date_reported <- as.Date(covid$Date_reported, format="%Y-%m-%d")
+```
+
+The WHO COVID-19 data looks like this:
+```{r view WHO data}
+# Take a quick look at the table - note I am limiting view to first 25 rows
+prettyTable(covid[1:25, ])
+```
+
+### Processing the data
+
+The WHO data reports the new and cumulative counts for cases and deaths for each country since the start of January. We want to visualise the daily trends in deaths for each country, so we'll need to manipulate the data a little to align the daily deaths counts by date (*note that I am using a bespoke function to do this processing*):
+```{r align by date, echo=TRUE}
+# Align the daily death counts by date
+alignedByDate <- alignCountByDate(covid, countColumn="New_deaths")
+```
+
+The aligned data looks like this:
+```{r view aligned data}
+# Take a quick look at the aligned deaths data - note only selecting 25 rows and 25 countries
+prettyTable(alignedByDate[100:125, 1:25])
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Visualising trends  countries with highest number of total deaths
+
+```{r plot the daily deaths}
+# Select the countries with the highest cumulative death counts
+nToSelect <- 5
+topCountries <- getTopCountries(covid, countColumn="Cumulative_deaths", n=nToSelect)
+
+# Ploit the trends for the countries with highest counts
+plotDailyDeathsInteractive(aligendByDate, countries=topCountries, 
+                           title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
+```
+
+Data
+=======================================================================
+
+```{r interactive table}
+datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
+```
