@@ -55,22 +55,41 @@ getTopCountries <-function(covid, countColumn, n){
 }
 
 # Function to create interactive line chart of daily deaths trends for particular countries
-plotDailyDeathsInteractive <- function(aligendByDate, countries, title, legend=TRUE){
+plotDailyDeathsInteractive <- function(aligendByDate, countries, title, countriesInBackground=NULL, legend=TRUE,
+                                       backgroundColour=rgb(0,0,0, 0.1)){
   
   # Define a colour palette
   colours <- colorRampPalette(brewer.pal(8, "Dark2"))(length(countries))
-  
+
   # Create the initial plotly figure
   fig <- plot_ly()
   
-  # Add a trace for the rolling average dataset
+  # Add countries into background
+  for(i in seq_along(countriesInBackground)){
+    
+    # Add a trace for the current country
+    fig <- add_lines(fig, 
+                     x=alignedByDate$Date, y=alignedByDate[, countriesInBackground[i]], 
+                     name=countriesInBackground[i], 
+                     hovertemplate=paste("Number deaths:", alignedByDate[, countriesInBackground[i]]),
+                     line=list(color=backgroundColour),
+                     showlegend=FALSE)
+  }
+  
+  # Add a trace for each country that isn't to be in background
   for(i in seq_along(countries)){
+
+    # Add a trace for the current country
     fig <- add_lines(fig, 
                      x=alignedByDate$Date, y=alignedByDate[, countries[i]], 
-                     name=topCountries[i], 
-                     hovertemplate=paste("Number deaths:", alignedByDate[, topCountries[i]]),
+                     name=countries[i], 
+                     hovertemplate=paste("Number deaths:", alignedByDate[, countries[i]]),
                      line=list(color=colours[i]))
   }
+  
+  # Set the Y axis limits based on the countries not in the background
+  yLimits <- c(0, max(alignedByDate[, countries]))
+  fig <- layout(fig, yaxis=list(range=yLimits))
   
   # Set the X axis label
   fig <- layout(fig, xaxis=list(title="Date"))

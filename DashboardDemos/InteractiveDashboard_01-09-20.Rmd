@@ -91,11 +91,38 @@ datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
 United Kingdom {data-navmenu="Countries"}
 =======================================================================
 
+```{r, echo=FALSE}
+backgroundCountries <- colnames(alignedByDate)[-1]
+backgroundCountries <- backgroundCountries[backgroundCountries != "The United Kingdom"]
+plotDailyDeathsInteractive(aligendByDate, countries=c("The United Kingdom"),
+                           countriesInBackground=backgroundCountries,
+                           title=paste0("Trends in daily deaths in UK"),
+                           legend=FALSE)
+```
+
 United States of America {data-navmenu="Countries"}
 =======================================================================
 
+```{r, echo=FALSE}
+backgroundCountries <- colnames(alignedByDate)[-1]
+backgroundCountries <- backgroundCountries[backgroundCountries != "United States of America"]
+plotDailyDeathsInteractive(aligendByDate, countries=c("United States of America"),
+                           countriesInBackground=backgroundCountries,
+                           title=paste0("Trends in daily deaths in US"),
+                           legend=FALSE)
+```
+
 China {data-navmenu="Countries"}
 =======================================================================
+
+```{r, echo=FALSE}
+backgroundCountries <- colnames(alignedByDate)[-1]
+backgroundCountries <- backgroundCountries[backgroundCountries != "China"]
+plotDailyDeathsInteractive(aligendByDate, countries=c("China"),
+                           countriesInBackground=backgroundCountries,
+                           title=paste0("Trends in daily deaths in China"),
+                           legend=FALSE)
+```
 
 Resources
 =======================================================================
