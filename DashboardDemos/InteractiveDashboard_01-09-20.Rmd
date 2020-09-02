@@ -1,5 +1,5 @@
 ---
-title: "An stand-a-lone interactive Rmarkdown dashboards"
+title: "A stand-a-lone interactive Rmarkdown dashboard"
 author: "Joseph Crispell"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output: 
