@@ -6,6 +6,7 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    source_code: embed
 ---
 
 ```{r setup, include=FALSE}
@@ -86,6 +87,15 @@ Data
 ```{r interactive table}
 datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
 ```
+
+United Kingdom {data-navmenu="Countries"}
+=======================================================================
+
+United States of America {data-navmenu="Countries"}
+=======================================================================
+
+China {data-navmenu="Countries"}
+=======================================================================
 
 Resources
 =======================================================================
