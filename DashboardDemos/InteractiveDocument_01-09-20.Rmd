@@ -90,7 +90,7 @@ datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
 
 # Some useful resources
 
-Here's some resources that I found useful when creating this dashboard:
+Here's some resources that I found useful when creating this document:
 
 - [Getting started with Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
 - [Rmarkdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)

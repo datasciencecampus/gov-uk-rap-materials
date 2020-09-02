@@ -86,3 +86,17 @@ Data
 ```{r interactive table}
 datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
 ```
+
+Resources
+=======================================================================
+
+Here's some resources that I found useful when creating this document:
+
+- [Getting started with Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
+- [Creating a dashboard with `flexdashboard`](https://rmarkdown.rstudio.com/flexdashboard/using.html)
+- [Rmarkdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [Interactive plotting with plotly](https://plotly.com/r/)
+- [Programming in R](https://www.tutorialspoint.com/r/index.htm)
+- [Troubleshooting with stackoverflow](https://stackoverflow.com/questions/tagged/r)
+
+
