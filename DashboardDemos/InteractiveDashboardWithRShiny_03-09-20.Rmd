@@ -1,0 +1,118 @@
+---
+title: "An RShiny interactive Rmarkdown dashboard"
+author: "Joseph Crispell"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+    flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+# Load the required libraries
+library(flexdashboard) # Create Rmarkdown flexdashboard
+library(plotly) # Interative plots
+library(kableExtra) # Extra nice tables
+library(RColorBrewer) # Creating colour pallettes
+library(DT) # An interactive table format
+
+# Load the common functions
+source("ExampleDashboards_FUNCTIONS.R")
+```
+
+```{r global}
+# Using global chunk to use variables that will be accessible throughout application
+
+## Load the data
+# Load the WHO COVID-19 data
+covid <- read.csv("https://covid19.who.int/WHO-COVID-19-global-data.csv")
+
+# Fix the first column name
+colnames(covid)[1] <- "Date_reported"
+
+# Convert the dates from character vector to a date object
+covid$Date_reported <- as.Date(covid$Date_reported, format="%Y-%m-%d")
+
+## Align by date
+alignedByDate <- alignCountByDate(covid, countColumn="New_deaths")
+
+```
+
+
+Main
+=======================================================================
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+By using an RShiny application we can gather user input live and tailor the visualisations to that input.
+
+```{r gather user input}
+# Define the options
+options <- c("Top 5", colnames(alignedByDate)[-1])
+
+# Build the user selection widget
+selectInput("dataInput", label="Select which data to visualise",
+            choices=options, 
+            selected=options[1])
+```
+
+Column
+-----------------------------------------------------------------------
+
+### Interactive graphic
+
+```{r}
+
+# Get the dataset selected
+option <- reactive({input$dataInput})
+
+# Create the interactive plotly graphic
+renderPlotly({
+
+  # Check if we are using the iris dataset or the geysers
+  if(option() == "Top 5"){
+    
+    # Select the countries with the highest cumulative death counts
+    topCountries <- getTopCountries(covid, countColumn="Cumulative_deaths", n=5)
+
+    # Ploit the trends for the countries with highest counts
+    plotDailyDeathsInteractive(alignedByDate, countries=topCountries, 
+                               title=paste0("Trends in daily deaths in top 5 countries with highest total deaths"))
+  }else{
+    
+    # Note the countries to show in background
+    backgroundCountries <- colnames(alignedByDate)[-1]
+    backgroundCountries <- backgroundCountries[backgroundCountries != option()]
+    
+    # Create the interactive graphic, highlight selected country
+    plotDailyDeathsInteractive(alignedByDate, countries=c(option()),
+                               countriesInBackground=backgroundCountries,
+                               title=paste0("Trends in daily deaths in "),
+                               legend=FALSE)
+  }
+})
+```
+
+Data
+=======================================================================
+
+```{r interactive table}
+datatable(alignedByDate, rownames=FALSE)
+```
+
+Resources
+=======================================================================
+
+Here's some resources that I found useful when creating this document:
+
+- [Getting started with RShiny](https://shiny.rstudio.com/tutorial/)
+- [Getting started with Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
+- [Creating a dashboard with `flexdashboard`](https://rmarkdown.rstudio.com/flexdashboard/using.html)
+- [Rmarkdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [Interactive plotting with plotly](https://plotly.com/r/)
+- [Programming in R](https://www.tutorialspoint.com/r/index.htm)
+- [Troubleshooting with stackoverflow](https://stackoverflow.com/questions/tagged/r)
+

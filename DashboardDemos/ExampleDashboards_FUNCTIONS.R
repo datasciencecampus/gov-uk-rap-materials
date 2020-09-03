@@ -55,7 +55,7 @@ getTopCountries <-function(covid, countColumn, n){
 }
 
 # Function to create interactive line chart of daily deaths trends for particular countries
-plotDailyDeathsInteractive <- function(aligendByDate, countries, title, countriesInBackground=NULL, legend=TRUE,
+plotDailyDeathsInteractive <- function(alignedByDate, countries, title, countriesInBackground=NULL, legend=TRUE,
                                        backgroundColour=rgb(0,0,0, 0.1)){
   
   # Define a colour palette
@@ -88,7 +88,7 @@ plotDailyDeathsInteractive <- function(aligendByDate, countries, title, countrie
   }
   
   # Set the Y axis limits based on the countries not in the background
-  yLimits <- c(0, max(alignedByDate[, countries]))
+  yLimits <- c(0, max(alignedByDate[, countries], na.rm=TRUE))
   fig <- layout(fig, yaxis=list(range=yLimits))
   
   # Set the X axis label
@@ -107,4 +107,47 @@ plotDailyDeathsInteractive <- function(aligendByDate, countries, title, countrie
   
   # Plot the final figure
   fig
+}
+
+# Function to create static line chart of daily deaths trends for particular countries
+plotDailyDeathsStatic <- function(alignedByDate, countries, title, countriesInBackground=NULL, legend=TRUE,
+                                  backgroundColour=rgb(0,0,0, 0.1), lwd=2){
+  
+  # Define a colour palette
+  colours <- colorRampPalette(brewer.pal(8, "Dark2"))(length(countries))
+  
+  # Define the Y axis limits
+  yLimits <- c(0, max(alignedByDate[, countries], na.rm=TRUE))
+  
+  # Create the initial plotly figure
+  plot(x=alignedByDate$Date, y=alignedByDate[, 2], 
+       col=rgb(0,0,0,0), # Setting to be completely transparent - using these data to set X axis
+       xlab="Date",
+       ylab="Number deaths per day",
+       main=title,
+       ylim=yLimits,
+       las=1, # Change angle of axis ticks to horizontal
+       bty="n") # Remove box around plot
+  
+  # Add countries into background
+  for(i in seq_along(countriesInBackground)){
+    
+    # Add a trace for the current country
+    lines(x=alignedByDate$Date, y=alignedByDate[, countriesInBackground[i]], col=backgroundColour, lwd=lwd)
+  }
+  
+  # Add a trace for each country that isn't to be in background
+  for(i in seq_along(countries)){
+    
+    # Add a trace for the current country
+    lines(x=alignedByDate$Date, y=alignedByDate[, countries[i]], col=colours[i], lwd=lwd)
+  }
+  
+  # Add legend if requested
+  if(legend){
+    legend("topleft", legend=countries, col=colours, 
+           lty=1, # Set line type to be standard line
+           bty="n", # Remove box around legend
+           lwd=lwd) # Set line width to input parameter
+  }
 }

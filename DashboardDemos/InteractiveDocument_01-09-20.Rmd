@@ -70,15 +70,24 @@ prettyTable(alignedByDate[100:125, 1:25])
 # Plotting the data
 
 With the aligned data, we can now create an interactive plot for the daily deaths counts in each country. Here we've written code to view the daily death trends in the 5 countries with the highest cumulative totals
-```{r plot the daily deaths}
+```{r plot the daily deaths interactive}
 # Select the countries with the highest cumulative death counts
 nToSelect <- 5
 topCountries <- getTopCountries(covid, countColumn="Cumulative_deaths", n=nToSelect)
 
-# Ploit the trends for the countries with highest counts
-plotDailyDeathsInteractive(aligendByDate, countries=topCountries, 
+# Plot the trends for the countries with highest counts
+plotDailyDeathsInteractive(alignedByDate, countries=topCountries, 
                            title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
 ```
+
+We can also create non-interactive static plots in using R's own functions:
+```{r plot the daily deaths static, echo=FALSE}
+# Plot the trends for the countries with highest counts
+plotDailyDeathsStatic(alignedByDate, countries=topCountries, 
+                           title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
+```
+
+
 
 # Providing the data
 
@@ -96,4 +105,5 @@ Here's some resources that I found useful when creating this document:
 - [Rmarkdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 - [Interactive plotting with plotly](https://plotly.com/r/)
 - [Programming in R](https://www.tutorialspoint.com/r/index.htm)
+- [Getting started with plotting in R](https://towardsdatascience.com/a-guide-to-data-visualisation-in-r-for-beginners-ef6d41a34174)
 - [Troubleshooting with stackoverflow](https://stackoverflow.com/questions/tagged/r)
