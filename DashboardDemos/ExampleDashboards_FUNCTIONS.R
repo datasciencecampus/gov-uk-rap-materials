@@ -17,7 +17,7 @@ prettyTable <- function(table){
 alignCountByDate <- function(data, countColumn){
   
   # Initialise a dataframe to store the aligned data - a row for each date data from any country available
-  alignedByDate <- data.frame(Date=sort(unique(covid$Date_reported)), check.names=FALSE)
+  alignedByDate <- data.frame(Date=sort(unique(covid$Date_reported)), check.names=FALSE, stringsAsFactors=FALSE)
   
   # Using dates as unique row names as some countries don't have data for every date
   rownames(alignedByDate) <- as.character(alignedByDate$Date)
@@ -51,7 +51,7 @@ getTopCountries <-function(covid, countColumn, n){
   latestCounts <- latestCounts[order(latestCounts[, countColumn], decreasing=TRUE), ]
   
   # Return the top "n" countries
-  return(latestCounts$Country[1:n])
+  return(as.character(latestCounts$Country[1:n]))
 }
 
 # Function to create interactive line chart of daily deaths trends for particular countries

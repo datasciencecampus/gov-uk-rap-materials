@@ -27,7 +27,7 @@ source("ExampleDashboards_FUNCTIONS.R")
 
 ## Load the data
 # Load the WHO COVID-19 data
-covid <- read.csv("https://covid19.who.int/WHO-COVID-19-global-data.csv")
+covid <- read.csv("https://covid19.who.int/WHO-COVID-19-global-data.csv", stringsAsFactors=FALSE)
 
 # Fix the first column name
 colnames(covid)[1] <- "Date_reported"
@@ -78,18 +78,13 @@ renderPlotly({
     # Select the countries with the highest cumulative death counts
     topCountries <- getTopCountries(covid, countColumn="Cumulative_deaths", n=5)
 
-    # Ploit the trends for the countries with highest counts
+    # Plot the trends for the countries with highest counts
     plotDailyDeathsInteractive(alignedByDate, countries=topCountries, 
                                title=paste0("Trends in daily deaths in top 5 countries with highest total deaths"))
   }else{
     
-    # Note the countries to show in background
-    backgroundCountries <- colnames(alignedByDate)[-1]
-    backgroundCountries <- backgroundCountries[backgroundCountries != option()]
-    
     # Create the interactive graphic, highlight selected country
     plotDailyDeathsInteractive(alignedByDate, countries=c(option()),
-                               countriesInBackground=backgroundCountries,
                                title=paste0("Trends in daily deaths in "),
                                legend=FALSE)
   }

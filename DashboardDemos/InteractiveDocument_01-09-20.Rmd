@@ -38,7 +38,7 @@ The World Health Organisation publishes COVID-19 case and death counts for most 
 whoURL <- "https://covid19.who.int/WHO-COVID-19-global-data.csv"
 
 # Load the WHO COVID-19 data
-covid <- read.csv(whoURL)
+covid <- read.csv(whoURL, stringsAsFactors=FALSE)
 
 # Fix the first column name
 colnames(covid)[1] <- "Date_reported"

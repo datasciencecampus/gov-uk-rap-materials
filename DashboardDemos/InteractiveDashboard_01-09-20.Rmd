@@ -37,7 +37,7 @@ The current document aims to illustrate how we can used [Rmarkdown](https://rmar
 whoURL <- "https://covid19.who.int/WHO-COVID-19-global-data.csv"
 
 # Load the WHO COVID-19 data
-covid <- read.csv(whoURL)
+covid <- read.csv(whoURL, stringsAsFactors=FALSE)
 
 # Fix the first column name
 colnames(covid)[1] <- "Date_reported"
@@ -94,7 +94,7 @@ United Kingdom {data-navmenu="Countries"}
 ```{r, echo=FALSE}
 backgroundCountries <- colnames(alignedByDate)[-1]
 backgroundCountries <- backgroundCountries[backgroundCountries != "The United Kingdom"]
-plotDailyDeathsInteractive(align edByDate, countries=c("The United Kingdom"),
+plotDailyDeathsInteractive(alignedByDate, countries=c("The United Kingdom"),
                            countriesInBackground=backgroundCountries,
                            title=paste0("Trends in daily deaths in UK"),
                            legend=FALSE)
