@@ -4,7 +4,8 @@ Command,Definition
   git branch [branchName],Create new branch
   git branch -d [branchName],Delete branch
   git checkout [branchName],Switch to branch
-  git checkout -t origin/[branchName],Switch to remote branch
+  git fetch,Get latest version references for repository
+  git checkout -t origin/[branchName],Switch to remote branch (note you'll need to run git fetch first)
   git push -u origin [branchName],Push a branch online
   git add [FileName],Stage file for committing
   git commit -m [message],Commit staged changes to GitHub. Always add meaningful message.

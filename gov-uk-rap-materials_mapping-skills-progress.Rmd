@@ -31,6 +31,7 @@ library(fmsb)
 # Our skill areas
 
 We'll look to categorise our skills progress into the following themes:
+
 - **Programming**
 - **Statistics**
 - **Databases**
@@ -102,3 +103,4 @@ radarchart(skillsPointsGoal,
            vlcex=1) # Font size for skills labels
 ```
 
+NEED TO LOOK INTO DOING THIS PLOTLY: https://plotly.com/r/radar-chart/
