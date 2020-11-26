@@ -208,7 +208,26 @@ You'll find more information, and links for creating an account, [here](https://
     <img src="images/VersionControl_withoutGitLogo.png" width="75%" height="auto">
 </p>
 
-## Managing your repository in the terminal [ADD MORE CONTENT HERE!]
+## Managing your repository in the command line
+
+<img src="images/logos/git_logo.jpg" width="35%" height="auto" align="right">
+
+- `git` is traditionally a command line tool
+- Use these commands to navigate between folders in the command line:
+  * `cd path/to/new/folder/` - use `cd` to move between folders (remember that "`..`" means go back one folder)
+  * `ls` - to list the files and folders in your current folder (`dir` in Windows)
+- Here's some more help for [Windows](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/), [mac](https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/), and [linux](https://www.hostinger.co.uk/tutorials/linux-commands) users
+- Once you're happy with the above commands, here are some screenshots to illustrate using the command line to setup `git`
+
+## {data-background=images/GitInCommandLine/GitInCommandLine_1.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_2.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_3.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_4.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_5.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_6.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_7.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_8.png data-background-size=100%}
+## {data-background=images/GitInCommandLine/GitInCommandLine_9.png data-background-size=100%}
 
 ## `git` the most out of GitHub
 
@@ -222,6 +241,8 @@ You'll find more information, and links for creating an account, [here](https://
 - Document your project using a [wiki](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards)
 - Host a [website](https://guides.github.com/features/pages/) on GitHub, check out these jekyl [themes](http://jekyllthemes.org/)
 
+## {data-background=images/VanuatuProjectsBoard.png data-background-size=100%}
+
 ## Useful resources
 
 <img src="images/logos/git_logo.jpg" width="35%" height="auto" align="right">
@@ -231,8 +252,8 @@ You'll find more information, and links for creating an account, [here](https://
 - A game to help us think about git branches ([here](https://learngitbranching.js.org/))
 - ONS GitHub introductory course ([here](https://github.com/datasciencecampus/version-control-with-git-github))
 - [Tutorial](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line) about getting started with git in the command line
-- [Git Handbook](https://guides.github.com/introduction/git-handbook/)
-- [Git glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv)
+- All you need to know about `git` in the [git handbook](https://guides.github.com/introduction/git-handbook/)
+- My own [git glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv) to remind me of the crucial `git` commands
 
 ## `git` glossary
 
