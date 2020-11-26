@@ -24,6 +24,10 @@ A collection of documents describing what a Reproducible Analytical Pipeline is 
     * A presentation introducing `git`.
     * Available to view [here](https://josephcrispell.github.io/standalone/gov-uk-rap-materials_make-git-happen.html#1).
     * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_make-git-happen.Rmd).
+- [`git` going with R](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_git-going-with-R.html)
+    * A presentation illustrating how to use `git` with R
+    * Available to view [here](https://josephcrispell.github.io/standalone/gov-uk-rap-materials_git-going-with-R.html#1).
+    * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_git-going-with-R.Rmd).
 - [`git` glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv)
     * A [dashboard](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/gov-uk-rap-materials_git-glossary.html) visualising a simple `git` [glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv) and list of [resources](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-resources.csv).
     * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/gov-uk-rap-materials_git-glossary.Rmd).
