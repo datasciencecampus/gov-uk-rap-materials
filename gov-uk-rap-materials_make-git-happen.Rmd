@@ -208,28 +208,7 @@ You'll find more information, and links for creating an account, [here](https://
     <img src="images/VersionControl_withoutGitLogo.png" width="75%" height="auto">
 </p>
 
-## Linking to RStudio
-
-<img src="images/logos/RStudio_logo.png" width="35%" height="auto" align="right">
-
-<br><br>
-
-- Rstudio does a lot of the hard work for you
-- You can use the terminal, if you like
-- Here are some screenshots showing you how to link a GitHub repository to RStudio
-
-## {data-background=images/RStudioAndGit/RStudioAndGit_1.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_2.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_3.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_4.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_5.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_6.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_7.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_8.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_9.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_10.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_11.png data-background-size=100%}
-## {data-background=images/RStudioAndGit/RStudioAndGit_12.png data-background-size=100%}
+## Managing your repository in the terminal [ADD MORE CONTENT HERE!]
 
 ## `git` the most out of GitHub
 
@@ -249,10 +228,11 @@ You'll find more information, and links for creating an account, [here](https://
 
 - Introduction to GitHub presentation ([slides](https://speakerdeck.com/alicebartlett/git-for-humans) and [video](https://www.youtube.com/watch?v=eWxxfttcMts))
 - All you need to know about GitHub in their [help](https://help.github.com/en) pages
-- Detailed book about git, GitHub and R ([here](https://happygitwithr.com/))
-- Detailed overview of RStudio, git and GitHub ([here](http://r-pkgs.had.co.nz/git.html))
 - A game to help us think about git branches ([here](https://learngitbranching.js.org/))
 - ONS GitHub introductory course ([here](https://github.com/datasciencecampus/version-control-with-git-github))
+- [Tutorial](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line) about getting started with git in the command line
+- [Git Handbook](https://guides.github.com/introduction/git-handbook/)
+- [Git glossary](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/git-glossary/git-command-glossary.csv)
 
 ## `git` glossary
 

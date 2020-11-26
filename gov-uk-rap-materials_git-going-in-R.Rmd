@@ -1,0 +1,281 @@
+---
+title: "Make `git` happen"
+author: "Joseph Crispell"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output:
+  ioslides_presentation:
+    logo: images/logos/DataScienceCampus_logo_square.png
+    widescreen: true
+    css: 
+      css/custom.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r load required libraries, include=FALSE}
+library(kableExtra) # Extra nice tables
+```
+
+<!-- Extra custom code to add "OFFICIAL" into the header -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $('slide:not(.title-slide, .backdrop, .segue)').append('<header label=\"OFFICIAL\"></header>');    
+    })
+</script>
+
+<style>
+  header:after {
+    content: attr(label);
+    font-size: 12pt;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    line-height: 1.9;
+  }
+</style>
+
+<!-- END custom code block for header -->
+
+<!-- Extra custom code for footnotes - taken from https://stackoverflow.com/questions/42690955/how-to-insert-footnotes-in-ioslides-presentations-using-rmarkdown -->
+
+## What is git?
+
+"You use Git to take snapshots of all the files in a folder."
+
+[_Alice Bartlett_](https://speakerdeck.com/alicebartlett/git-for-humans)
+
+<br>
+
+<p class="aligncenter">
+    <img src="images/SnapshotOfFolder.png" width="60%" height="auto">
+</p>
+
+## Snapshots in time
+
+<p class="aligncenter">
+    <img src="images/FileVersionControl.png" width="100%" height="auto">
+</p>
+
+## Snapshots in time
+
+<p class="aligncenter">
+    <img src="images/gov-uk-rap-materials_make-git-happen.png" width="70%" height="auto">
+</p>
+
+## Three key concepts
+
+<img src="images/VersionControl_vertical.png" width="15%" height="auto" align="right">
+
+<br>
+
+- **Repository** - your project folder
+- **Commit** - a snapshot of your folder
+- **Branch** - a working version of your folder
+
+## Three key concepts
+
+<img src="images/VersionControl_vertical.png" width="15%" height="auto" align="right">
+
+<br>
+
+- **Repository** - your project folder
+- **Commit** - a snapshot of your folder
+  * We use `push` to send the snapshots online
+  * And `pull` to retrieve an updated snapshot
+- **Branch** - a working version of your folder
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_1.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_2.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_3.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_4.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_5.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_6.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_7.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_8.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_9.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_10.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_11.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_12.png" width="100%" height="auto">
+</p>
+
+## Work `git`!
+
+<p class="aligncenter">
+    <img src="images/WorkingWithGit/WorkingWithGit_13.png" width="100%" height="auto">
+</p>
+
+## Installing `git`
+
+<img src="images/logos/git_logo.png" width="40%" height="auto" align="right">
+
+<br>
+
+- For Windows, download the executable [here](https://git-scm.com/download/win)
+- On a mac type `git --version` in your terminal
+- On linux machines type `sudo apt install git-all` in your terminal
+
+<br>
+
+_Note that you may need admin rights on your computer, without these you'll need to request an install._
+
+## Create a GitHub account
+
+<img src="images/logos/github_logo_octo.png" width="35%" height="auto" align="right">
+
+<br>
+
+GitHub offers a range of account types. A free account is available for organisations and individuals.
+
+Even if you're in an institution, create a personal GitHub account to keep track of you own work.
+
+You'll find more information, and links for creating an account, [here](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).
+
+## Create a repository
+
+- Follow the instructions [here](https://help.github.com/en/enterprise/2.16/user/github/getting-started-with-github/create-a-repo) to create your first repository
+- Some key files to include:
+
+  `README` - ideally format this as a markdown `md` file (more info [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes) and [here](https://github.com/18F/open-source-guide/blob/18f-pages/pages/making-readmes-readable.md))<br>
+  
+  `LICENSE` - how you want people to re-use your code ([info](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository))<br>
+  
+  `.gitignore` - names of any files in your project you don't want on GitHub ([templates](https://github.com/github/gitignore/blob/master/README.md))<br>
+  
+<p class="aligncenter">
+    <img src="images/VersionControl_withoutGitLogo.png" width="75%" height="auto">
+</p>
+
+## Linking to RStudio
+
+<img src="images/logos/RStudio_logo.png" width="35%" height="auto" align="right">
+
+<br><br>
+
+- Rstudio does a lot of the hard work for you
+- You can use the terminal, if you like
+- Here are some screenshots showing you how to link a GitHub repository to RStudio
+
+## {data-background=images/RStudioAndGit/RStudioAndGit_1.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_2.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_3.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_4.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_5.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_6.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_7.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_8.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_9.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_10.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_11.png data-background-size=100%}
+## {data-background=images/RStudioAndGit/RStudioAndGit_12.png data-background-size=100%}
+
+## `git` the most out of GitHub
+
+<img src="images/logos/github_logo.png" width="35%" height="auto" align="right">
+
+<br>
+
+- Manage your work on a project using the [Projects](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) tab
+- Track your tasks using [issues](https://help.github.com/en/github/managing-your-work-on-github/managing-your-work-with-issues) 
+- Use your README to describe your project (more info [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes) and [here](https://github.com/18F/open-source-guide/blob/18f-pages/pages/making-readmes-readable.md))
+- Document your project using a [wiki](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards)
+- Host a [website](https://guides.github.com/features/pages/) on GitHub, check out these jekyl [themes](http://jekyllthemes.org/)
+
+## Useful resources
+
+<img src="images/logos/git_logo.jpg" width="35%" height="auto" align="right">
+
+- Introduction to GitHub presentation ([slides](https://speakerdeck.com/alicebartlett/git-for-humans) and [video](https://www.youtube.com/watch?v=eWxxfttcMts))
+- All you need to know about GitHub in their [help](https://help.github.com/en) pages
+- Detailed book about git, GitHub and R ([here](https://happygitwithr.com/))
+- Detailed overview of RStudio, git and GitHub ([here](http://r-pkgs.had.co.nz/git.html))
+- A game to help us think about git branches ([here](https://learngitbranching.js.org/))
+- ONS GitHub introductory course ([here](https://github.com/datasciencecampus/version-control-with-git-github))
+
+## `git` glossary
+
+```{r create glossary table, echo=FALSE}
+# Get the latest copy of the git glossary
+glossary <- read.csv("https://raw.githubusercontent.com/datasciencecampus/gov-uk-rap-materials/master/git-glossary/git-command-glossary.csv")
+
+# Wrap the code with markdown code apostrophes
+glossary$Command <- paste0("`", glossary$Command, "`")
+
+# Force row colours
+options("kableExtra.html.bsTable"=TRUE)
+
+# Create nice html visualisation
+kable(glossary, format="html") %>%
+  
+  # Set the format
+  kable_styling(bootstrap_options="striped", # Set the colour of rows
+                full_width=FALSE, # Make the table not stretch to fit the page
+                position="left", # Position the table on the left
+                font_size=15) %>% # Change the font size
+  
+  # Make the table scrollable
+  scroll_box(height = "450px")
+```
+
