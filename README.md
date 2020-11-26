@@ -8,7 +8,7 @@
 
 A collection of documents describing what a Reproducible Analytical Pipeline is and why it is useful. We will continue to add resources to this repository as we create them.
 
-> A Reproducible Analytical Pipeline (RAP) brings together code and data to generate outputs. The RAP pipeline is built within a version control system (e.g. `git`) to create a transparent production process.
+> A Reproducible Analytical Pipeline (RAP) brings together code and data to generate outputs. The RAP pipeline is built within a version control system (e.g. [`git`](https://git-scm.com/)) to create a transparent production process.
 
 ## Resources list
 - [Introduction to RAP presentation](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/gov-uk-rap-materials_intro-to-rap.html)
