@@ -137,7 +137,7 @@ legend("topright", legend=c("Current", "Goal"), text.col=c("red", "blue"),  bty=
 
 # Creating an interactive skills map
 
-Lastly, we can use the [plotly]() R package to create an interactive radar chart. Install plotly with the following code:
+Lastly, we can use the [plotly](https://plotly.com/r/radar-chart/) R package to create an interactive radar chart. Install plotly with the following code:
 
 ```{r install plotly, eval=FALSE}
 install.packages("plotly")
