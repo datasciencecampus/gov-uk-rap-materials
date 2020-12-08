@@ -35,5 +35,8 @@ A collection of documents describing what a Reproducible Analytical Pipeline is 
    * A quick tutorial to about creating a GANTT chart in R. 
    * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/CreatingAGantt/Tutorial-CreatingAGanttInR_18-05-20.Rmd).
    * GANTT charts are used for visualising project timelines - using horizontal bars and events to illustrate work packages, tasks and outputs.
-    
+ - [Creating a word document using Rmarkdown](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/CreatingAWordDocument/gov-uk-rap-materials_output-as-word-doc-template.Rmd)
+   * A template document to demonstrate how to build a microsoft word document using Rmarkdown
+   * Code available [here](https://github.com/datasciencecampus/gov-uk-rap-materials/blob/master/CreatingAWordDocument/gov-uk-rap-materials_output-as-word-doc-template.Rmd)
+   * Output word document [here](https://github.com/datasciencecampus/gov-uk-rap-materials/raw/master/CreatingAWordDocument/gov-uk-rap-materials_output-as-word-doc-template.docx)
 _Note: for links to html documents, you'll need to click the raw document and save a html file locally that you double click on to view content in your default internet browser_
