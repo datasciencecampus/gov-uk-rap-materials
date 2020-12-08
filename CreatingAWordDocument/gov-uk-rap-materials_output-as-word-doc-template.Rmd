@@ -1,0 +1,56 @@
+---
+title: "Creating a word document using Rmarkdown"
+subtitle: 'A simple template to get started'
+author: "Joseph Crispell"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output: 
+  word_document:
+    reference_docx: styles_reference.docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<!-- instructions
+
+Helpful resources:
+- https://bookdown.org/yihui/rmarkdown/word-document.html - general 
+- https://rmarkdown.rstudio.com/articles_docx.html - general
+- https://datascienceplus.com/r-markdown-how-to-insert-page-breaks-in-a-ms-word-document/ - page breaks
+- https://support.office.com/en-us/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563 modify/create styles
+
+To create title page:
+- I modified styles for title, subtitle, Author, and Date
+  * I opened the word document produced by R
+  * Home -> styles gallery -> click tiny expand in bottom right corner
+  
+To have page breaks:
+- I modified the Header 9:
+  * Home -> styles gallery -> click tiny expand in bottom right corner
+  * Select Header 9 and edit paragraph settings to insert page break
+  * Set font size to as small as possible and colour to white - so it isn't seen!
+- Then used 9 hashes (#########) to link to this header in Rmarkdown and this will create line break
+-->
+
+######### Page break
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

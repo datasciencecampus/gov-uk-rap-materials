@@ -179,7 +179,3 @@ fig <- layout(fig,
 # Plot the radial chart
 fig
 ```
-
-
-
-NEED TO LOOK INTO DOING THIS PLOTLY: https://plotly.com/r/radar-chart/
