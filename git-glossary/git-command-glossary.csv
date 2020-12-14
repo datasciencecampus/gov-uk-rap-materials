@@ -6,7 +6,7 @@ Command,Definition
   git checkout [branchName],Switch to branch
   git fetch,Get latest version references for repository
   git checkout -t origin/[branchName],Switch to remote branch (note you'll need to run git fetch first)
-  git push -u origin [branchName],Push a branch online
+  git push --set-upstream origin [branchName],Push a branch online
   git add [FileName],Stage file for committing
   git commit -m [message],Commit staged changes to GitHub. Always add meaningful message.
   git push,Push committed changes to GitHub
