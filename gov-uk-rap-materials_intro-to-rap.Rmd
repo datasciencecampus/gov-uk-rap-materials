@@ -55,13 +55,13 @@ More information on "ioslides" available here: https://bookdown.org/yihui/rmarkd
 </p>
 
 <div class="notes">
-Our ideal analytical pipeline has a clear set of steps that we do once in succession to create a final report.
+  Our ideal analytical pipeline has a clear set of steps that we do once in succession to create a final report.
 
-Here, we:
+  Here, we:
 
-1. Download some data and store it in an excel file, which we create a formatted table within
-2. We load the excel data into R to generate a chart
-3. We then copy and paste the formatted table and chart into a word document and add some text and formatting to create the final report
+  1. Download some data and store it in an excel file, which we create a formatted table within
+  2. We load the excel data into R to generate a chart
+  3. We then copy and paste the formatted table and chart into a word document and add some text and formatting to create the final report
 </div>
 
 ## What is a Analytical Pipeline? The reality...
@@ -69,6 +69,10 @@ Here, we:
 <p class="aligncenter">
     <img src="images/TraditionalAnalysis-Reality.png" width="85%" height="auto" align="center">
 </p>
+
+<div class="notes">
+  In reality though, our ideal analytical pipeline can quickly become a complicated tangle of multiple file and data versions, programs, emails and final reports.
+</div>
 
 ## What are the issues?
 
@@ -82,6 +86,16 @@ Here, we:
 - The steps aren't recorded
 - Using multiple independent tools
 - How do we keep track of which file versions people have?
+
+<div class="notes">
+  There are some key issues with this type of analytical pipeline:
+  - Each step is manual and has to be completed in turn
+  - It is difficult to teach someone else to replicate the process
+  - Because each step is manual mistakes can be made
+  - The different steps involved are often note recorded nor is how they can change
+  - The pipeline combines multiple different programs
+  - There isn't a way of keeping track of changes to files and who made them
+</div>
 
 ## What is a Reproducible Analytical Pipeline (RAP)?
 
@@ -100,17 +114,46 @@ Here, we:
   Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
 </p>
 
+<div class="notes">
+  This is where a reproducible analytical pipeline can help. It is:
+  - Easy for you or others to replicate
+  - It can easily be adapted and improved and that process is recorded
+  - It is automated, all steps are completed but with only one click of a button
+  - Becuase it is automated, it minimises mistakes introduced by individual error, it is fast
+  - By being transparent about how the pipeline works, recording how it is built and maintains we build trust in our outputs
+</div>
+
 ## What does a RAP look like?
 
 <img src="images/ReproducibleAnalyticalPipeline-Python.png" width="90%" height="auto" align="center">
+
+<div class="notes">
+  A reproducible pipeline looks a bit like this.
+
+  It uses an open-source tool like python.
+</div>
 
 ## What does a RAP look like?
 
 <img src="images/ReproducibleAnalyticalPipeline-R.png" width="90%" height="auto" align="center">
 
+<div class="notes">
+  Or R, to process, analyse and report a particular dataset.
+
+  The process is handled by a single program (R or python in these examples) and the pipeline's development and maintenance is overseen by a version control system like git.
+</div>
+
 ## All the functionality in one place
 
 <img src="images/ReproducibleAnalyticalPipeline-R_expanded.png" width="90%" height="auto" align="center">
+
+<div class="notes">
+  With tools like R or python, they have all the functionality to process, analyse and report data in one place. 
+
+  They are also designed to handle large and complex datasets efficiently.
+
+  Also, R and python are open-source and free for anyone to use!
+</div>
 
 ## What are the benefits?
 
@@ -128,6 +171,10 @@ Here, we:
 <p class="footnote">
   Image taken from: [The Turing Way](https://the-turing-way.netlify.com/introduction/introduction) book
 </p>
+
+<div class="notes">
+  
+</div>
 
 ## Is it Data Science?
 
