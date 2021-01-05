@@ -38,6 +38,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- Extra custom code for footnotes - taken from https://stackoverflow.com/questions/42690955/how-to-insert-footnotes-in-ioslides-presentations-using-rmarkdown -->
 
+<!-- PRESENTER NOTES
+To view notes press "p" during the presentation on slides with notes a element with notes inside will be overlaid. 
+
+Note that you can use presenter mode by adding "presentme=true" to presentation url ("my-presentation.html?presentme=true"). Turn off presenter mode by adding "?presentme=false" to the url.
+
+More information on "ioslides" available here: https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html.
+-->
+
 ## What is a Analytical Pipeline? The ideal scenario
 
 <br><br>
@@ -45,6 +53,16 @@ knitr::opts_chunk$set(echo = FALSE)
 <p class="aligncenter">
     <img src="images/TraditionalAnalysis-Aim.png" width="85%" height="auto" align="center">
 </p>
+
+<div class="notes">
+Our ideal analytical pipeline has a clear set of steps that we do once in succession to create a final report.
+
+Here, we:
+
+1. Download some data and store it in an excel file, which we create a formatted table within
+2. We load the excel data into R to generate a chart
+3. We then copy and paste the formatted table and chart into a word document and add some text and formatting to create the final report
+</div>
 
 ## What is a Analytical Pipeline? The reality...
 
