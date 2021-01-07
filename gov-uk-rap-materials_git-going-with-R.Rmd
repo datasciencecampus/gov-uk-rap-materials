@@ -241,6 +241,46 @@ You'll find more information, and links for creating an account, [here](https://
   
   Now you can begin working on the files in RStudio.
 </div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_13.png data-background-size=100%}
+<div class="notes">
+  Next I selected the README.md file.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_14.png data-background-size=100%}
+<div class="notes">
+  I added some additional text to explain how to view presenter notes for the presentations.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_15.png data-background-size=100%}
+<div class="notes">
+  I then open the Git tab in the top right corner.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_16.png data-background-size=100%}
+<div class="notes">
+  Clicked the checkbox to stage the changes I made to the README file.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_17.png data-background-size=100%}
+<div class="notes">
+  Then clicked commit.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_18.png data-background-size=100%}
+<div class="notes">
+  And added a message into commit message box detailing the changes I made.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_19.png data-background-size=100%}
+<div class="notes">
+  And clicked commit.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_20.png data-background-size=100%}
+<div class="notes">
+  I closed the terminal once finished and then clicked push in the top right corner.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_21.png data-background-size=100%}
+<div class="notes">
+  I then navigated to my repository online - notice my commit message has appeared at the top and against the file I changed.
+</div>
+## {data-background=images/RStudioAndGit/RStudioAndGit_22.png data-background-size=100%}
+<div class="notes">
+  And if I scroll down to the bottom I can see the changes I made to the README have appeared online. Note that the README is the repository documentation so it will be available to view on the repository site.
+</div>
 
 ## Useful resources
 

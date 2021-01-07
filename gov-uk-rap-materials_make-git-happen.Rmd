@@ -392,7 +392,7 @@ You'll find more information, and links for creating an account, [here](https://
 </div>
 ## {data-background=images/GitInCommandLine/GitInCommandLine_9.png data-background-size=100%}
 <div class="notes">
-  And I can see that the change I made is now shown in the README - a with a hyperlink on the word git.
+  And I can see that the change I made is now shown in the README - a with a hyperlink on the word git. Note that the README is the repository documentation so it will be available to view on the repository site.
 </div>
 
 ## `git` the most out of GitHub
