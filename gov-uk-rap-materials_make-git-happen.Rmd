@@ -43,6 +43,14 @@ library(kableExtra) # Extra nice tables
 
 <!-- Extra custom code for footnotes - taken from https://stackoverflow.com/questions/42690955/how-to-insert-footnotes-in-ioslides-presentations-using-rmarkdown -->
 
+<!-- PRESENTER NOTES
+To view notes press "p" during the presentation on each slides with notes and an element with notes inside will appear. 
+
+Note that you can use presenter mode by adding "presentme=true" to presentation url ("my-presentation.html?presentme=true"). Turn off presenter mode by adding "?presentme=false" to the url.
+
+More information on "ioslides" available here: https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html.
+-->
+
 ## What is git?
 
 "You use Git to take snapshots of all the files in a folder."
@@ -55,17 +63,36 @@ library(kableExtra) # Extra nice tables
     <img src="images/SnapshotOfFolder.png" width="60%" height="auto">
 </p>
 
+<div class="notes">
+  git is a version control tool. It is a way of keeping track of:
+  
+  - How are files are changing
+  - Who is making those changes
+  - When were the changes made
+  - Why were the changes made
+</div>
+
 ## Snapshots in time
 
 <p class="aligncenter">
     <img src="images/FileVersionControl.png" width="100%" height="auto">
 </p>
 
+<div class="notes">
+  On the left, we have a typical file version tracking systems. We create new files and include dates and flags to denote changes that were made. With this we quickly lose track of different versions of our files and we end up with a cluttered file system.
+  
+  On the right, we have the same file but monitored by git. It remains a single file throughout but git has recorded how, when, why and who has made what changes to the document. We can easily track back through how the document has changed.
+</div>
+
 ## Snapshots in time
 
 <p class="aligncenter">
     <img src="images/gov-uk-rap-materials_make-git-happen.png" width="70%" height="auto">
 </p>
+
+<div class="notes">
+  Here, we can see version control in action for this presentation. Recording what changes I have made, when I made them, and why I made them. And I can jump back to anyone of these older versions of my file.
+</div>
 
 ## Three key concepts
 
@@ -76,6 +103,14 @@ library(kableExtra) # Extra nice tables
 - **Repository** - your project folder
 - **Commit** - a snapshot of your folder
 - **Branch** - a working version of your folder
+
+<div class="notes">
+  There are three key concepts to version control:
+
+  1. Repository - this is the same as a folder on our computer. It's the place we keep all teh files we need for a particular project.
+  2. Commit - this is how we tell git that we have made some changes we'd like it to record
+  3. Branch - we can think of branches as a copy of our folder that we are currently working on for a particular task. Once we have completed the work we'll merge any changes back into the main copy of the repository.
+</div>
 
 ## Three key concepts
 
