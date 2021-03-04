@@ -32,7 +32,7 @@ To get started, you'll ned to install `MySQL`, here are links for the different 
 - Installing on mac: ([link](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation.html)), also, I think it comes ready installed! See [here](https://www.thoughtco.com/installing-mysql-on-mac-2693866))
 - Installing on Windows ([link](https://dev.mysql.com/downloads/installer/)), with extra help [here](https://www.wikihow.com/Install-the-MySQL-Database-Server-on-Your-Windows-PC)
 
-For this tutorial, I worked on a Windows machine and it took me a wee while to get MySQL installed properly, so be patient.
+For this tutorial, I worked on a Windows machine and it took me a wee while to get MySQL installed properly, so be patient. Also, I had to use the legacy password based authentification to get R to connect properly (see this [question](https://stackoverflow.com/questions/49931541/mysql-changing-authentication-type-from-standard-to-caching-sha2-password) for more information).
 
 # Installing `RMySQL`
 
