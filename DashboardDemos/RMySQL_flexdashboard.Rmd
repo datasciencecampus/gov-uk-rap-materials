@@ -1,0 +1,91 @@
+---
+title: "Testing connection to MySQL"
+output: 
+  flexdashboard::flex_dashboard:
+    source_code: embed
+    runtime: shiny
+    orientation: columns
+    vertical_layout: scroll
+---
+
+```{r setup, include=FALSE}
+# Load libraries
+library(flexdashboard) # Building the dashboard
+library(shiny) # Adding interactive elements for user input
+library(RMySQL) # Interacting with local MySQL server
+library(DBI) # Used by RMySQL
+
+# Get MySQL password
+sqlPassword <- Sys.getenv("MYSQLPASS") # I have stored as environmental variable
+sqlUser <- "root"
+```
+
+```{r define functions to interact with MySQL server}
+
+connect <- function(password, user = "root"){
+  
+  # Connect to MySQL server
+  connection <- dbConnect(
+      drv = MySQL(),
+      user = user, 
+      password = password,
+      dbname = 'sakila',
+      host = 'localhost')
+  
+  return(connection)
+}
+
+disconnect <- function(connection){
+  dbDisconnect(connection)
+}
+
+sendMySQLQuery <- function(query, password, user = "root"){
+  
+  # Connecting/disconnecting for each query because shiny was breaking after 16 connections made (see question here: https://stackoverflow.com/questions/33885400/rmysql-internal-error-in-rs-dbi-getconnection-corrupt-connection-handle)
+  
+  # Connect to MySQL server
+  connection <- connect(password, user)
+  
+  # Send query to MySQL database
+  result <- dbGetQuery(connection, query)
+  
+  # Disconnect from MySQL server
+  disconnect(connection)
+  
+  return(result)
+}
+```
+
+
+Trade Trends by Countries
+========================================
+
+Inputs {.sidebar}
+----------------------------------------
+
+```{r user input}
+
+numericInput("nrows", "Enter the number of rows to display:", 5)
+selectInput("actor", "select actor", c("NICK", "ED"))
+```
+
+Column
+------------------------------------
+
+Below should a simple table giving details of actors (taken from the `actor` table in the [`sakila`](https://dev.mysql.com/doc/sakila/en/) database that comes with every MySQL download). The number of rows in the table should be set to no more than ``r reactive({input$nrows})`` (set by user on the left). The actor's detailed in the table below should all have the first_name of ``r reactive({input$actor})`` (set by user on the left).
+
+```{r get data based on user input}
+
+# Select data from MySQL server
+actorInfo <- reactive({
+
+  sendMySQLQuery(paste0("SELECT * FROM actor WHERE first_name = \"", input$actor, "\" LIMIT ", input$nrows, ";"), password = sqlPassword, user = sqlUser)
+})
+```
+
+```{r show data}
+# View the actor data
+renderTable({
+  actorInfo()
+})
+```
