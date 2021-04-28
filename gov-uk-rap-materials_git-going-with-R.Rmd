@@ -296,3 +296,91 @@ You'll find more information, and links for creating an account, [here](https://
 <div class="notes">
   Here are some useful resources that will help you learn more about git, GitHub, and RStudio.
 </div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_1.png data-background-size=100%}
+<div class="notes">
+  Say ive cloned a remote repository as an Rstudio project called 'KNBS_mentoring_prep'
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_2.png data-background-size=100%}
+<div class="notes">
+  I navigate to the git tab in top-right corner
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_3.png data-background-size=100%}
+<div class="notes">
+  and press the 'new branch' icon where I can name a new branch on which ill add changes to the gitignore file 
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_4.png data-background-size=100%}
+<div class="notes">
+  we can now see that this new branch has been created and that we are on it (top right) 
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_5.png data-background-size=100%}
+<div class="notes">
+  We can then open up the .gitignore file
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_6.png data-background-size=100%}
+<div class="notes">
+  in it we add two lines of code: one to tell git to ignore all files in the 'data' folder, and another to make an exception for a text file in this folder
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_7.png data-background-size=100%}
+<div class="notes">
+  save our changes
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_8.png data-background-size=100%}
+<div class="notes">
+  'stage' the gitignore file
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_9.png data-background-size=100%}
+<div class="notes">
+  press commit and add a commit message explaining what changes we have made
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_10.png data-background-size=100%}
+<div class="notes">
+  you can see a message telling us that our local branch is 1 commit ahead of the remote copy of the branch.
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_11.png data-background-size=100%}
+<div class="notes">
+  To update the remote branch we can just press the push button
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_12.png data-background-size=100%}
+<div class="notes">
+  If we are happy with the .gitignore file as it is, we can then merge the branch with the master branch. Go to shell in options dropdown
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_13.png data-background-size=100%}
+<div class="notes">
+   and write git checkout master and hit enter to switch back to the master branch
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_14.png data-background-size=100%}
+<div class="notes">
+ now we are back on master branch, we write 'git merge' followed by the name of our branch 'data_to_gitignore'
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_15.png data-background-size=100%}
+<div class="notes">
+  We hit enter and we are given a breakdown of changes to files. Again we get the message telling us that the remote master branch is behind on these changes. So as before we press push and those changes will be updated on the remote master branch. 
+</div>
+
+## {data-background=images/RStudioAndGit/Ruben_Branch_And_Gitignore_16.png data-background-size=100%}
+<div class="notes">
+  to check this is the case, I can navigate to the repo webpage and I can see that surely enough, in the .gitignore file, there are now those two lines specifying what to ignore in the data folder.  
+</div>
+
+
+
+
+
+
+
+
