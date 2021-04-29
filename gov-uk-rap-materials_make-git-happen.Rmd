@@ -1,6 +1,6 @@
 ---
 title: "Make `git` happen"
-author: "Joseph Crispell"
+author: "FCDO data science hub"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output:
   ioslides_presentation:

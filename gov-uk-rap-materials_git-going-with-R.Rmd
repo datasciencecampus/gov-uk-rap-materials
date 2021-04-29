@@ -1,6 +1,6 @@
 ---
 title: "`git` going with R"
-author: "Joseph Crispell"
+author: "FCDO data science hub"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output:
   ioslides_presentation:
