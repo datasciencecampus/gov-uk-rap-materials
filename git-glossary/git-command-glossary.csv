@@ -13,4 +13,5 @@ Command,Definition
   git pull,Pull changes from GitHub to local repository
   git rm [fileName],Remove file and record
   git mv [fileName],Move file and version history within repository
-  git reset --hard HEAD^,Remove un-pushed commits
+  git reset --hard HEAD^,Remove un-pushed commits
+  git merge [branchName],Merge current branch onto [branchName] - will automatically annotate any conflicts!
