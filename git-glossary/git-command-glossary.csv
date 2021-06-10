@@ -15,3 +15,5 @@ Command,Definition
   git mv [fileName],Move file and version history within repository
   git reset --hard HEAD^,Remove un-pushed commits
   git merge [branchName],Merge current branch onto [branchName] - will automatically annotate any conflicts!
+  git stash,Stash changes so that I can send to different branch ( I use when I forgot to switch branches before making change. Run this command, then switch to branch, then run command below)
+  git stash pop,Unstash changes that were previously stashed (Used in combination with command above to move changes onto different branch)
