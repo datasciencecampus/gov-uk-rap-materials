@@ -1,0 +1,99 @@
+---
+title: "Monitoring KNBS national census sampling frame (last updated: `r format(Sys.Date(), '%d %b %Y')`)"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    source_code: embed
+---
+
+```{r preparation}
+# Load required libraries
+library(leaflet) # Interactive maps
+library(plotly) # Interactive plots
+library(flexdashboard) # Value boxes
+```
+
+Sidebar {.sidebar}
+=======================================================================
+
+### An example flexdashboard
+
+The current dashboard is a demonstration of the type of dashboard that can be built using [Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html) and [flexdashboard](https://pkgs.rstudio.com/flexdashboard/). Rmarkdown is the underlying script - a combination of R and [markdown](https://opensource.com/article/19/9/introduction-markdown) to enable effective reporting. Flexdashboard is a library that makes setting up the structure of your dashboard a little easier.
+
+
+Dashboard
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Number of clusters visited {.value-box}
+
+```{r number clusters}
+valueBox(value = 250, 
+         icon = "fa-check-circle")
+```
+
+### Number of surveyors on the gound {.value-box}
+
+```{r number surveyors}
+valueBox(value = 25, 
+         icon = "fa-shoe-prints")
+```
+
+### Current phase {.value-box}
+
+```{r current phase}
+valueBox(value = 2, 
+         caption = "Current phase", 
+         icon = "fa-calendar-check")
+```
+
+Row
+-----------------------------------------------------------------------
+
+### An example of interactive map
+
+```{r leaflet map}
+# Example taken from: http://rstudio.github.io/leaflet/
+
+# Initialise the leaflet map
+interactive_map <- leaflet() %>%
+  
+  # Add background map
+  addTiles() %>%
+
+  # Add point location
+  addMarkers(lng = 174.768, lat = -36.852, popup = "The birthplace of R")
+
+# Show map
+interactive_map
+```
+
+### An example of an interactive plot
+
+```{r plot plot}
+# Generate some example time series
+trace_0 <- rnorm(100, mean = 5)
+trace_1 <- rnorm(100, mean = 0)
+trace_2 <- rnorm(100, mean = -5)
+
+# Generate X axis values
+x <- c(1:100)
+
+# Store example data in data frame
+data <- data.frame(x, trace_0, trace_1, trace_2)
+
+# Initialise plotly figure with first time series
+fig <- plot_ly(data, x = ~x, y = ~trace_0, name = 'trace 0', type = 'scatter', mode = 'lines')
+
+# Add additional traces (lines)
+fig <- fig %>% add_trace(y = ~trace_1, name = 'trace 1', mode = 'lines+markers') 
+fig <- fig %>% add_trace(y = ~trace_2, name = 'trace 2', mode = 'markers')
+
+# Show figure
+fig
+```
+
+Page 2
+=======================================================================
