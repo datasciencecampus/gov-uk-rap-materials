@@ -30,23 +30,29 @@ Row
 ### Number of clusters visited {.value-box}
 
 ```{r number clusters}
-valueBox(value = 250, 
-         icon = "fa-check-circle")
+valueBox(
+  value = 250,
+  icon = "fa-check-circle"
+)
 ```
 
-### Number of surveyors on the gound {.value-box}
+### Number of surveyors on the ground {.value-box}
 
 ```{r number surveyors}
-valueBox(value = 25, 
-         icon = "fa-shoe-prints")
+valueBox(
+  value = 25,
+  icon = "fa-shoe-prints"
+)
 ```
 
 ### Current phase {.value-box}
 
 ```{r current phase}
-valueBox(value = 2, 
-         caption = "Current phase", 
-         icon = "fa-calendar-check")
+valueBox(
+  value = 2,
+  caption = "Current phase",
+  icon = "fa-calendar-check"
+)
 ```
 
 Row
@@ -59,10 +65,8 @@ Row
 
 # Initialise the leaflet map
 interactive_map <- leaflet() %>%
-  
   # Add background map
   addTiles() %>%
-
   # Add point location
   addMarkers(lng = 174.768, lat = -36.852, popup = "The birthplace of R")
 
@@ -85,11 +89,15 @@ x <- c(1:100)
 data <- data.frame(x, trace_0, trace_1, trace_2)
 
 # Initialise plotly figure with first time series
-fig <- plot_ly(data, x = ~x, y = ~trace_0, name = 'trace 0', type = 'scatter', mode = 'lines')
+fig <- plot_ly(data,
+  x = ~x, y = ~trace_0,
+  name = "trace 0", type = "scatter",
+  mode = "lines"
+)
 
 # Add additional traces (lines)
-fig <- fig %>% add_trace(y = ~trace_1, name = 'trace 1', mode = 'lines+markers') 
-fig <- fig %>% add_trace(y = ~trace_2, name = 'trace 2', mode = 'markers')
+fig <- fig %>% add_trace(y = ~trace_1, name = "trace 1", mode = "lines+markers")
+fig <- fig %>% add_trace(y = ~trace_2, name = "trace 2", mode = "markers")
 
 # Show figure
 fig

@@ -8,21 +8,28 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  output$tbl <- renderTable({
-    
+  output$tbl <- shiny::renderTable({
+
     # Connect to MySQL server
-    connection <- dbConnect(
-      drv = MySQL(),
-      user = 'root', 
-      password = sqlPass,
-      dbname = 'sakila',
-      host = 'localhost')
-    
+    connection <- RMySQL::dbConnect(
+      drv = RMySQL::MySQL(),
+      user = "root",
+      password = input$sqlPass,
+      dbname = "sakila",
+      host = "localhost"
+    )
+
     # Set to disconnect on exit
-    on.exit(dbDisconnect(connection), add = TRUE)
-    
+    on.exit(RMySQL::dbDisconnect(connection), add = TRUE)
+
     # Select data from MySQL server
-    dbGetQuery(connection, paste0("SELECT * FROM actor LIMIT ", input$nrows, ";"))
+    RMySQL::dbGetQuery(
+      connection,
+      paste0(
+        "SELECT * FROM actor LIMIT ",
+        input$nrows, ";"
+      )
+    )
   })
 }
 

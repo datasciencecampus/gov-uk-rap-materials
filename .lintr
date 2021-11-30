@@ -1,0 +1,11 @@
+linters: with_defaults(
+  line_length_linter(120), 
+  commented_code_linter = NULL,
+  camel_case_linter = NULL, 
+  snake_case_linter = NULL
+  )
+exclusions: list(".lintr")
+exclude: "# Exclude Linting"
+exclude_start: "# Begin Exclude Linting"
+exclude_end: "# End Exclude Linting"
+encoding: "ISO-8859-1"

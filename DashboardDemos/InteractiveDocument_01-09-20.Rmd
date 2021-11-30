@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE}
 
 # By default show code chunks in output
-knitr::opts_chunk$set(echo=TRUE)
+knitr::opts_chunk$set(echo = TRUE)
 
 # Load the required libraries
 library(plotly) # Interative plots
@@ -38,13 +38,13 @@ The World Health Organisation publishes COVID-19 case and death counts for most 
 whoURL <- "https://covid19.who.int/WHO-COVID-19-global-data.csv"
 
 # Load the WHO COVID-19 data
-covid <- read.csv(whoURL, stringsAsFactors=FALSE)
+covid <- read.csv(whoURL, stringsAsFactors = FALSE)
 
 # Fix the first column name
 colnames(covid)[1] <- "Date_reported"
 
 # Convert the dates from character vector to a date object
-covid$Date_reported <- as.Date(covid$Date_reported, format="%Y-%m-%d")
+covid$Date_reported <- as.Date(covid$Date_reported, format = "%Y-%m-%d")
 ```
 
 The WHO COVID-19 data looks like this:
@@ -58,7 +58,7 @@ prettyTable(covid[1:25, ])
 The WHO data reports the new and cumulative counts for cases and deaths for each country since the start of January. We want to visualise the daily trends in deaths for each country, so we'll need to manipulate the data a little to align the daily deaths counts by date (*note that I am using a bespoke function to do this processing*):
 ```{r align by date}
 # Align the daily death counts by date
-alignedByDate <- alignCountByDate(covid, countColumn="New_deaths")
+alignedByDate <- alignCountByDate(covid, countColumn = "New_deaths")
 ```
 
 The aligned data looks like this:
@@ -73,18 +73,22 @@ With the aligned data, we can now create an interactive plot for the daily death
 ```{r plot the daily deaths interactive}
 # Select the countries with the highest cumulative death counts
 nToSelect <- 5
-topCountries <- getTopCountries(covid, countColumn="Cumulative_deaths", n=nToSelect)
+topCountries <- getTopCountries(covid, countColumn = "Cumulative_deaths", n = nToSelect)
 
 # Plot the trends for the countries with highest counts
-plotDailyDeathsInteractive(alignedByDate, countries=topCountries, 
-                           title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
+plotDailyDeathsInteractive(alignedByDate,
+  countries = topCountries,
+  title = paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths")
+)
 ```
 
 We can also create non-interactive static plots in using R's own functions:
 ```{r plot the daily deaths static, echo=FALSE}
 # Plot the trends for the countries with highest counts
-plotDailyDeathsStatic(alignedByDate, countries=topCountries, 
-                           title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
+plotDailyDeathsStatic(alignedByDate,
+  countries = topCountries,
+  title = paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths")
+)
 ```
 
 
@@ -94,7 +98,7 @@ plotDailyDeathsStatic(alignedByDate, countries=topCountries,
 We can use the [DT](https://rstudio.github.io/DT/) package to provide an interactive version of the aligned data used to create the plot above  (*Note that for the first few months many of the top countries didn't report any COVID-19 deaths*):
 
 ```{r interactive table}
-datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
+datatable(alignedByDate[, c("Date", topCountries)], rownames = FALSE)
 ```
 
 # Some useful resources
