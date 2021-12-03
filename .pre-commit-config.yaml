@@ -20,6 +20,8 @@ repos:
           (.*/|)\.Rbuildignore|
           (.*/|)\.pre-commit-.*|
           .*\.[rR]|
+          .*\.html|
+          .*\.docx|
           .*\.Rproj|
           .*\.py|
           .*\.feather|
@@ -57,3 +59,4 @@ repos:
     rev: v1.1.0
     hooks:
     -   id: detect-secrets
+        exclude: '\.html'
