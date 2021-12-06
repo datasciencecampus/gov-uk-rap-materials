@@ -40,10 +40,12 @@ timevis(gantt, groups = groups, options = options)
 
 # Save the timeline to file
 file <- file.path(path, "GanttTutorial_gantt.html")
-saveWidget(timevis(gantt,
-  groups = groups, options = options,
-  width = "100%", showZoom = TRUE
-),
-file,
-selfcontained = FALSE
+saveWidget(
+  timevis(
+    gantt,
+    groups = groups, options = options,
+    width = "100%", showZoom = TRUE
+  ),
+  file,
+  selfcontained = FALSE
 ) # Unfortunately self-contained doesn't work
