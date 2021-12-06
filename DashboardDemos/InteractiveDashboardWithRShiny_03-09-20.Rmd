@@ -3,7 +3,7 @@ title: "An RShiny interactive Rmarkdown dashboard"
 author: "Joseph Crispell"
 date: "`r format(Sys.Date(), '%d %b %Y')`"
 output:
-    flexdashboard::flex_dashboard:
+  flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
     source_code: embed
