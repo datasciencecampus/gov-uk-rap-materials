@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r set-options, echo=FALSE, cache=FALSE}
-options(width=800)
+options(width = 800)
 ```
 
 ```{r preparation, include=FALSE}
@@ -31,16 +31,17 @@ path <- file.path("C:", "Users", "j-crispell", "Repositories", "gov-uk-rap-mater
 ```
 
 ```{r functions, include=FALSE}
-prettyTable <- function(table){
-  
+prettyTable <- function(table) {
+
   # Use the kable function to create a nicer formatted table
   kable(table) %>%
-  
     # Set the format
-    kable_styling(bootstrap_options="striped", # Set the colour of rows
-                  full_width=FALSE, # Make the table not stretch to fit the page
-                  position="left") %>% # Position the table on the left
-  
+    kable_styling(
+      bootstrap_options = "striped", # Set the colour of rows
+      full_width = FALSE, # Make the table not stretch to fit the page
+      position = "left"
+    ) %>% # Position the table on the left
+
     # Make the table scrollable
     scroll_box(height = "400px")
 }
@@ -49,15 +50,15 @@ prettyTable <- function(table){
 ```{r load gantt, echo=FALSE}
 # Read in the GANTT table
 file <- file.path(path, "GanttTutorialTimeline_18-05-20.csv")
-gantt <- read.table(file, header=TRUE, sep=",", stringsAsFactors=FALSE)
+gantt <- read.table(file, header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 # Set the date formats
-gantt$start <- as.POSIXct(gantt$start, format="%d/%m/%Y %H:%M")
-gantt$end <- as.POSIXct(gantt$end, format="%d/%m/%Y %H:%M")
+gantt$start <- as.POSIXct(gantt$start, format = "%d/%m/%Y %H:%M")
+gantt$end <- as.POSIXct(gantt$end, format = "%d/%m/%Y %H:%M")
 
 # Remove NA rows
 naRows <- which(is.na(gantt$id))
-if(length(naRows) > 0){
+if (length(naRows) > 0) {
   gantt <- gantt[-naRows, ]
 }
 ```
@@ -66,15 +67,17 @@ if(length(naRows) > 0){
 # Note the groupings in the gannt chart
 groups <- c("Preparation", "Presenting")
 style <- c("<b>Preparation</b>", "<b>Presenting</b>")
-groups <- data.frame(id=groups, content=style)
+groups <- data.frame(id = groups, content = style)
 
 # Set the options for timevis
-options <- list(editable=FALSE, align="center", multiselect=TRUE)
+options <- list(editable = FALSE, align = "center", multiselect = TRUE)
 
 # Save the timeline to file
 file <- file.path(path, "GanttTutorial_gantt.html")
-saveWidget(timevis(gantt, groups=groups, options=options, width="100%", showZoom=TRUE), 
-           file, selfcontained=FALSE) # Unfortunately self-contained doesn't work
+saveWidget(timevis(gantt, groups = groups, options = options, width = "100%", showZoom = TRUE),
+  file,
+  selfcontained = FALSE
+) # Unfortunately self-contained doesn't work
 ```
 
 # What is a gantt chart
@@ -84,7 +87,7 @@ It's a horizontal bar chart illustrating a project schedule. It was first used b
 ```{r show gantt, echo=FALSE, fig.width=10}
 
 # Plot the GANTT chart
-timevis(gantt, groups=groups, options=options)
+timevis(gantt, groups = groups, options = options)
 ```
 
 The above gantt chart sets out the work packages (`WP`) and their associated tasks (`T`) and deliverables (`D`).
@@ -123,7 +126,7 @@ Here is a brief description of each of the columns:
 - **style** - `css` code used to set style of element on gantt
 - **group** - categorical column dividing elements into groups
 
-I created the above table in excel and saved as `csv` formatted text file to read into R. For setting the styles with `css` code take alook at [this](https://www.w3schools.com/html/html_css.asp) tutorial.
+I created the above table in excel and saved as `csv` formatted text file to read into R. For setting the styles with `css` code take a look at [this](https://www.w3schools.com/html/html_css.asp) tutorial.
 
 ## Read in timeline table into R and process
 
@@ -132,7 +135,7 @@ We can read in the timeline table with the following code:
 ```{r load timeline table, eval=FALSE, echo=TRUE}
 # Read in the GANTT table
 file <- file.path(path, "GanttTutorialTimeline_18-05-20.csv")
-gantt <- read.table(file, header=TRUE, sep=",", stringsAsFactors=FALSE)
+gantt <- read.table(file, header = TRUE, sep = ",", stringsAsFactors = FALSE)
 ```
 
 <br>
@@ -140,12 +143,12 @@ Next, we can note the date columns and remove `NA` rows (excel kept inserting th
 
 ```{r note date columns and remove NA rows, eval=FALSE, echo=TRUE}
 # Set the date formats
-gantt$start <- as.POSIXct(gantt$start, format="%d/%m/%Y %H:%M")
-gantt$end <- as.POSIXct(gantt$end, format="%d/%m/%Y %H:%M")
+gantt$start <- as.POSIXct(gantt$start, format = "%d/%m/%Y %H:%M")
+gantt$end <- as.POSIXct(gantt$end, format = "%d/%m/%Y %H:%M")
 
 # Remove NA rows
 naRows <- which(is.na(gantt$id))
-if(length(naRows) > 0){
+if (length(naRows) > 0) {
   gantt <- gantt[-naRows, ]
 }
 ```
@@ -158,7 +161,7 @@ We can recognise the grouping column and use some `html` to set some styles for 
 # Note the groupings in the gannt chart
 groups <- c("Preparation", "Presenting")
 style <- c("<b>Preparation</b>", "<b>Presenting</b>")
-groups <- data.frame(id=groups, content=style)
+groups <- data.frame(id = groups, content = style)
 ```
 
 ## Plotting the gantt
@@ -167,19 +170,23 @@ Now we can visualise our gantt chart in R with the following code:
 
 ```{r visualise gantt, eval=TRUE, echo=TRUE, fig.width=10}
 # Set the options for timevis
-options <- list(editable=FALSE, align="center", multiselect=TRUE)
+options <- list(editable = FALSE, align = "center", multiselect = TRUE)
 
 # Plot the GANTT chart
-timevis(gantt, groups=groups, options=options)
+timevis(gantt, groups = groups, options = options)
 ```
 
 We can also save the gantt as an `html` file:
 ```{r save gantt as html, eval=FALSE, echo=TRUE}
 # Save the timeline to file
 file <- file.path(path, "GanttTutorial_gantt.html")
-saveWidget(timevis(gantt, groups=groups, options=options, 
-                   width="100%", showZoom=TRUE), 
-           file, selfcontained=FALSE) # Unfortunately self-contained doesn't work well for me
+saveWidget(timevis(gantt,
+  groups = groups, options = options,
+  width = "100%", showZoom = TRUE
+),
+file,
+selfcontained = FALSE
+) # Unfortunately self-contained doesn't work well for me
 ```
 
 # Wrapping up

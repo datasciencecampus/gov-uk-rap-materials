@@ -16,42 +16,45 @@ library(RMySQL) # Interacting with local MySQL server
 library(DBI) # Used by RMySQL
 
 # Get MySQL password
-sqlPassword <- Sys.getenv("MYSQLPASS") # I have stored as environmental variable
-sqlUser <- "root"
+sql_password <- Sys.getenv("MYSQLPASS") # Stored as environmental variable
+sql_user <- "root"
 ```
 
 ```{r define functions to interact with MySQL server}
 
-connect <- function(password, user = "root"){
-  
+connect <- function(password, user = "root") {
+
   # Connect to MySQL server
-  connection <- dbConnect(
-      drv = MySQL(),
-      user = user, 
-      password = password,
-      dbname = 'sakila',
-      host = 'localhost')
-  
+  connection <- RMySQL::dbConnect(
+    drv = RMySQL::MySQL(),
+    user = user,
+    password = password,
+    dbname = "sakila",
+    host = "localhost"
+  )
+
   return(connection)
 }
 
-disconnect <- function(connection){
-  dbDisconnect(connection)
+disconnect <- function(connection) {
+  RMySQL::dbDisconnect(connection)
 }
 
-sendMySQLQuery <- function(query, password, user = "root"){
-  
-  # Connecting/disconnecting for each query because shiny was breaking after 16 connections made (see question here: https://stackoverflow.com/questions/33885400/rmysql-internal-error-in-rs-dbi-getconnection-corrupt-connection-handle)
-  
+send_mysql_query <- function(query, password, user = "root") {
+
+  # Connecting/disconnecting for each query because shiny was
+  # breaking after 16 connections made - see question here:
+  # https://stackoverflow.com/questions/33885400/rmysql-internal-error-in-rs-dbi-getconnection-corrupt-connection-handle
+
   # Connect to MySQL server
   connection <- connect(password, user)
-  
+
   # Send query to MySQL database
-  result <- dbGetQuery(connection, query)
-  
+  result <- RMySQL::dbGetQuery(connection, query)
+
   # Disconnect from MySQL server
   disconnect(connection)
-  
+
   return(result)
 }
 ```
@@ -77,9 +80,14 @@ Below should a simple table giving details of actors (taken from the `actor` tab
 ```{r get data based on user input}
 
 # Select data from MySQL server
-actorInfo <- reactive({
-
-  sendMySQLQuery(paste0("SELECT * FROM actor WHERE first_name = \"", input$actor, "\" LIMIT ", input$nrows, ";"), password = sqlPassword, user = sqlUser)
+actor_info <- reactive({
+  send_mysql_query(
+    paste0(
+      "SELECT * FROM actor WHERE first_name = \"",
+      input$actor, "\" LIMIT ", input$nrows, ";"
+    ),
+    password = sql_password, user = sql_user
+  )
 })
 ```
 

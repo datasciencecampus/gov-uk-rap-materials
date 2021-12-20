@@ -37,13 +37,13 @@ The current document aims to illustrate how we can used [Rmarkdown](https://rmar
 whoURL <- "https://covid19.who.int/WHO-COVID-19-global-data.csv"
 
 # Load the WHO COVID-19 data
-covid <- read.csv(whoURL, stringsAsFactors=FALSE)
+covid <- read.csv(whoURL, stringsAsFactors = FALSE)
 
 # Fix the first column name
 colnames(covid)[1] <- "Date_reported"
 
 # Convert the dates from character vector to a date object
-covid$Date_reported <- as.Date(covid$Date_reported, format="%Y-%m-%d")
+covid$Date_reported <- as.Date(covid$Date_reported, format = "%Y-%m-%d")
 ```
 
 The WHO COVID-19 data looks like this:
@@ -57,7 +57,7 @@ prettyTable(covid[1:25, ])
 The WHO data reports the new and cumulative counts for cases and deaths for each country since the start of January. We want to visualise the daily trends in deaths for each country, so we'll need to manipulate the data a little to align the daily deaths counts by date (*note that I am using a bespoke function to do this processing*):
 ```{r align by date, echo=TRUE}
 # Align the daily death counts by date
-alignedByDate <- alignCountByDate(covid, countColumn="New_deaths")
+alignedByDate <- alignCountByDate(covid, countColumn = "New_deaths")
 ```
 
 The aligned data looks like this:
@@ -74,18 +74,20 @@ Column {data-width=650}
 ```{r plot the daily deaths}
 # Select the countries with the highest cumulative death counts
 nToSelect <- 5
-topCountries <- getTopCountries(covid, countColumn="Cumulative_deaths", n=nToSelect)
+topCountries <- getTopCountries(covid, countColumn = "Cumulative_deaths", n = nToSelect)
 
 # Ploit the trends for the countries with highest counts
-plotDailyDeathsInteractive(alignedByDate, countries=topCountries, 
-                           title=paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths"))
+plotDailyDeathsInteractive(alignedByDate,
+  countries = topCountries,
+  title = paste0("Trends in daily deaths in top ", nToSelect, " countries with highest total deaths")
+)
 ```
 
 Data
 =======================================================================
 
 ```{r interactive table}
-datatable(alignedByDate[, c("Date", topCountries)], rownames=FALSE)
+datatable(alignedByDate[, c("Date", topCountries)], rownames = FALSE)
 ```
 
 United Kingdom {data-navmenu="Countries"}
@@ -94,10 +96,12 @@ United Kingdom {data-navmenu="Countries"}
 ```{r, echo=FALSE}
 backgroundCountries <- colnames(alignedByDate)[-1]
 backgroundCountries <- backgroundCountries[backgroundCountries != "The United Kingdom"]
-plotDailyDeathsInteractive(alignedByDate, countries=c("The United Kingdom"),
-                           countriesInBackground=backgroundCountries,
-                           title=paste0("Trends in daily deaths in UK"),
-                           legend=FALSE)
+plotDailyDeathsInteractive(alignedByDate,
+  countries = c("The United Kingdom"),
+  countriesInBackground = backgroundCountries,
+  title = paste0("Trends in daily deaths in UK"),
+  legend = FALSE
+)
 ```
 
 United States of America {data-navmenu="Countries"}
@@ -106,10 +110,12 @@ United States of America {data-navmenu="Countries"}
 ```{r, echo=FALSE}
 backgroundCountries <- colnames(alignedByDate)[-1]
 backgroundCountries <- backgroundCountries[backgroundCountries != "United States of America"]
-plotDailyDeathsInteractive(alignedByDate, countries=c("United States of America"),
-                           countriesInBackground=backgroundCountries,
-                           title=paste0("Trends in daily deaths in US"),
-                           legend=FALSE)
+plotDailyDeathsInteractive(alignedByDate,
+  countries = c("United States of America"),
+  countriesInBackground = backgroundCountries,
+  title = paste0("Trends in daily deaths in US"),
+  legend = FALSE
+)
 ```
 
 China {data-navmenu="Countries"}
@@ -118,10 +124,12 @@ China {data-navmenu="Countries"}
 ```{r, echo=FALSE}
 backgroundCountries <- colnames(alignedByDate)[-1]
 backgroundCountries <- backgroundCountries[backgroundCountries != "China"]
-plotDailyDeathsInteractive(alignedByDate, countries=c("China"),
-                           countriesInBackground=backgroundCountries,
-                           title=paste0("Trends in daily deaths in China"),
-                           legend=FALSE)
+plotDailyDeathsInteractive(alignedByDate,
+  countries = c("China"),
+  countriesInBackground = backgroundCountries,
+  title = paste0("Trends in daily deaths in China"),
+  legend = FALSE
+)
 ```
 
 Resources
@@ -135,5 +143,3 @@ Here's some resources that I found useful when creating this document:
 - [Interactive plotting with plotly](https://plotly.com/r/)
 - [Programming in R](https://www.tutorialspoint.com/r/index.htm)
 - [Troubleshooting with stackoverflow](https://stackoverflow.com/questions/tagged/r)
-
-

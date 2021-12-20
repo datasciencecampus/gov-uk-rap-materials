@@ -17,20 +17,21 @@ library(kableExtra) # Extra nice tables
 ```
 
 ```{r functions, include=FALSE}
-prettyTable <- function(table){
-  
+prettyTable <- function(table) {
+
   # Force row colours
-  options("kableExtra.html.bsTable"=TRUE)
+  options("kableExtra.html.bsTable" = TRUE)
 
   # Create nice html visualisation
-  kable(table, format="html") %>%
-  
+  kable(table, format = "html") %>%
     # Set the format
-    kable_styling(bootstrap_options="striped", # Set the colour of rows
-                  full_width=FALSE, # Make the table not stretch to fit the page
-                  position="left", # Position the table on the left
-                  font_size=15) %>% # Change the font size
-  
+    kable_styling(
+      bootstrap_options = "striped", # Set the colour of rows
+      full_width = FALSE, # Make the table not stretch to fit the page
+      position = "left", # Position the table on the left
+      font_size = 15
+    ) %>% # Change the font size
+
     # Make the table scrollable
     scroll_box(height = "100%")
 }

@@ -107,7 +107,7 @@ More information on "ioslides" available here: https://bookdown.org/yihui/rmarkd
 <div class="notes">
   There are three key concepts to version control:
 
-  1. Repository - this is the same as a folder on our computer. It's the place we keep all teh files we need for a particular project.
+  1. Repository - this is the same as a folder on our computer. It's the place we keep all the files we need for a particular project.
   2. Commit - this is how we tell git that we have made some changes we'd like it to record
   3. Branch - we can think of branches as a copy of our folder that we are currently working on for a particular task. Once we have completed the work we'll merge any changes back into the main copy of the repository.
 </div>
@@ -380,7 +380,7 @@ You'll find more information, and links for creating an account, [here](https://
   
   With these I have:
   - Told git to make a note of any files that have changed been added or removed
-  - Committed any changes I found and written a meangingful message about the changes I made
+  - Committed any changes I found and written a meaningful message about the changes I made
   - And finally pushed my committed changes onto GitHub that stores the main copy of my repository
 </div>
 
@@ -450,17 +450,18 @@ glossary <- read.csv("https://raw.githubusercontent.com/datasciencecampus/gov-uk
 glossary$Command <- paste0("`", glossary$Command, "`")
 
 # Force row colours
-options("kableExtra.html.bsTable"=TRUE)
+options("kableExtra.html.bsTable" = TRUE)
 
 # Create nice html visualisation
-kable(glossary, format="html") %>%
-  
+kable(glossary, format = "html") %>%
   # Set the format
-  kable_styling(bootstrap_options="striped", # Set the colour of rows
-                full_width=FALSE, # Make the table not stretch to fit the page
-                position="left", # Position the table on the left
-                font_size=15) %>% # Change the font size
-  
+  kable_styling(
+    bootstrap_options = "striped", # Set the colour of rows
+    full_width = FALSE, # Make the table not stretch to fit the page
+    position = "left", # Position the table on the left
+    font_size = 15
+  ) %>% # Change the font size
+
   # Make the table scrollable
   scroll_box(height = "450px")
 ```
@@ -468,4 +469,3 @@ kable(glossary, format="html") %>%
 <div class="notes">
   And here's a glossary of some of the most used commands for managing your repository with git in the command line.
 </div>
-

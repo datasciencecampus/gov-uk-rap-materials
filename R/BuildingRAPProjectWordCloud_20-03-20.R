@@ -24,7 +24,7 @@ projectData <- sheets_read(sheet_url)
 array_of_words <- unlist(strsplit(data$`Please provide a brief outline of the example`, " "))
 
 # Remove non-character characters from words
-array_of_words <- gsub(pattern="[[:punct:]]", replacement="", x=array_of_words)
+array_of_words <- gsub(pattern = "[[:punct:]]", replacement = "", x = array_of_words)
 
 # Ignore words with fewer than X characters
 array_of_words <- array_of_words[nchar(array_of_words) > 3]
@@ -33,12 +33,12 @@ array_of_words <- array_of_words[nchar(array_of_words) > 3]
 
 # Open a png file
 fileName <- file.path(path, "images", "RAP-project-wordcloud.png")
-png(fileName, width=620,height=550)
+png(fileName, width = 620, height = 550)
 
 # Set the plotting margins
-par(mar=c(0,0,0,0))
+par(mar = c(0, 0, 0, 0))
 
 # Plot a word cloud representing the frequency that words appear in descriptions
-wordcloud(array_of_words, max.words=500, min.freq=2, scale=c(8,0.5))
+wordcloud(array_of_words, max.words = 500, min.freq = 2, scale = c(8, 0.5))
 
 dev.off()
